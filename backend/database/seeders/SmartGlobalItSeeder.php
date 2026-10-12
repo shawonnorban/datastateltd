@@ -21,7 +21,7 @@ class SmartGlobalItSeeder extends Seeder
 {
     public function run(): void
     {
-        $adminEmail = env('ADMIN_EMAIL', 'admin@smartglobalit.test');
+        $adminEmail = env('ADMIN_EMAIL', 'admin@sarkaritfirm.com');
         $adminPassword = env('ADMIN_PASSWORD');
 
         if (!$adminPassword) {
@@ -129,13 +129,13 @@ class SmartGlobalItSeeder extends Seeder
                 'content' => 'We help businesses turn ideas into reliable digital products.',
                 'is_published' => true,
                 'published_at' => now(),
-                'meta_title' => 'About Smart Global IT',
+                'meta_title' => 'About Sarkar IT Firm',
                 'meta_description' => 'Learn about our digital solutions and services.',
             ]
         );
 
         $settings = [
-            'site_name' => ['value' => 'SMART GLOBAL IT', 'type' => 'text', 'group' => 'general'],
+            'site_name' => ['value' => 'Sarkar IT Firm', 'type' => 'text', 'group' => 'general'],
             'tagline' => ['value' => 'Your Vision, Our Technology', 'type' => 'text', 'group' => 'general'],
             'contact_email' => ['value' => 'hello@example.com', 'type' => 'text', 'group' => 'contact'],
             'contact_phone' => ['value' => '', 'type' => 'text', 'group' => 'contact'],

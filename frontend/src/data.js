@@ -1,8 +1,8 @@
 // Placeholder content. Replace with API data (Laravel backend) later.
 export const site = {
-  name: 'Smart Global IT',
+  name: 'Sarkar IT Firm',
   phone: '+880 1XXX-XXXXXX',
-  email: 'info@smartglobalit.test',
+  email: 'info@sarkaritfirm.com',
   tagline: 'Cloud-based, customizable software designed to grow your business.',
 };
 
@@ -49,9 +49,9 @@ export const process = [
 ];
 
 export const branches = [
-  { name: 'Head Office', address: 'Address line, City, Country', phone: '+880 1XXX-XXXXXX', email: 'info@smartglobalit.test' },
-  { name: 'Branch Office', address: 'Address line, City, Country', phone: '+880 1XXX-XXXXXX', email: 'info@smartglobalit.test' },
-  { name: 'Overseas Office', address: 'Address line, City, Country', phone: '+000 XXX-XXXXXX', email: 'info@smartglobalit.test' },
+  { name: 'Head Office', address: 'Address line, City, Country', phone: '+880 1XXX-XXXXXX', email: 'info@sarkaritfirm.com' },
+  { name: 'Branch Office', address: 'Address line, City, Country', phone: '+880 1XXX-XXXXXX', email: 'info@sarkaritfirm.com' },
+  { name: 'Overseas Office', address: 'Address line, City, Country', phone: '+000 XXX-XXXXXX', email: 'info@sarkaritfirm.com' },
 ];
 
 export const perks = [

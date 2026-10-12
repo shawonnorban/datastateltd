@@ -29,7 +29,7 @@ class DemoDataSeeder extends Seeder
     private function settings(array $scrapedBranches): void
     {
         Storage::disk('public')->put('branding/demo-logo.svg', <<<'SVG'
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 56"><path d="M20 4l16 16-16 16L4 20z" fill="#0a0a0a"/><path d="M20 14l6 6-6 6-6-6z" fill="#fff"/><text x="46" y="38" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="30" fill="#0a0a0a">DATA STATE LTD</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 56"><path d="M20 4l16 16-16 16L4 20z" fill="#0a0a0a"/><path d="M20 14l6 6-6 6-6-6z" fill="#fff"/><text x="46" y="38" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="30" fill="#0a0a0a">SARKAR IT FIRM</text></svg>
 SVG);
 
         $branches = array_merge([[
@@ -40,7 +40,7 @@ SVG);
         ]], array_slice($scrapedBranches, 1));
 
         $demo = [
-            'site_name' => ['Data State Ltd', 'text', 'general'],
+            'site_name' => ['Sarkar IT Firm', 'text', 'general'],
             'tagline' => ['Cloud-based, fully customizable software designed to enhance your business growth.', 'text', 'general'],
             'logo' => ['branding/demo-logo.svg', 'image', 'general'],
             'contact_phone' => ['+88 09666707635', 'text', 'contact'],
@@ -57,7 +57,7 @@ SVG);
             'branches' => [json_encode($branches, JSON_UNESCAPED_UNICODE), 'json', 'contact'],
         ];
 
-        $placeholders = ['hello@example.com', 'Your Vision, Our Technology', 'SMART GLOBAL IT'];
+        $placeholders = ['hello@example.com', 'Your Vision, Our Technology', 'SMART GLOBAL IT', 'Data State Ltd'];
 
         foreach ($demo as $key => [$value, $type, $group]) {
             $setting = SiteSetting::firstOrNew(['key' => $key]);
