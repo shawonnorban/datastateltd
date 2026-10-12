@@ -202,3 +202,16 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);bo
 
 /* keep uploaded logos readable over the dark hero */
 .header:not(.scrolled) .logo-img{background:#fff;padding:5px 12px;border-radius:12px;filter:none}
+
+/* industry showcase */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:26px}
+.tabs button{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;border:1px solid var(--line);background:#fff;font:600 .88rem Inter;color:var(--text);cursor:pointer;transition:.25s}
+.tabs button:hover{border-color:#b9c6ff;transform:translateY(-2px)}
+.tabs button.on{background:var(--grad);color:#fff;border-color:transparent;box-shadow:0 10px 22px -8px rgba(90,90,255,.6)}
+.show{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center;padding:38px;background:linear-gradient(160deg,#fff,#f1f4ff);animation:pop .45s ease}
+@keyframes pop{from{opacity:0;transform:translateY(10px)}}
+.show h3{font-size:1.5rem}.show p{font-size:1rem}
+.show-list li{display:flex;gap:12px;align-items:center;padding:14px 16px;margin-bottom:10px;border-radius:14px;background:#fff;border:1px solid var(--line);font-weight:600;transition:.25s}
+.show-list li:hover{transform:translateX(6px);border-color:#b9c6ff}
+.show-list li span{width:26px;height:26px;border-radius:50%;background:var(--grad);color:#fff;display:grid;place-items:center;flex:none}
+@media(max-width:900px){.show{grid-template-columns:1fr;padding:26px}}

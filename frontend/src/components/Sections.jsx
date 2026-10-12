@@ -208,6 +208,41 @@ function Split({ s }) {
   );
 }
 
+function Showcase({ s }) {
+  const items = s.data?.items || [];
+  const [i, setI] = useState(0);
+  const cur = items[i];
+  if (!cur) return null;
+  return (
+    <section className="section">
+      <div className="container">
+        <Head s={s} />
+        <Reveal>
+          <div className="tabs">
+            {items.map((it, n) => (
+              <button key={it.name} className={n === i ? 'on' : ''} onClick={() => setI(n)}>
+                <Icon name={it.icon} size={18} /> {it.name}
+              </button>
+            ))}
+          </div>
+          <div className="show card" key={cur.name}>
+            <div>
+              <h3>{cur.title}</h3>
+              <p>{cur.text}</p>
+              {cur.button && <div className="btn-row"><Btn b={cur.button} /></div>}
+            </div>
+            <ul className="show-list">
+              {(cur.bullets || []).map((b) => (
+                <li key={b}><span><Icon name="check" size={15} /></span>{b}</li>
+              ))}
+            </ul>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 function Steps({ s }) {
   return (
     <section className="section alt">
@@ -334,7 +369,7 @@ function ContactForm({ s }) {
     } catch { setState('error'); }
   };
   return (
-    <section className="section">
+    <section className="section" id={s.key.endsWith('-demo') ? 'demo' : undefined}>
       <div className="container split">
         <Reveal>
           <div className="sec-head left">
@@ -403,7 +438,7 @@ function Jobs({ s }) {
 
 const map = {
   hero: Hero, cards: Cards, services_grid: ServicesGrid, industries_grid: IndustriesGrid, stats: Stats,
-  split: Split, steps: Steps, testimonials: Testimonials, faq: Faq, cta: Cta,
+  split: Split, showcase: Showcase, steps: Steps, testimonials: Testimonials, faq: Faq, cta: Cta,
   branches: Branches, contact_form: ContactForm, jobs: Jobs,
 };
 

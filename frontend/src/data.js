@@ -10,6 +10,7 @@ export const nav = [
   { to: '/', label: 'Home' },
   { to: '/industries', label: 'Industries' },
   { to: '/solutions', label: 'Solutions' },
+  { to: '/ai', label: 'AI' },
   { to: '/about', label: 'About' },
   { to: '/careers', label: 'Career' },
   { to: '/contact', label: 'Contact Us' },

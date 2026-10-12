@@ -12,7 +12,7 @@ function ScrollTop() {
   return null;
 }
 
-const pages = { '/': 'home', '/about': 'about', '/solutions': 'solutions', '/industries': 'industries', '/contact': 'contact', '/careers': 'careers' };
+const pages = { '/': 'home', '/about': 'about', '/solutions': 'solutions', '/ai': 'ai', '/industries': 'industries', '/contact': 'contact', '/careers': 'careers' };
 
 export default function App() {
   const { site } = useSite();
