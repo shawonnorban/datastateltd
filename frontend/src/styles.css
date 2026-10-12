@@ -248,3 +248,11 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);bo
 .modal label{display:grid;gap:6px;font-size:.84rem;font-weight:600}
 .modal input[type=file]{padding:10px;background:#fff7ef}
 .sent{text-align:center;display:grid;gap:12px;justify-items:center}
+
+/* hero banner image */
+.hero-img{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.04)}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(100deg,rgba(5,5,5,.92) 0%,rgba(10,10,10,.75) 45%,rgba(30,15,5,.55) 100%)}
+.hero.has-img .grid-bg{opacity:.5}
+.center-lead{max-width:760px;margin:0 auto}
+.art-wide>.center-lead{margin-bottom:-6px}
+.art .btn-row{margin-top:20px}

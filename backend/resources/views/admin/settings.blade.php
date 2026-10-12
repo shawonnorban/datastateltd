@@ -38,6 +38,14 @@
                     @endif
                     <input type="file" name="logo" class="form-control" accept="image/*">
                 </div>
+                <div class="col-12">
+                    <label class="form-label">Hero banner image (background of the top banner on every page; PNG, JPG or WebP, max 4 MB)</label>
+                    @if ($bannerUrl)
+                        <div class="mb-2"><img src="{{ $bannerUrl }}" alt="Banner" style="max-height:110px;border-radius:8px"></div>
+                        <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="remove_hero_banner" value="1" id="rb"><label class="form-check-label" for="rb">Remove current banner</label></div>
+                    @endif
+                    <input type="file" name="hero_banner" class="form-control" accept="image/png,image/jpeg,image/webp">
+                </div>
             </div>
         </div>
 

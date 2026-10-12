@@ -36,10 +36,14 @@ function Head({ s, light }) {
 
 function Hero({ s }) {
   const d = s.data || {};
+  const { site } = useSite();
   const main = d.variant === 'main';
+  const img = d.image_url || site.hero_banner_url;
   return (
-    <section className={`hero ${main ? 'hero-main' : 'hero-page'}`}>
-      <div className="blob b1" /><div className="blob b2" /><div className="blob b3" /><div className="grid-bg" />
+    <section className={`hero ${main ? 'hero-main' : 'hero-page'} ${img ? 'has-img' : ''}`}>
+      {img && <div className="hero-img" style={{ backgroundImage: `url(${img})` }} />}
+      {img ? <div className="hero-shade" /> : <><div className="blob b1" /><div className="blob b2" /><div className="blob b3" /></>}
+      <div className="grid-bg" />
       <div className="container hero-in">
         <div className="hero-copy">
           {s.eyebrow && <span className="pill">{s.eyebrow}</span>}
@@ -551,6 +555,7 @@ function Block({ b, first }) {
           return (
             <Reveal key={c.title} delay={(i % cols) * 70}>
               <div className="card glass lift">
+                {b.numbered && <span className="ghost-n">0{i + 1}</span>}
                 <div className="ico"><Icon name={iconFor(i)} /></div>
                 <h3>{c.title}</h3>
                 {paras.map((p) => <p key={p}>{p}</p>)}
@@ -566,18 +571,41 @@ function Block({ b, first }) {
   return null;
 }
 
-let articleIndex = 0;
+const visuals = ['dashboard', 'network', 'shield'];
 function Article({ s }) {
   const blocks = s.data?.blocks || [];
   const wide = blocks.some((b) => ['cards', 'tiles', 'stats'].includes(b.k));
   const alt = blocks.some((b) => b.k === 'cards') ? 'alt' : '';
+  const idx = Number(s.id) || 0;
+
+  if (!wide) {
+    return (
+      <section className="section">
+        <div className={`container split ${idx % 2 ? 'rev' : ''}`}>
+          <Reveal>
+            <div className="sec-head left">
+              {s.eyebrow && <span className="eyebrow">{s.eyebrow}</span>}
+              {s.title && <h2><Rich text={s.title} /></h2>}
+              {s.subtitle && <p className="lead">{s.subtitle}</p>}
+            </div>
+            <div className="art">
+              {blocks.map((b, i) => <Block key={i} b={b} first={i === 0 && b.k === 'p'} />)}
+            </div>
+          </Reveal>
+          <Reveal delay={120}><Visual kind={visuals[idx % 3]} /></Reveal>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className={`section ${alt}`}>
-      <div className={`container ${wide ? '' : 'narrow'}`}>
-        <Head s={{ ...s, subtitle: null }} />
-        {s.subtitle && <p className="lead center-lead">{s.subtitle}</p>}
-        <div className={wide ? 'art-wide' : 'art'}>
-          {blocks.map((b, i) => <Block key={i} b={b} first={i === 0 && b.k === 'p'} />)}
+      <div className="container">
+        <Head s={s} />
+        <div className="art-wide">
+          {blocks.map((b, i) => (b.k === 'p'
+            ? <p key={i} className="lead center-lead">{b.text}</p>
+            : <Block key={i} b={b} />))}
         </div>
       </div>
     </section>

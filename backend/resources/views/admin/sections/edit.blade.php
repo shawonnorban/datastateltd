@@ -9,7 +9,7 @@
     @if (session('status'))<div class="alert alert-success">{{ session('status') }}</div>@endif
     @if ($errors->any())<div class="alert alert-danger">{{ $errors->first() }}</div>@endif
 
-    <form method="POST" action="{{ route('admin.sections.update', $section) }}" class="card border-0 shadow-sm">
+    <form method="POST" action="{{ route('admin.sections.update', $section) }}" enctype="multipart/form-data" class="card border-0 shadow-sm">
         @csrf @method('PUT')
         <div class="card-body row g-3">
             <div class="col-md-6">
@@ -34,6 +34,16 @@
                 <label class="form-label">Subtitle</label>
                 <textarea name="subtitle" rows="2" class="form-control">{{ old('subtitle', $section->subtitle) }}</textarea>
             </div>
+            @if ($section->type === 'hero')
+                <div class="col-12">
+                    <label class="form-label">Banner image for this section (overrides the site-wide hero banner)</label>
+                    @if (! empty($section->data['image']))
+                        <div class="mb-2"><img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($section->data['image']) }}" alt="" style="max-height:100px;border-radius:8px"></div>
+                        <div class="form-check mb-2"><input class="form-check-input" type="checkbox" name="remove_image" value="1" id="ri"><label class="form-check-label" for="ri">Remove image</label></div>
+                    @endif
+                    <input type="file" name="image" class="form-control" accept="image/png,image/jpeg,image/webp">
+                </div>
+            @endif
             <div class="col-12">
                 <label class="form-label">Content (JSON: items, buttons, bullets, etc.)</label>
                 <textarea name="data" rows="16" class="form-control font-monospace small">{{ old('data', json_encode($section->data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES)) }}</textarea>

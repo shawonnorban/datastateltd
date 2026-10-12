@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\PageSection;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class SectionController extends Controller
 {
@@ -28,6 +29,8 @@ class SectionController extends Controller
             'subtitle' => ['nullable', 'string', 'max:2000'],
             'sort_order' => ['required', 'integer', 'min:0'],
             'data' => ['nullable', 'string', 'max:50000'],
+            'image' => ['nullable', 'file', 'mimes:png,jpg,jpeg,webp', 'max:4096'],
+            'remove_image' => ['nullable', 'boolean'],
         ]);
 
         $json = null;
@@ -38,13 +41,30 @@ class SectionController extends Controller
             }
         }
 
+        $json = $json ?? [];
+        $existing = $section->data['image'] ?? null;
+        if ($existing && ! array_key_exists('image', $json)) {
+            $json['image'] = $existing;
+        }
+        if ($request->boolean('remove_image') && ! empty($json['image'])) {
+            Storage::disk('public')->delete($json['image']);
+            unset($json['image']);
+        }
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('sections', 'public');
+            if (! empty($json['image']) && $json['image'] !== $path) {
+                Storage::disk('public')->delete($json['image']);
+            }
+            $json['image'] = $path;
+        }
+
         $section->update([
             'eyebrow' => $data['eyebrow'] ?? null,
             'title' => $data['title'] ?? null,
             'subtitle' => $data['subtitle'] ?? null,
             'sort_order' => $data['sort_order'],
             'is_active' => $request->boolean('is_active'),
-            'data' => $json,
+            'data' => $json ?: null,
         ]);
 
         return redirect()->route('admin.sections.edit', $section)->with('status', 'Section saved.');

@@ -1321,13 +1321,10 @@
          },
          {
           "title": "Our ERP Experience Since 2009",
-          "text": "Since 2009, we have delivered 450+ ERP projects in Bangladesh and abroad, with numbers steadily increasing.",
-          "bullets": [
-           "ERP.COM.BD",
-           "Best ERP Software Solution in Bangladesh"
-          ]
+          "text": "Since 2009, we have delivered 450+ ERP projects in Bangladesh and abroad, with numbers steadily increasing."
          }
-        ]
+        ],
+        "numbered": true
        }
       ]
      }
@@ -1340,10 +1337,6 @@
        {
         "k": "p",
         "text": "ERP.COM.BD has strong domain knowledge in areas like Enterprise Resources Planning (ERP) for (Manufacturing, Banking, Textiles, Real estate, Education, Hospitals industry),Non-core Banking application development. Apart from its own developed products, ERP.COM.BD has successfully completed several large-scale groups of companies IT implementation projects in the country. To strengthen the company, ERP.COM.BD made a business Hub joint venture and partnership with another company's product and serve the country in a meaningful fashion."
-       },
-       {
-        "k": "p",
-        "text": "Get the Best ERP Solutions for Your Business"
        }
       ]
      }
@@ -1358,7 +1351,8 @@
         "text": "All types of small, medium, and enterprise-level software can be created utilizing digital technologies, development services and experience can help to develop by ERP.COM.BD . To maintain all of its daily operations, every firm, small or large, needs the appropriate tools and strategies. We understand their suffering, and in order to address their issues, we have developed a number of solutions, including HRM, accounting and inventory management software, POS systems, Smart ERP, Garments ERP, and others. Our software is inexpensive, extremely secure, and most importantly, it is simple to use without the need for any specialized knowledge. The system is simple to use even for non-technical people. We have a reputation for being Bangladesh's best software development business. We have also won consumers' trust and are regarded as one of the greatest software companies."
        }
       ]
-     }
+     },
+     "eyebrow": "Get the Best ERP Solutions for Your Business"
     },
     {
      "type": "article",
@@ -1421,7 +1415,8 @@
           "title": "Business Innovation",
           "text": "90%"
          }
-        ]
+        ],
+        "numbered": true
        }
       ]
      }
@@ -11658,42 +11653,6 @@
      }
     },
     {
-     "type": "article",
-     "title": "Cloud ERP Software Solutions for Businesses in Bangladesh",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "450+ ERP projects delivered for manufacturing, garments, food, real estate and corporate groups in Bangladesh and abroad."
-       },
-       {
-        "k": "list",
-        "items": [
-         {
-          "text": "All-in-One ERP Solutions"
-         },
-         {
-          "text": "Complete Cloud-Based ERP System"
-         },
-         {
-          "text": "Flexible and Customizable"
-         },
-         {
-          "text": "24/7 Customer Support"
-         }
-        ]
-       },
-       {
-        "k": "button",
-        "label": "About US",
-        "to": "/company/about"
-       }
-      ]
-     },
-     "key": "intro",
-     "eyebrow": "ERP solutions for your business"
-    },
-    {
      "type": "cards",
      "key": "ai",
      "eyebrow": "New · ERP AI is live",
@@ -11738,17 +11697,54 @@
      }
     },
     {
-     "type": "services_grid",
-     "key": "modules",
-     "eyebrow": "Our Featured Services",
-     "title": "ERP Software Solutions for Your Business",
+     "type": "cta",
+     "key": "pricing",
+     "title": "Pricing that fits your business",
+     "subtitle": "The price depends on the modules and number of users you need. Tell us what you need and we will send you a quote.",
      "data": {
-      "limit": 12,
-      "more": {
-       "label": "View All Services",
-       "to": "/solution"
-      }
+      "buttons": [
+       {
+        "label": "Get pricing",
+        "to": "/company/request-demo"
+       }
+      ]
      }
+    },
+    {
+     "type": "article",
+     "title": "Cloud ERP Software Solutions for Businesses in Bangladesh",
+     "data": {
+      "blocks": [
+       {
+        "k": "p",
+        "text": "450+ ERP projects delivered for manufacturing, garments, food, real estate and corporate groups in Bangladesh and abroad."
+       },
+       {
+        "k": "list",
+        "items": [
+         {
+          "text": "All-in-One ERP Solutions"
+         },
+         {
+          "text": "Complete Cloud-Based ERP System"
+         },
+         {
+          "text": "Flexible and Customizable"
+         },
+         {
+          "text": "24/7 Customer Support"
+         }
+        ]
+       },
+       {
+        "k": "button",
+        "label": "About US",
+        "to": "/company/about"
+       }
+      ]
+     },
+     "key": "intro",
+     "eyebrow": "ERP solutions for your business"
     },
     {
      "type": "showcase",
@@ -11847,6 +11843,19 @@
      }
     },
     {
+     "type": "services_grid",
+     "key": "modules",
+     "eyebrow": "Our Featured Services",
+     "title": "ERP Software Solutions for Your Business",
+     "data": {
+      "limit": 12,
+      "more": {
+       "label": "View All Services",
+       "to": "/solution"
+      }
+     }
+    },
+    {
      "type": "testimonials",
      "key": "testimonials",
      "eyebrow": "Client voices",
@@ -11939,20 +11948,6 @@
        {
         "q": "How do I get a demo?",
         "a": "Fill in the demo form on this page or call +880 1617-224424, and we will arrange a live demo with the modules that matter to you."
-       }
-      ]
-     }
-    },
-    {
-     "type": "cta",
-     "key": "pricing",
-     "title": "Pricing that fits your business",
-     "subtitle": "The price depends on the modules and number of users you need. Tell us what you need and we will send you a quote.",
-     "data": {
-      "buttons": [
-       {
-        "label": "Get pricing",
-        "to": "/company/request-demo"
        }
       ]
      }

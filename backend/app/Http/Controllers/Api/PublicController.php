@@ -23,6 +23,7 @@ class PublicController extends Controller
         return [
             'name' => $s['site_name'] ?? null,
             'tagline' => $s['tagline'] ?? null,
+            'hero_banner_url' => ($s['hero_banner'] ?? null) ? Storage::disk('public')->url($s['hero_banner']) : null,
             'logo_url' => ($s['logo'] ?? null) ? Storage::disk('public')->url($s['logo']) : null,
             'phone' => $s['contact_phone'] ?? null,
             'whatsapp' => $s['contact_whatsapp'] ?? null,
@@ -56,7 +57,15 @@ class PublicController extends Controller
 
         abort_if($sections->isEmpty(), 404);
 
-        return $sections;
+        return $sections->map(function ($section) {
+            $data = $section->data ?? [];
+            if (! empty($data['image'])) {
+                $data['image_url'] = Storage::disk('public')->url($data['image']);
+            }
+            $section->data = $data;
+
+            return $section;
+        });
     }
 
     public function services()

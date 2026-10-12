@@ -33,7 +33,8 @@ class SettingsController extends Controller
         return view('admin.settings', [
             's' => $settings,
             'branches' => json_decode($settings['branches'] ?? '[]', true) ?: [],
-            'logoUrl' => $settings['logo'] ?? null ? Storage::disk('public')->url($settings['logo']) : null,
+            'logoUrl' => ($settings['logo'] ?? null) ? Storage::disk('public')->url($settings['logo']) : null,
+            'bannerUrl' => ($settings['hero_banner'] ?? null) ? Storage::disk('public')->url($settings['hero_banner']) : null,
         ]);
     }
 
@@ -41,6 +42,8 @@ class SettingsController extends Controller
     {
         $rules = [
             'logo' => ['nullable', 'file', 'mimes:png,jpg,jpeg,webp,svg', 'max:2048'],
+            'hero_banner' => ['nullable', 'file', 'mimes:png,jpg,jpeg,webp', 'max:4096'],
+            'remove_hero_banner' => ['nullable', 'boolean'],
             'branches' => ['nullable', 'array'],
             'branches.*.name' => ['nullable', 'string', 'max:120'],
             'branches.*.address' => ['nullable', 'string', 'max:500'],
@@ -85,6 +88,29 @@ class SettingsController extends Controller
             }
         }
 
+        $this->handleBanner($request);
+
         return redirect()->route('admin.settings.edit')->with('status', 'Settings saved.');
+    }
+
+    private function handleBanner(Request $request): void
+    {
+        $old = SiteSetting::where('key', 'hero_banner')->value('value');
+
+        if ($request->boolean('remove_hero_banner') && $old) {
+            Storage::disk('public')->delete($old);
+            SiteSetting::where('key', 'hero_banner')->update(['value' => '']);
+        }
+
+        if ($request->hasFile('hero_banner')) {
+            $path = $request->file('hero_banner')->store('branding', 'public');
+            SiteSetting::updateOrCreate(
+                ['key' => 'hero_banner'],
+                ['value' => $path, 'type' => 'image', 'group' => 'general']
+            );
+            if ($old && $old !== $path) {
+                Storage::disk('public')->delete($old);
+            }
+        }
     }
 }
