@@ -11,6 +11,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             SmartGlobalItSeeder::class,
             DemoDataSeeder::class,
+            PageSectionSeeder::class,
         ]);
     }
 }

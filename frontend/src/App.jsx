@@ -2,12 +2,8 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
-import Home from './pages/Home.jsx';
-import About from './pages/About.jsx';
-import Solutions from './pages/Solutions.jsx';
-import Industries from './pages/Industries.jsx';
-import Contact from './pages/Contact.jsx';
-import Careers from './pages/Careers.jsx';
+import DynamicPage from './pages/DynamicPage.jsx';
+import Icon from './components/Icon.jsx';
 import { useSite } from './SiteContext.jsx';
 
 function ScrollTop() {
@@ -15,6 +11,8 @@ function ScrollTop() {
   useEffect(() => window.scrollTo(0, 0), [pathname]);
   return null;
 }
+
+const pages = { '/': 'home', '/about': 'about', '/solutions': 'solutions', '/industries': 'industries', '/contact': 'contact', '/careers': 'careers' };
 
 export default function App() {
   const { site } = useSite();
@@ -25,18 +23,14 @@ export default function App() {
       <Header />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/solutions" element={<Solutions />} />
-          <Route path="/industries" element={<Industries />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="*" element={<About />} />
+          {Object.entries(pages).map(([path, slug]) => (
+            <Route key={path} path={path} element={<DynamicPage slug={slug} />} />
+          ))}
+          <Route path="*" element={<DynamicPage slug="home" />} />
         </Routes>
       </main>
       <Footer />
-      {wa && <a className="float-btn wa" href={wa} target="_blank" rel="noreferrer" aria-label="WhatsApp">✆</a>}
-      <a className="float-btn chat" href="#" aria-label="Chat">💬</a>
+      {wa && <a className="float-btn" href={wa} target="_blank" rel="noreferrer" aria-label="WhatsApp"><Icon name="phone" size={22} /></a>}
     </>
   );
 }

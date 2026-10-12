@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\Inquiry;
+use App\Models\PageSection;
 use App\Models\ProjectCategory;
 use App\Models\Service;
 use App\Models\SiteSetting;
@@ -34,6 +35,17 @@ class PublicController extends Controller
             ],
             'branches' => json_decode($s['branches'] ?? '[]', true) ?: [],
         ];
+    }
+
+    public function page(string $slug)
+    {
+        $sections = PageSection::where('page', $slug)->where('is_active', true)
+            ->orderBy('sort_order')
+            ->get(['id', 'key', 'type', 'eyebrow', 'title', 'subtitle', 'data']);
+
+        abort_if($sections->isEmpty(), 404);
+
+        return $sections;
     }
 
     public function services()

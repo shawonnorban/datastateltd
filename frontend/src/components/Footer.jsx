@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { footerCols } from '../data.js';
+import Icon from './Icon.jsx';
 import { useSite } from '../SiteContext.jsx';
 
 export default function Footer() {
@@ -15,9 +16,9 @@ export default function Footer() {
           <div>
             <h4>Contact</h4>
             <p className="muted-blue">{site.tagline}</p>
-            {site.address && <p>⌖ {site.address}</p>}
-            <p>✆ {site.phone}</p>
-            <p>✉ {site.email}</p>
+            {site.address && <p className="line"><Icon name="pin" size={15} /> {site.address}</p>}
+            <p className="line"><Icon name="phone" size={15} /> {site.phone}</p>
+            <p className="line"><Icon name="mail" size={15} /> {site.email}</p>
             <div className="social">
               {social.filter(([k]) => site.social?.[k]).map(([k, l]) => (
                 <a key={k} href={site.social[k]} target="_blank" rel="noreferrer">{l}</a>

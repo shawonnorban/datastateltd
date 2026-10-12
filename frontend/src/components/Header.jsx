@@ -1,13 +1,20 @@
 import { NavLink, Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { nav } from '../data.js';
 import { useSite } from '../SiteContext.jsx';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const { site } = useSite();
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const f = () => setScrolled(window.scrollY > 10);
+    f();
+    window.addEventListener('scroll', f, { passive: true });
+    return () => window.removeEventListener('scroll', f);
+  }, []);
   return (
-    <header className="header">
+    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="header-in">
         <Link to="/" className="logo">{site.logo_url ? <img src={site.logo_url} alt={site.name} className="logo-img" /> : site.name}</Link>
         <button className="burger" onClick={() => setOpen(!open)} aria-label="Menu">☰</button>
@@ -16,7 +23,7 @@ export default function Header() {
             <NavLink key={n.to} to={n.to} end={n.to === '/'}>{n.label}</NavLink>
           ))}
         </nav>
-        <Link to="/contact" className="btn btn-sm">Request a Demo</Link>
+        <Link to="/contact" className="btn sm">Request a Demo</Link>
       </div>
     </header>
   );

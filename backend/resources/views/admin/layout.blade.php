@@ -15,6 +15,7 @@
             <hr>
             <a href="{{ route('admin.dashboard') }}" class="d-block text-decoration-none mb-3 {{ request()->routeIs('admin.dashboard') ? 'text-white' : 'text-white-50' }}">Dashboard</a>
             <a href="{{ route('admin.settings.edit') }}" class="d-block text-decoration-none mb-3 {{ request()->routeIs('admin.settings.*') ? 'text-white' : 'text-white-50' }}">Site Settings</a>
+            <a href="{{ route('admin.sections.index') }}" class="d-block text-decoration-none mb-3 {{ request()->routeIs('admin.sections.*') ? 'text-white' : 'text-white-50' }}">Page Sections</a>
             <form method="POST" action="{{ route('logout') }}" class="mt-5">
                 @csrf
                 <button type="submit" class="btn btn-outline-light btn-sm w-100">Logout</button>

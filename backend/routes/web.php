@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\SectionController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
@@ -19,5 +20,8 @@ Route::middleware(['auth', 'role:admin'])
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         Route::get('/settings', [SettingsController::class, 'edit'])->name('settings.edit');
+        Route::get('/sections', [SectionController::class, 'index'])->name('sections.index');
+        Route::get('/sections/{section}', [SectionController::class, 'edit'])->name('sections.edit');
+        Route::put('/sections/{section}', [SectionController::class, 'update'])->name('sections.update');
         Route::post('/settings', [SettingsController::class, 'update'])->name('settings.update');
     });
