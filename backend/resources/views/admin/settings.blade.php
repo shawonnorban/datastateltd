@@ -73,6 +73,20 @@
         </div>
 
         <div class="card border-0 shadow-sm mb-4">
+            <div class="card-header bg-white"><h2 class="h6 mb-0">Legal &amp; memberships (footer)</h2></div>
+            <div class="card-body row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">Legal info (one line each)</label>
+                    <textarea name="legal_info" rows="4" class="form-control">{{ old('legal_info', $s['legal_info'] ?? '') }}</textarea>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Memberships (one per line: SHORT|Full name)</label>
+                    <textarea name="memberships" rows="4" class="form-control">{{ old('memberships', $s['memberships'] ?? '') }}</textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="card border-0 shadow-sm mb-4">
             <div class="card-header bg-white"><h2 class="h6 mb-0">Branches</h2></div>
             <div class="card-body">
                 <p class="text-secondary small">Leave the name blank to remove a branch. Two empty rows are provided for new branches.</p>

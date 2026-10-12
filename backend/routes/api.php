@@ -9,7 +9,7 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/site', [PublicController::class, 'site']);
-Route::get('/pages/{slug}', [PublicController::class, 'page']);
+Route::get('/pages/{slug}', [PublicController::class, 'page'])->where('slug', '.*');
 Route::get('/services', [PublicController::class, 'services']);
 Route::get('/industries', [PublicController::class, 'industries']);
 Route::get('/testimonials', [PublicController::class, 'testimonials']);

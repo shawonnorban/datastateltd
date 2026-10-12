@@ -12,9 +12,14 @@ function Rich({ text }) {
   );
 }
 
+function ItemLink({ to, className, children }) {
+  return to ? <Link to={to} className={className}>{children}</Link> : <div className={className}>{children}</div>;
+}
+
 function Btn({ b }) {
   const cls = `btn ${b.style === 'ghost' ? 'ghost' : ''}`;
   if (b.to?.startsWith('#')) return <a href={b.to} className={cls}>{b.label}</a>;
+  if (/^https?:/.test(b.to || '')) return <a href={b.to} className={cls} target="_blank" rel="noreferrer">{b.label}</a>;
   return <Link to={b.to || '/'} className={cls}>{b.label} <Icon name="arrow" size={16} /></Link>;
 }
 
@@ -72,7 +77,7 @@ function Cards({ s }) {
             <Reveal key={c.title} delay={i * 80}>
               <div className="card glass lift">
                 {d.numbered && <span className="ghost-n">0{i + 1}</span>}
-                <div className="ico"><Icon name={c.icon} /></div>
+                <div className="ico"><Icon name={c.icon || iconFor(i)} /></div>
                 <h3>{c.title}</h3>
                 <p>{c.text}</p>
               </div>
@@ -95,12 +100,12 @@ function ServicesGrid({ s }) {
         <div className="grid cols-3">
           {list.map((m, i) => (
             <Reveal key={m.title} delay={(i % 3) * 80}>
-              <Link to="/contact" className="card module lift">
+              <ItemLink to={m.to} className="card module lift">
                 <div className="ico grad"><Icon name={iconFor(i)} /></div>
                 <h3>{m.title}</h3>
                 <p>{m.text}</p>
-                <span className="more">Read more <Icon name="arrow" size={15} /></span>
-              </Link>
+                {m.to && <span className="more">Read more <Icon name="arrow" size={15} /></span>}
+              </ItemLink>
             </Reveal>
           ))}
         </div>
@@ -119,13 +124,14 @@ function IndustriesGrid({ s }) {
       <div className="container">
         <Head s={s} />
         <div className="grid cols-4">
-          {list.map((name, i) => (
-            <Reveal key={name} delay={(i % 4) * 60}>
-              <Link to="/contact" className={`tile tone-${i % 6}`}>
+          {list.map((it, i) => (
+            <Reveal key={it.name} delay={(i % 4) * 60}>
+              <ItemLink to={it.to} className={`tile tone-${i % 6}`}>
                 <span className="tile-n">{String(i + 1).padStart(2, '0')}</span>
-                <h3>{name}</h3>
-                <span className="more">Explore <Icon name="arrow" size={15} /></span>
-              </Link>
+                <h3>{it.name}</h3>
+                {it.text && <p className="tile-p">{it.text}</p>}
+                {it.to && <span className="more">Explore <Icon name="arrow" size={15} /></span>}
+              </ItemLink>
             </Reveal>
           ))}
         </div>
@@ -145,8 +151,11 @@ function Stats({ s }) {
           {(s.data?.items || []).map((m, i) => (
             <Reveal key={m.label} delay={i * 80}>
               <div className="stat glass-dark">
-                <div className="ico light"><Icon name={m.icon} /></div>
-                <div className="num"><Counter value={m.value} /><small>+</small></div>
+                <div className="ico light"><Icon name={m.icon || iconFor(i + 8)} /></div>
+                <div className="num">{(() => {
+                  const mm = String(m.value).match(/^([^\d]*)([\d,.]+)(.*)$/);
+                  return mm ? <>{mm[1]}<Counter value={mm[2].replace(/,/g, '')} /><small>{mm[3]}</small></> : m.value;
+                })()}</div>
                 <div className="lbl">{m.label}</div>
               </div>
             </Reveal>
@@ -301,7 +310,7 @@ function Faq({ s }) {
             <button onClick={() => setOpen(open === i ? -1 : i)}>
               <span>{f.q}</span><Icon name="plus" size={18} />
             </button>
-            <div className="faq-a"><p>{f.a}</p></div>
+            <div className="faq-a"><p>{f.a}</p>{f.button && <div className="faq-btn"><Btn b={{ ...f.button, style: 'outline' }} /></div>}</div>
           </div>
         ))}
       </div>
@@ -421,11 +430,11 @@ function Jobs({ s }) {
             <div className="job card lift">
               <div>
                 <h3>{j.title}</h3>
-                <div className="tags"><span>{j.location}</span><span>{j.type}</span><span>{j.level}</span></div>
+                <div className="tags"><span>{j.location}</span><span>{j.type}</span><span>{j.level}</span>{j.posted && <span className="soft">{j.posted}</span>}{j.applicants && <span className="soft">{j.applicants}</span>}</div>
                 <p>{j.text}</p>
               </div>
               <div className="btn-row">
-                <Link to="/contact" className="btn sm">Apply now</Link>
+                <Link to="/company/contact" className="btn sm">Apply Now</Link>
               </div>
             </div>
           </Reveal>
@@ -436,7 +445,147 @@ function Jobs({ s }) {
   );
 }
 
+function Block({ b, first }) {
+  if (b.k === 'p') return <p className={first ? 'lead-p' : 'prose'}>{b.text}</p>;
+  if (b.k === 'button') return <div className="btn-row"><Btn b={b} /></div>;
+  if (b.k === 'list') {
+    return (
+      <ul className="checks">
+        {b.items.map((it) => (
+          <li key={it.text}><span><Icon name="check" size={14} /></span>
+            {it.to ? <Link to={it.to}>{it.text}</Link> : it.text}</li>
+        ))}
+      </ul>
+    );
+  }
+  if (b.k === 'tiles') {
+    return (
+      <div className="grid cols-4 tiles">
+        {b.items.map((it, i) => (
+          <Reveal key={it.title} delay={(i % 4) * 50}>
+            <ItemLink to={it.to} className={`tile sm tone-${i % 6}`}>
+              <span className="tile-n">{String(i + 1).padStart(2, '0')}</span><h3>{it.title}</h3>
+            </ItemLink>
+          </Reveal>
+        ))}
+      </div>
+    );
+  }
+  if (b.k === 'stats') {
+    return (
+      <div className="grid cols-4">
+        {b.items.map((m) => (
+          <div className="stat plain" key={m.label}><div className="num">{m.value}</div><div className="lbl">{m.label}</div></div>
+        ))}
+      </div>
+    );
+  }
+  if (b.k === 'cards') {
+    const n = b.items.length;
+    const cols = n === 4 || n === 8 ? 4 : n === 2 ? 2 : 3;
+    return (
+      <div className={`grid cols-${cols}`}>
+        {b.items.map((c, i) => {
+          const paras = Array.isArray(c.text) ? c.text : c.text ? [c.text] : [];
+          return (
+            <Reveal key={c.title} delay={(i % cols) * 70}>
+              <div className="card glass lift">
+                <div className="ico"><Icon name={iconFor(i)} /></div>
+                <h3>{c.title}</h3>
+                {paras.map((p) => <p key={p}>{p}</p>)}
+                {!!c.bullets?.length && <ul className="checks sm">{c.bullets.map((x) => <li key={x}><span><Icon name="check" size={12} /></span>{x}</li>)}</ul>}
+                {c.button && <div className="btn-row"><Btn b={{ ...c.button, style: 'outline' }} /></div>}
+              </div>
+            </Reveal>
+          );
+        })}
+      </div>
+    );
+  }
+  return null;
+}
+
+let articleIndex = 0;
+function Article({ s }) {
+  const blocks = s.data?.blocks || [];
+  const wide = blocks.some((b) => ['cards', 'tiles', 'stats'].includes(b.k));
+  const alt = blocks.some((b) => b.k === 'cards') ? 'alt' : '';
+  return (
+    <section className={`section ${alt}`}>
+      <div className={`container ${wide ? '' : 'narrow'}`}>
+        <Head s={{ ...s, subtitle: null }} />
+        {s.subtitle && <p className="lead center-lead">{s.subtitle}</p>}
+        <div className={wide ? 'art-wide' : 'art'}>
+          {blocks.map((b, i) => <Block key={i} b={b} first={i === 0 && b.k === 'p'} />)}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Quotes({ s }) {
+  const items = s.data?.items || [];
+  return (
+    <section className="section">
+      <div className="container">
+        <Head s={s} />
+        <div className="grid cols-3">
+          {items.map((t, i) => (
+            <Reveal key={t.name} delay={(i % 3) * 90}>
+              <figure className="card quote lift">
+                <div className="stars">{'★'.repeat(t.rating || 5)}</div>
+                <blockquote>“{t.text}”</blockquote>
+                <figcaption>
+                  <span className="avatar">{t.name?.[0]}</span>
+                  <span><b>{t.name}</b><small>{t.role}</small></span>
+                </figcaption>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Posts({ s }) {
+  return (
+    <section className="section">
+      <div className="container">
+        <Head s={s} />
+        <div className="grid cols-3">
+          {(s.data?.items || []).map((p, i) => (
+            <Reveal key={p.title} delay={(i % 3) * 80}>
+              <ItemLink to={p.to} className="card post lift">
+                {p.category && <span className="tag">{p.category}</span>}
+                <h3>{p.title}</h3>
+                {p.text && <p>{p.text}</p>}
+                <div className="post-meta">{[p.date, p.read].filter(Boolean).join(' · ')}</div>
+                {p.to && <span className="more">Read more <Icon name="arrow" size={15} /></span>}
+              </ItemLink>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Clients({ s }) {
+  return (
+    <section className="section alt">
+      <div className="container">
+        <Head s={s} />
+        <div className="client-grid">
+          {(s.data?.items || []).map((n, i) => <Reveal key={n} delay={(i % 6) * 40}><div className="client">{n}</div></Reveal>)}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 const map = {
+  article: Article, quotes: Quotes, posts: Posts, clients: Clients,
   hero: Hero, cards: Cards, services_grid: ServicesGrid, industries_grid: IndustriesGrid, stats: Stats,
   split: Split, showcase: Showcase, steps: Steps, testimonials: Testimonials, faq: Faq, cta: Cta,
   branches: Branches, contact_form: ContactForm, jobs: Jobs,

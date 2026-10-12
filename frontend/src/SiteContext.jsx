@@ -2,9 +2,9 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { site as fallbackSite, solutions as fbSolutions, industries as fbIndustries, branches as fbBranches } from './data.js';
 
 const fallback = {
-  site: { ...fallbackSite, logo_url: null, whatsapp: null, address: null, map_embed_url: null, social: {}, branches: fbBranches },
+  site: { ...fallbackSite, legal: [], memberships: [], logo_url: null, whatsapp: null, address: null, map_embed_url: null, social: {}, branches: fbBranches },
   solutions: fbSolutions,
-  industries: fbIndustries,
+  industries: fbIndustries.map((name) => ({ name })),
   testimonials: [],
 };
 
@@ -30,10 +30,10 @@ export function SiteProvider({ children }) {
               }
             : prev.site,
           solutions: services.status === 'fulfilled' && services.value.length
-            ? services.value.map((s) => ({ title: s.title, text: s.short_description }))
+            ? services.value.map((s) => ({ title: s.title, text: s.short_description, to: s.url }))
             : prev.solutions,
           industries: industries.status === 'fulfilled' && industries.value.length
-            ? industries.value.map((i) => i.name)
+            ? industries.value.map((i) => ({ name: i.name, text: i.description, to: i.url }))
             : prev.industries,
           testimonials: testimonials.status === 'fulfilled' ? testimonials.value : prev.testimonials,
         }));

@@ -9,8 +9,8 @@ return new class extends Migration {
     {
         Schema::create('page_sections', function (Blueprint $table) {
             $table->id();
-            $table->string('page', 60);
-            $table->string('key', 120)->unique();
+            $table->string('page', 120);
+            $table->string('key', 160)->unique();
             $table->string('type', 40);
             $table->string('eyebrow')->nullable();
             $table->string('title', 500)->nullable();

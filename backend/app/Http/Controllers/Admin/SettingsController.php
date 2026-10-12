@@ -22,6 +22,8 @@ class SettingsController extends Controller
         'twitter_url' => ['url', 'social'],
         'linkedin_url' => ['url', 'social'],
         'youtube_url' => ['url', 'social'],
+        'legal_info' => ['textarea', 'legal'],
+        'memberships' => ['textarea', 'legal'],
     ];
 
     public function edit()
@@ -47,7 +49,7 @@ class SettingsController extends Controller
             'contact_email' => ['nullable', 'email', 'max:190'],
         ];
         foreach (self::FIELDS as $key => [$type]) {
-            $rules[$key] = $rules[$key] ?? ['nullable', 'string', $type === 'url' ? 'url' : 'max:1000', 'max:1000'];
+            $rules[$key] = $rules[$key] ?? ['nullable', 'string', $type === 'url' ? 'url' : 'max:2000', 'max:2000'];
         }
         $data = $request->validate($rules);
 

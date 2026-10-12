@@ -8,12 +8,12 @@ export const site = {
 
 export const nav = [
   { to: '/', label: 'Home' },
-  { to: '/industries', label: 'Industries' },
-  { to: '/solutions', label: 'Solutions' },
-  { to: '/ai', label: 'AI' },
-  { to: '/about', label: 'About' },
-  { to: '/careers', label: 'Career' },
-  { to: '/contact', label: 'Contact Us' },
+  { to: '/industry', label: 'Industries' },
+  { to: '/solution', label: 'Solutions' },
+  { to: '/company/clients', label: 'Client List' },
+  { to: '/blogs', label: 'Blogs' },
+  { to: '/jobs', label: 'Career' },
+  { to: '/company/contact', label: 'Contact Us' },
 ];
 
 export const solutions = [
@@ -67,7 +67,20 @@ export const jobs = [
 ];
 
 export const footerCols = {
-  Solutions: ['Accounts Module', 'Sales Module', 'Warehouse & Store', 'Human Resource', 'Purchase Module', 'CRM', 'All Solutions'],
-  Industries: ['Real Estate', 'Food & Beverage', 'Garments', 'Power & Energy', 'Agro', 'Mills & Factories', 'All Industries'],
-  Company: ['Home', 'About Us', 'Our Clients', 'Our Team', 'Locations', 'FAQ', 'Privacy Policy'],
+  Solutions: [
+    ['Accounts Module', '/solution/accounting-software-in-bangladesh'], ['Sales Module', '/solution/sales-software'],
+    ['e-Procurement Module', '/solution/e-procurement-software'], ['Warehouse & Store Module', '/solution/inventory-software'],
+    ['Human Resource Management', '/solution/hrm-software'], ['Purchase Module', '/solution/purchase-software'],
+    ['Customer Relation Management', '/solution/customer-relationship-management-software'], ['All Solutions', '/solution'],
+  ],
+  Industries: [
+    ['Real Estate', '/industry/real-estate'], ['Food & Beverage', '/industry/food-and-beverage'], ['Garments', '/industry/garments'],
+    ['Power & Energy', '/industry/power-and-energy'], ['Agro', '/industry/agro'], ['Mills & Factories', '/industry/mills-and-factories'],
+    ['Government', '/industry/government'], ['All Industries', '/industry'],
+  ],
+  'About Us': [
+    ['Home', '/'], ['Blog', '/blogs'], ['News', '/news'], ['About Us', '/company/about'], ['Our Clients', '/company/clients'],
+    ['Our Team', '/company/team'], ['Why Choose Us?', '/company/why-erp-com-bd'], ['Locations', '/company/contact'],
+    ['FAQ', '/company/faq'], ['Privacy Policy', '/company/privacy-policy'],
+  ],
 };

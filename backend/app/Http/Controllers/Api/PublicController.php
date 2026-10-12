@@ -11,6 +11,7 @@ use App\Models\SiteSetting;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class PublicController extends Controller
 {
@@ -34,7 +35,16 @@ class PublicController extends Controller
                 'youtube' => $s['youtube_url'] ?? null,
             ],
             'branches' => json_decode($s['branches'] ?? '[]', true) ?: [],
+            'legal' => $this->lines($s['legal_info'] ?? ''),
+            'memberships' => collect($this->lines($s['memberships'] ?? ''))
+                ->map(fn ($l) => ['name' => trim(Str::before($l, '|')), 'full_name' => trim(Str::contains($l, '|') ? Str::after($l, '|') : '')])
+                ->all(),
         ];
+    }
+
+    private function lines(string $text): array
+    {
+        return array_values(array_filter(array_map('trim', preg_split('/\R/', $text))));
     }
 
     public function page(string $slug)
@@ -51,13 +61,13 @@ class PublicController extends Controller
     public function services()
     {
         return Service::where('is_active', true)->orderBy('sort_order')
-            ->get(['id', 'title', 'slug', 'icon', 'short_description', 'is_featured']);
+            ->get(['id', 'title', 'slug', 'icon', 'url', 'short_description', 'is_featured']);
     }
 
     public function industries()
     {
         return ProjectCategory::where('is_active', true)->orderBy('sort_order')
-            ->get(['id', 'name', 'slug', 'description']);
+            ->get(['id', 'name', 'slug', 'description', 'url']);
     }
 
     public function testimonials()

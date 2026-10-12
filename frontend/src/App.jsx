@@ -7,12 +7,21 @@ import Icon from './components/Icon.jsx';
 import { useSite } from './SiteContext.jsx';
 
 function ScrollTop() {
-  const { pathname } = useLocation();
-  useEffect(() => window.scrollTo(0, 0), [pathname]);
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (hash) {
+      const el = document.querySelector(hash);
+      if (el) { el.scrollIntoView({ behavior: 'smooth' }); return; }
+    }
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
   return null;
 }
 
-const pages = { '/': 'home', '/about': 'about', '/solutions': 'solutions', '/ai': 'ai', '/industries': 'industries', '/contact': 'contact', '/careers': 'careers' };
+function Page() {
+  const { pathname } = useLocation();
+  return <DynamicPage slug={pathname.replace(/^\/+|\/+$/g, '') || 'home'} />;
+}
 
 export default function App() {
   const { site } = useSite();
@@ -22,12 +31,7 @@ export default function App() {
       <ScrollTop />
       <Header />
       <main>
-        <Routes>
-          {Object.entries(pages).map(([path, slug]) => (
-            <Route key={path} path={path} element={<DynamicPage slug={slug} />} />
-          ))}
-          <Route path="*" element={<DynamicPage slug="home" />} />
-        </Routes>
+        <Routes><Route path="*" element={<Page />} /></Routes>
       </main>
       <Footer />
       {wa && <a className="float-btn" href={wa} target="_blank" rel="noreferrer" aria-label="WhatsApp"><Icon name="phone" size={22} /></a>}
