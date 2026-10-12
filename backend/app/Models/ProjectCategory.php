@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class ProjectCategory extends Model
 {
-    protected $fillable = ['name', 'slug', 'description', 'is_active', 'sort_order'];
+    protected $fillable = ['name', 'slug', 'description', 'url', 'is_active', 'sort_order'];
 
     protected function casts(): array
     {

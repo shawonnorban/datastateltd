@@ -1,32 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Admin Dashboard | Smart Global IT</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
-<div class="container-fluid">
-    <div class="row min-vh-100">
-        <aside class="col-lg-2 bg-dark text-white p-4">
-            <h5 class="mb-1">SMART GLOBAL IT</h5>
-            <small class="text-secondary">Administration</small>
-            <hr>
-            <a href="{{ route('admin.dashboard') }}" class="d-block text-white text-decoration-none mb-3">Dashboard</a>
-            <a href="#" class="d-block text-white-50 text-decoration-none mb-3">Services</a>
-            <a href="#" class="d-block text-white-50 text-decoration-none mb-3">Portfolio</a>
-            <a href="#" class="d-block text-white-50 text-decoration-none mb-3">Blog</a>
-            <a href="#" class="d-block text-white-50 text-decoration-none mb-3">Pages & Settings</a>
-            <a href="#" class="d-block text-white-50 text-decoration-none mb-3">Media Library</a>
-            <a href="#" class="d-block text-white-50 text-decoration-none mb-3">Inquiries</a>
-            <form method="POST" action="{{ route('logout') }}" class="mt-5">
-                @csrf
-                <button type="submit" class="btn btn-outline-light btn-sm w-100">Logout</button>
-            </form>
-        </aside>
+@extends('admin.layout')
+@section('title', 'Dashboard')
 
-        <main class="col-lg-10 p-4 p-lg-5">
+@section('content')
             <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
                 <div>
                     <h1 class="h3 mb-1">Dashboard</h1>
@@ -80,8 +55,4 @@
                     </table>
                 </div>
             </div>
-        </main>
-    </div>
-</div>
-</body>
-</html>
+        @endsection
