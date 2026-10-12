@@ -1,20 +1,26 @@
 import { useState } from 'react';
 import PageHero from '../components/PageHero.jsx';
-import { branches } from '../data.js';
+import { useSite } from '../SiteContext.jsx';
 
 export default function Contact() {
+  const { site } = useSite();
+  const branches = site.branches;
   const [sent, setSent] = useState(false);
+  const [failed, setFailed] = useState(false);
   const submit = async (e) => {
     e.preventDefault();
     const body = Object.fromEntries(new FormData(e.target));
     try {
-      await fetch('/api/inquiries', {
+      const res = await fetch('/api/inquiries', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(body),
       });
-    } catch { /* API not built yet */ }
-    setSent(true);
+      if (!res.ok) throw new Error();
+      setSent(true);
+    } catch {
+      setFailed(true);
+    }
   };
   return (
     <>
@@ -39,6 +45,7 @@ export default function Contact() {
             <input name="company" placeholder="Company Name" />
             <textarea name="message" placeholder="Your Message" rows="3" />
             <button className="btn block" disabled={sent}>{sent ? 'Thank you!' : 'Submit Request →'}</button>
+            {failed && <small style={{ color: '#b91c1c' }}>Could not send. Please try again.</small>}
             <small className="sub">100% Confidential · Reply within 24h</small>
           </form>
         </div>

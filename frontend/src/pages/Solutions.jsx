@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
-import { solutions } from '../data.js';
+import { useSite } from '../SiteContext.jsx';
 
 export default function Solutions() {
+  const { solutions } = useSite();
   return (
     <>
       <section className="hero small">

@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import Metrics from '../components/Metrics.jsx';
 import Process from '../components/Process.jsx';
-import { industries, solutions } from '../data.js';
+import { useSite } from '../SiteContext.jsx';
 
 export default function Home() {
+  const { solutions, industries, testimonials } = useSite();
+  const t = testimonials[0];
   return (
     <>
       <section className="hero">
@@ -66,8 +68,8 @@ export default function Home() {
         <div className="container center">
           <h2>What Industry Leaders Say</h2>
           <blockquote className="quote">
-            “The implementation cut our month-end closing cycle significantly. Outstanding support.”
-            <footer>Client Name — Finance Manager</footer>
+            “{t?.content || 'The implementation cut our month-end closing cycle significantly. Outstanding support.'}”
+            <footer>{t ? `${t.client_name} — ${t.client_position}, ${t.company_name}` : 'Client Name — Finance Manager'}</footer>
           </blockquote>
         </div>
       </section>

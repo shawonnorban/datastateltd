@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
-import { industries } from '../data.js';
+import { useSite } from '../SiteContext.jsx';
 import Metrics from '../components/Metrics.jsx';
 import Process from '../components/Process.jsx';
 
 export default function Industries() {
+  const { industries } = useSite();
   return (
     <>
       <section className="hero small">

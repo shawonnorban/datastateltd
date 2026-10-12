@@ -8,6 +8,9 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        $this->call(SmartGlobalItSeeder::class);
+        $this->call([
+            SmartGlobalItSeeder::class,
+            DemoDataSeeder::class,
+        ]);
     }
 }

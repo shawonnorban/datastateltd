@@ -8,6 +8,7 @@ import Solutions from './pages/Solutions.jsx';
 import Industries from './pages/Industries.jsx';
 import Contact from './pages/Contact.jsx';
 import Careers from './pages/Careers.jsx';
+import { useSite } from './SiteContext.jsx';
 
 function ScrollTop() {
   const { pathname } = useLocation();
@@ -16,6 +17,8 @@ function ScrollTop() {
 }
 
 export default function App() {
+  const { site } = useSite();
+  const wa = site.whatsapp ? `https://wa.me/${site.whatsapp.replace(/\D/g, '')}` : null;
   return (
     <>
       <ScrollTop />
@@ -32,7 +35,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-      <a className="float-btn wa" href="#" aria-label="WhatsApp">✆</a>
+      {wa && <a className="float-btn wa" href={wa} target="_blank" rel="noreferrer" aria-label="WhatsApp">✆</a>}
       <a className="float-btn chat" href="#" aria-label="Chat">💬</a>
     </>
   );
