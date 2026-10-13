@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Icon, { iconFor } from './Icon.jsx';
+import { BrandMark, PayBadge } from './BrandIcon.jsx';
 import { Reveal, Counter, useInView } from './Reveal.jsx';
 import { useSite } from '../SiteContext.jsx';
 
@@ -629,7 +630,10 @@ function Strip({ s }) {
     <div className="strip">
       <div className="container strip-in">
         <span className="strip-title"><i />{s.title}</span>
-        <ul>{(s.data?.items || []).map((x) => <li key={x}>{x}</li>)}</ul>
+        <ul>{(s.data?.items || []).map((x) => {
+          const name = typeof x === 'string' ? x : x.name;
+          return <li key={name}><BrandMark name={name} logo={typeof x === 'string' ? null : x.logo} size={20} />{name}</li>;
+        })}</ul>
       </div>
     </div>
   );
@@ -754,7 +758,7 @@ function Payments({ s }) {
     <section className="section">
       <div className="container">
         <Head s={s} />
-        <div className="pay-row">{(s.data?.items || []).map((x) => <span key={x} className="pay">{x}</span>)}</div>
+        <div className="pay-row">{(s.data?.items || []).map((x) => <PayBadge key={typeof x === 'string' ? x : x.name} item={x} />)}</div>
       </div>
     </section>
   );

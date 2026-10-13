@@ -330,3 +330,18 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);bo
 .full-name{font-size:.82rem;color:#cbd5e1;margin:-6px 0 10px}
 @media(max-width:1100px){.plans{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:900px){.offer-body{grid-template-columns:1fr}.plans{grid-template-columns:1fr}.mini-stats{grid-template-columns:1fr}.hero-light{padding:110px 0 50px}}
+
+/* domain page: full-width offer card and domain box, brand logos */
+.offer{max-width:none;margin:0}
+.domain-box{max-width:none;margin:0}
+.strip li{display:inline-flex;align-items:center;gap:8px;color:#334155;font-weight:500}
+.strip li+li::before{display:none}
+.strip ul{gap:30px}
+.strip li svg,.strip li img{flex:none}
+.brand-fallback{display:inline-grid;place-items:center;color:#64748b}
+.pay-row{gap:16px}
+.pay{display:inline-flex;align-items:center;gap:12px;padding:14px 22px;font-weight:600}
+.pay-tile{display:inline-grid;place-items:center;min-width:76px;height:34px;padding:0 12px;border-radius:6px;font-size:.95rem;letter-spacing:.01em}
+.pay img{height:30px;width:auto}
+.pay-name{font-size:.85rem;color:#475569;font-weight:600}
+.brand-tile{display:inline-grid;place-items:center;border-radius:5px;color:#fff;font-weight:800;letter-spacing:-.02em;line-height:1;flex:none}
