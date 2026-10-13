@@ -80,6 +80,7 @@ SVG);
         ])->update(['is_active' => false]);
 
         foreach ($items as $i => $s) {
+            Service::whereNull('url')->where('slug', Str::slug($s['title']))->update(['url' => $s['to'] ?? null]);
             Service::firstOrCreate(['slug' => Str::slug($s['title'])], [
                 'title' => $s['title'],
                 'short_description' => $s['text'],
