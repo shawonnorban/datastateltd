@@ -12,6 +12,7 @@ use App\Models\PageSection;
 use App\Models\ProjectCategory;
 use App\Models\Service;
 use App\Models\SiteSetting;
+use App\Support\MapEmbed;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -33,7 +34,11 @@ class PublicController extends Controller
             'whatsapp' => $s['contact_whatsapp'] ?? null,
             'email' => $s['contact_email'] ?? null,
             'address' => $s['address'] ?? null,
-            'map_embed_url' => $s['map_embed_url'] ?? null,
+            // A pasted share link is never embeddable: derive a working URL from it or from the address.
+            'map_embed_url' => MapEmbed::isEmbeddable($s['map_embed_url'] ?? null)
+                ? $s['map_embed_url']
+                : MapEmbed::from(null, ($s['map_embed_url'] ?? '') !== '' ? ($s['address'] ?? null) : null),
+            'map_link' => ($s['map_link'] ?? '') !== '' ? $s['map_link'] : (($s['map_embed_url'] ?? '') !== '' && ! MapEmbed::isEmbeddable($s['map_embed_url']) ? $s['map_embed_url'] : null),
             'social' => [
                 'facebook' => $s['facebook_url'] ?? null,
                 'twitter' => $s['twitter_url'] ?? null,

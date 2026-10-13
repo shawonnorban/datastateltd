@@ -25,7 +25,12 @@ export default function Footer() {
       )}
       <footer className="footer">
         <div className="container">
-          {site.map_embed_url && <iframe className="map" title="Map" src={site.map_embed_url} loading="lazy" />}
+          {site.map_embed_url && (
+            <div className="map-wrap">
+              <iframe className="map" title="Map" src={site.map_embed_url} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+              {site.map_link && <a className="map-open" href={site.map_link} target="_blank" rel="noreferrer">Open in Maps ↗</a>}
+            </div>
+          )}
           <div className="footer-grid">
             <div>
               <h4>Contact Us</h4>

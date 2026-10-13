@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\SiteSetting;
+use App\Support\MapEmbed;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -19,6 +20,7 @@ class SettingsController extends Controller
         'contact_email' => ['text', 'contact'],
         'address' => ['textarea', 'contact'],
         'map_embed_url' => ['url', 'contact'],
+        'map_link' => ['url', 'contact'],
         'facebook_url' => ['url', 'social'],
         'twitter_url' => ['url', 'social'],
         'linkedin_url' => ['url', 'social'],
@@ -34,6 +36,8 @@ class SettingsController extends Controller
         foreach (array_keys(self::FIELDS) as $key) {
             $values[$key] = $s[$key] ?? '';
         }
+        // The form shows what the admin pasted; the embed URL is derived from it.
+        $values['map_embed_url'] = ($s['map_link'] ?? '') !== '' ? $s['map_link'] : ($s['map_embed_url'] ?? '');
 
         return [
             'values' => $values,
@@ -62,7 +66,7 @@ class SettingsController extends Controller
         $data = $request->validate($rules);
 
         foreach (self::FIELDS as $key => [$type, $group]) {
-            if (! $request->exists($key)) {
+            if (! $request->exists($key) || in_array($key, ['map_embed_url', 'map_link'], true)) {
                 continue;
             }
             SiteSetting::updateOrCreate(['key' => $key], ['value' => $data[$key] ?? '', 'type' => $type, 'group' => $group]);
@@ -78,6 +82,16 @@ class SettingsController extends Controller
                     'email' => $b['email'] ?? '',
                 ])->values();
             SiteSetting::updateOrCreate(['key' => 'branches'], ['value' => $branches->toJson(), 'type' => 'json', 'group' => 'contact']);
+        }
+
+        if ($request->exists('map_embed_url') || $request->exists('map_link')) {
+            $link = trim((string) ($data['map_link'] ?? $data['map_embed_url'] ?? ''));
+            $address = $data['address'] ?? SiteSetting::where('key', 'address')->value('value');
+            SiteSetting::updateOrCreate(['key' => 'map_link'], ['value' => $link, 'type' => 'url', 'group' => 'contact']);
+            SiteSetting::updateOrCreate(
+                ['key' => 'map_embed_url'],
+                ['value' => $link === '' ? '' : (MapEmbed::from($link, $address) ?? ''), 'type' => 'url', 'group' => 'contact']
+            );
         }
 
         $this->replaceImage($request, 'logo', 'logo');

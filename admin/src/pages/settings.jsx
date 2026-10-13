@@ -86,7 +86,7 @@ export default function Settings() {
               {text('contact_phone', 'Phone')}
               {text('contact_whatsapp', 'WhatsApp number', { placeholder: '+8801XXXXXXXXX' })}
               {text('contact_email', 'Email', { type: 'email' })}
-              {text('map_embed_url', 'Google Maps embed URL')}
+              <Field label="Google Maps link" hint="Paste any Google Maps link (share link, place link or embed URL). It is converted for the website map automatically." htmlFor="map_embed_url"><Input id="map_embed_url" value={values.map_embed_url ?? ''} onChange={set('map_embed_url')} placeholder="https://maps.app.goo.gl/..." /></Field>
               <Field label="Address" className="md:col-span-2" htmlFor="address"><Textarea id="address" rows={2} value={values.address ?? ''} onChange={set('address')} /></Field>
             </CardContent></Card>
         </TabsContent>
