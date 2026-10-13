@@ -42,6 +42,7 @@ class SettingsController extends Controller
             'values' => $values,
             'branches' => json_decode($s['branches'] ?? '[]', true) ?: [],
             'logo_url' => ($s['logo'] ?? null) ? Storage::disk('public')->url($s['logo']) : null,
+            'logo_scrolled_url' => ($s['logo_scrolled'] ?? null) ? Storage::disk('public')->url($s['logo_scrolled']) : null,
             'banner_url' => ($s['hero_banner'] ?? null) ? Storage::disk('public')->url($s['hero_banner']) : null,
         ];
     }
@@ -50,6 +51,8 @@ class SettingsController extends Controller
     {
         $rules = [
             'logo' => ['nullable', 'file', 'mimes:png,jpg,jpeg,webp,svg', 'max:2048'],
+            'logo_scrolled' => ['nullable', 'file', 'mimes:png,jpg,jpeg,webp,svg', 'max:2048'],
+            'remove_logo_scrolled' => ['nullable', 'boolean'],
             'hero_banner' => ['nullable', 'file', 'mimes:png,jpg,jpeg,webp', 'max:4096'],
             'remove_hero_banner' => ['nullable', 'boolean'],
             'branches' => ['nullable', 'array'],
@@ -94,6 +97,15 @@ class SettingsController extends Controller
         }
 
         $this->replaceImage($request, 'logo', 'logo');
+        $this->replaceImage($request, 'logo_scrolled', 'logo_scrolled');
+
+        if ($request->boolean('remove_logo_scrolled')) {
+            $old = SiteSetting::where('key', 'logo_scrolled')->value('value');
+            if ($old && str_starts_with($old, 'branding/')) {
+                Storage::disk('public')->delete($old);
+            }
+            SiteSetting::where('key', 'logo_scrolled')->update(['value' => '']);
+        }
         $this->replaceImage($request, 'hero_banner', 'hero_banner');
 
         if ($request->boolean('remove_hero_banner')) {

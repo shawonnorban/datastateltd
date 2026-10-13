@@ -18,7 +18,12 @@ export default function Header() {
   return (
     <header className={`header ${solid ? 'scrolled' : ''}`}>
       <div className="header-in">
-        <Link to="/" className="logo">{site.logo_url ? <img src={site.logo_url} alt={site.name} className="logo-img" /> : site.name}</Link>
+        <Link to="/" className="logo">{site.logo_url ? (
+            <span className="logo-stack">
+              <img src={site.logo_url} alt={site.name} className={`logo-img logo-top ${solid ? 'off' : ''}`} />
+              <img src={site.logo_scrolled_url || site.logo_url} alt="" aria-hidden="true" className={`logo-img logo-solid ${solid ? '' : 'off'}`} />
+            </span>
+          ) : site.name}</Link>
         <button className="burger" onClick={() => setOpen(!open)} aria-label="Menu">☰</button>
         <nav className={open ? 'nav open' : 'nav'} onClick={() => setOpen(false)}>
           {nav.map((n) => (

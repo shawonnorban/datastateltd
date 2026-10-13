@@ -43,6 +43,11 @@ class DemoDataSeeder extends Seeder
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 56"><path d="M20 4l16 16-16 16L4 20z" fill="#0a0a0a"/><path d="M20 14l6 6-6 6-6-6z" fill="#fff"/><text x="46" y="38" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="30" fill="#0a0a0a">INSPIRE BD IT</text></svg>
 SVG);
 
+        // Light version of the demo logo for the transparent header over the dark hero.
+        Storage::disk('public')->put('branding/demo-logo-light.svg', <<<'SVG'
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 56"><path d="M20 4l16 16-16 16L4 20z" fill="#ffffff"/><path d="M20 14l6 6-6 6-6-6z" fill="#2563eb"/><text x="46" y="38" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="30" fill="#ffffff">INSPIRE BD IT</text></svg>
+SVG);
+
         $branches = array_merge([[
             'name' => 'Corporate Head Office',
             'address' => 'House 8/B, Road #1, Gulshan-1, Dhaka-1212, Bangladesh',
@@ -54,7 +59,8 @@ SVG);
             'site_name' => ['Inspire BD IT', 'text', 'general'],
             'site_full_name' => ['Inspire Bangladesh Information Technology', 'text', 'general'],
             'tagline' => ['Cloud-based, fully customizable software designed to enhance your business growth.', 'text', 'general'],
-            'logo' => ['branding/demo-logo.svg', 'image', 'general'],
+            'logo' => ['branding/demo-logo-light.svg', 'image', 'general'],
+            'logo_scrolled' => ['branding/demo-logo.svg', 'image', 'general'],
             'contact_phone' => ['+88 09666707635', 'text', 'contact'],
             'contact_whatsapp' => ['', 'text', 'contact'],
             'contact_email' => ['contact@datastateltd.com', 'text', 'contact'],

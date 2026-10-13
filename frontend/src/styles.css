@@ -27,7 +27,7 @@ a{color:inherit;text-decoration:none}ul{list-style:none;margin:0;padding:0}p{mar
 .header-in{display:flex;align-items:center;gap:24px;padding:12px 0;width:80%;margin:0 auto;min-height:92px}
 .logo{font-family:var(--font);font-weight:700;font-size:1.45rem;color:#fff;margin:0;transition:.3s}
 .header.scrolled .logo{color:var(--navy)}
-.logo-img{height:54px;width:auto;display:block;box-sizing:content-box;padding:4px 12px;background:#fff;border-radius:6px}
+.logo-img{height:56px;width:auto;display:block}
 .nav{display:flex;gap:6px;flex:1;margin-left:20px}
 .nav a{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;padding:8px 14px;border-radius:6px;color:rgba(255,255,255,.85);transition:.25s}
 .header.scrolled .nav a{color:var(--text)}
@@ -407,6 +407,9 @@ a.cert{transition:.25s}a.cert:hover{transform:translateY(-3px);box-shadow:0 14px
 
 /* logo keeps the same box in every header state (no size/menu jump on scroll) */
 .header .logo{display:flex;align-items:center;min-height:62px}
-.header .logo-img{border:1px solid transparent}
-.header.scrolled .logo-img{border-color:#e2e8f0}
-@media(max-width:900px){.logo-img{height:42px;padding:3px 10px}.header-in{min-height:76px}}
+@media(max-width:900px){.logo-img{height:44px}.logo-stack{width:170px;height:44px}.header-in{min-height:76px}}
+
+/* two logos: light one over the dark hero, dark one on the white scrolled header. Both share one box, so nothing shifts. */
+.logo-stack{position:relative;display:block;width:240px;height:56px;flex:none}
+.logo-stack .logo-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:left center;transition:opacity .25s ease}
+.logo-stack .off{opacity:0;pointer-events:none}

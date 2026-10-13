@@ -30,6 +30,7 @@ class PublicController extends Controller
             'tagline' => $s['tagline'] ?? null,
             'hero_banner_url' => ($s['hero_banner'] ?? null) ? Storage::disk('public')->url($s['hero_banner']) : null,
             'logo_url' => ($s['logo'] ?? null) ? Storage::disk('public')->url($s['logo']) : null,
+            'logo_scrolled_url' => ($s['logo_scrolled'] ?? null) ? Storage::disk('public')->url($s['logo_scrolled']) : null,
             'phone' => $s['contact_phone'] ?? null,
             'whatsapp' => $s['contact_whatsapp'] ?? null,
             'email' => $s['contact_email'] ?? null,

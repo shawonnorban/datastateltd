@@ -19,11 +19,13 @@ export default function Settings() {
   const [values, setValues] = useState({});
   const [branches, setBranches] = useState([]);
   const [logo, setLogo] = useState(null);
+  const [logo2, setLogo2] = useState(null);
+  const [removeLogo2, setRemoveLogo2] = useState(false);
   const [banner, setBanner] = useState(null);
   const [removeBanner, setRemoveBanner] = useState(false);
   const [busy, setBusy] = useState(false);
 
-  const load = (d) => { setState(d); setValues(d.values); setBranches(d.branches); setLogo(null); setBanner(null); setRemoveBanner(false); };
+  const load = (d) => { setState(d); setValues(d.values); setBranches(d.branches); setLogo(null); setLogo2(null); setRemoveLogo2(false); setBanner(null); setRemoveBanner(false); };
   useEffect(() => { api('/settings').then(load); }, []);
 
   const set = (k) => (e) => setValues((v) => ({ ...v, [k]: e.target.value }));
@@ -37,6 +39,8 @@ export default function Settings() {
       branches.forEach((b, i) => Object.entries(b).forEach(([k, v]) => fd.append(`branches[${i}][${k}]`, v ?? '')));
       if (!branches.length) fd.append('branches', '');
       if (logo) fd.append('logo', logo);
+      if (logo2) fd.append('logo_scrolled', logo2);
+      if (removeLogo2) fd.append('remove_logo_scrolled', '1');
       if (banner) fd.append('hero_banner', banner);
       if (removeBanner) fd.append('remove_hero_banner', '1');
       load(await api('/settings', { method: 'POST', form: fd }));
@@ -68,9 +72,14 @@ export default function Settings() {
               {text('site_name', 'Site name')}
               {text('site_full_name', 'Full name')}
               <Field label="Tagline" className="md:col-span-2" htmlFor="tagline"><Input id="tagline" value={values.tagline ?? ''} onChange={set('tagline')} /></Field>
-              <Field label="Logo" hint="PNG, JPG, WebP or SVG, max 2 MB">
-                {state.logo_url && <div className="bg-muted w-fit rounded-md p-3"><img src={state.logo_url} alt="Logo" className="max-h-14" /></div>}
+              <Field label="Logo 1 — top of the page" hint="Shown first, over the dark banner (use a light or white logo). It is shown in a 240×56 px area, so a wide logo (about 4:1) fits best. PNG, JPG, WebP or SVG, max 2 MB.">
+                {state.logo_url && <div className="w-fit rounded-md bg-slate-900 p-3"><img src={state.logo_url} alt="Logo 1" className="max-h-14" /></div>}
                 <Input type="file" accept="image/*" onChange={(e) => setLogo(e.target.files[0] || null)} />
+              </Field>
+              <Field label="Logo 2 — after scrolling" hint="Replaces logo 1 when the visitor scrolls down and the header turns white (use a dark or coloured logo). If empty, logo 1 is used.">
+                {state.logo_scrolled_url && !removeLogo2 && <div className="w-fit rounded-md border bg-white p-3"><img src={state.logo_scrolled_url} alt="Logo 2" className="max-h-14" /></div>}
+                <Input type="file" accept="image/*" onChange={(e) => { setLogo2(e.target.files[0] || null); setRemoveLogo2(false); }} />
+                {state.logo_scrolled_url && !logo2 && <div className="flex items-center gap-2"><Switch id="rl2" checked={removeLogo2} onCheckedChange={setRemoveLogo2} /><Label htmlFor="rl2">Remove logo 2</Label></div>}
               </Field>
               <Field label="Hero banner image" hint="Background of the top banner on every page. PNG, JPG or WebP, max 4 MB.">
                 {state.banner_url && !removeBanner && <img src={state.banner_url} alt="Banner" className="max-h-24 w-fit rounded-md" />}
