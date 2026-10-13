@@ -64,7 +64,6 @@ export default function PostDetail({ type, slug }) {
       <section className="section">
         <div className="container post-layout">
           <article className="post-article">
-            {post.image_url && <img className="post-cover" src={post.image_url} alt={post.title} />}
             {post.excerpt && <p className="post-lead">{post.excerpt}</p>}
             <div className="md" dangerouslySetInnerHTML={{ __html: html }} />
             <div className="share">

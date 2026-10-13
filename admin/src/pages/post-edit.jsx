@@ -108,11 +108,11 @@ export default function PostEdit() {
             <Field label="Read time (minutes)" hint="Leave empty to calculate automatically"><Input type="number" min="1" value={f.read_minutes} onChange={set('read_minutes')} /></Field>
           </CardContent></Card>
 
-          <Card><CardHeader><CardTitle>Featured image</CardTitle></CardHeader><CardContent className="grid gap-3">
+          <Card><CardHeader><CardTitle>Index image</CardTitle></CardHeader><CardContent className="grid gap-3">
             {preview && <img src={preview} alt="" className="max-h-40 w-full rounded-md object-cover" />}
             <Input type="file" accept="image/png,image/jpeg,image/webp" onChange={(e) => { setFile(e.target.files[0] || null); setRemoveImage(false); }} />
             {f.image_url && !file && <div className="flex items-center gap-2"><Switch id="ri" checked={removeImage} onCheckedChange={setRemoveImage} /><Label htmlFor="ri">Remove image</Label></div>}
-            <p className="text-muted-foreground text-xs">PNG, JPG or WebP, max 4 MB. Optional.</p>
+            <p className="text-muted-foreground text-xs">Shown only on the blog/news list (index) page, not inside the post. Best size 1280×720 (16:9). PNG, JPG or WebP, max 4 MB. Optional.</p>
           </CardContent></Card>
 
           <Card><CardHeader><CardTitle>SEO</CardTitle></CardHeader><CardContent className="grid gap-4">

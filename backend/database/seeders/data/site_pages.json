@@ -12,12 +12,7 @@
      "subtitle": "Explore the latest ERP software trends, business management tips, technology insights, industry updates, and ERP solutions to help businesses improve efficiency and make smarter decisions.",
      "data": {
       "variant": "page",
-      "buttons": [
-       {
-        "label": "Clients",
-        "to": "/company/clients"
-       }
-      ]
+      "buttons": []
      }
     },
     {
@@ -306,12 +301,7 @@
      "subtitle": "Answers about Inspire BD IT cloud ERP software in Bangladesh: modules, industries, small businesses, demos, implementation, training, support and data security.",
      "data": {
       "variant": "page",
-      "buttons": [
-       {
-        "label": "FAQ",
-        "to": "/company/faq"
-       }
-      ]
+      "buttons": []
      }
     },
     {
@@ -718,8 +708,8 @@
       "variant": "page",
       "buttons": [
        {
-        "label": "BOOK DEMO",
-        "to": "/company/contact"
+        "label": "Book a Demo",
+        "to": "/company/request-demo"
        }
       ]
      }
@@ -992,8 +982,8 @@
       "variant": "page",
       "buttons": [
        {
-        "label": "BOOK DEMO",
-        "to": "/company/contact"
+        "label": "Book a Demo",
+        "to": "/company/request-demo"
        }
       ]
      }
@@ -1119,8 +1109,8 @@
       "variant": "page",
       "buttons": [
        {
-        "label": "BOOK DEMO",
-        "to": "/company/contact"
+        "label": "Book a Demo",
+        "to": "/company/request-demo"
        }
       ]
      }
@@ -1242,8 +1232,8 @@
       "variant": "page",
       "buttons": [
        {
-        "label": "BOOK DEMO",
-        "to": "/company/contact"
+        "label": "Book a Demo",
+        "to": "/company/request-demo"
        }
       ]
      }
@@ -1369,8 +1359,8 @@
       "variant": "page",
       "buttons": [
        {
-        "label": "BOOK DEMO",
-        "to": "/company/contact"
+        "label": "Book a Demo",
+        "to": "/company/request-demo"
        }
       ]
      }
@@ -1496,8 +1486,8 @@
       "variant": "page",
       "buttons": [
        {
-        "label": "BOOK DEMO",
-        "to": "/company/contact"
+        "label": "Book a Demo",
+        "to": "/company/request-demo"
        }
       ]
      }
@@ -1738,8 +1728,8 @@
       "variant": "page",
       "buttons": [
        {
-        "label": "BOOK DEMO",
-        "to": "/company/contact"
+        "label": "Book a Demo",
+        "to": "/company/request-demo"
        }
       ]
      }
@@ -1865,8 +1855,8 @@
       "variant": "page",
       "buttons": [
        {
-        "label": "BOOK DEMO",
-        "to": "/company/contact"
+        "label": "Book a Demo",
+        "to": "/company/request-demo"
        }
       ]
      }
@@ -1992,8 +1982,8 @@
       "variant": "page",
       "buttons": [
        {
-        "label": "BOOK DEMO",
-        "to": "/company/contact"
+        "label": "Book a Demo",
+        "to": "/company/request-demo"
        }
       ]
      }
@@ -2218,8 +2208,8 @@
       "variant": "page",
       "buttons": [
        {
-        "label": "request a Demo",
-        "to": "/company/contact"
+        "label": "Request a Demo",
+        "to": "/company/request-demo"
        }
       ]
      }
