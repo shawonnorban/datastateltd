@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import DynamicPage from './pages/DynamicPage.jsx';
+import JobDetail from './pages/JobDetail.jsx';
+import PostDetail from './pages/PostDetail.jsx';
 import Icon from './components/Icon.jsx';
 import { useSite } from './SiteContext.jsx';
 
@@ -20,7 +22,11 @@ function ScrollTop() {
 
 function Page() {
   const { pathname } = useLocation();
-  return <DynamicPage slug={pathname.replace(/^\/+|\/+$/g, '') || 'home'} />;
+  const path = pathname.replace(/^\/+|\/+$/g, '') || 'home';
+  const detail = path.match(/^(jobs|blogs|news)\/([^/]+)$/);
+  if (detail?.[1] === 'jobs') return <JobDetail slug={detail[2]} key={detail[2]} />;
+  if (detail) return <PostDetail type={detail[1] === 'news' ? 'news' : 'blog'} slug={detail[2]} key={path} />;
+  return <DynamicPage slug={path} />;
 }
 
 export default function App() {

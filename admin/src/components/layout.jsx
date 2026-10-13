@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import { LayoutDashboard, Settings, LayoutTemplate, Search, Server, Briefcase, Inbox, LogOut, BadgeCheck } from 'lucide-react';
+import { LayoutDashboard, Settings, LayoutTemplate, Search, Server, Briefcase, Inbox, LogOut, BadgeCheck, Newspaper, BriefcaseBusiness } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/lib/auth.jsx';
 import { cn } from '@/lib/utils';
@@ -11,6 +11,8 @@ const nav = [
   { to: '/pages', label: 'Page Titles & SEO', icon: Search },
   { to: '/hosting', label: 'Domain & Hosting', icon: Server },
   { to: '/memberships', label: 'Certifications', icon: BadgeCheck },
+  { to: '/posts', label: 'Blog & News', icon: Newspaper },
+  { to: '/jobs', label: 'Jobs', icon: BriefcaseBusiness },
   { to: '/applications', label: 'Job Applications', icon: Briefcase },
   { to: '/inquiries', label: 'Inquiries', icon: Inbox },
 ];

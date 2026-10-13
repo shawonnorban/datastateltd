@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Icon, { iconFor } from './Icon.jsx';
 import { BrandMark, PayBadge } from './BrandIcon.jsx';
+import { PostCard } from '../pages/PostDetail.jsx';
+import { fmtDate, getJson, timeAgo } from '../lib.js';
 import { Reveal, Counter, useInView } from './Reveal.jsx';
 import { useSite } from '../SiteContext.jsx';
 
@@ -468,90 +470,6 @@ function ContactForm({ s }) {
   );
 }
 
-function ApplyModal({ job, onClose }) {
-  const [state, setState] = useState('idle');
-  const [error, setError] = useState('');
-  const submit = async (e) => {
-    e.preventDefault();
-    const fd = new FormData(e.target);
-    fd.append('position', job.title);
-    setState('sending'); setError('');
-    try {
-      const res = await fetch('/api/job-applications', { method: 'POST', headers: { Accept: 'application/json' }, body: fd });
-      if (res.status === 422) {
-        const j = await res.json();
-        setError(Object.values(j.errors || {})[0]?.[0] || 'Please check the form.');
-        setState('idle'); return;
-      }
-      if (!res.ok) throw new Error();
-      setState('sent');
-    } catch { setError('Could not submit. Please try again.'); setState('idle'); }
-  };
-  useEffect(() => {
-    const f = (e) => e.key === 'Escape' && onClose();
-    window.addEventListener('keydown', f);
-    document.body.style.overflow = 'hidden';
-    return () => { window.removeEventListener('keydown', f); document.body.style.overflow = ''; };
-  }, [onClose]);
-  return (
-    <div className="modal" onClick={onClose} role="dialog" aria-modal="true">
-      <div className="modal-box card" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-x" onClick={onClose} aria-label="Close">×</button>
-        <span className="eyebrow">Apply for position</span>
-        <h3>{job.title}</h3>
-        {state === 'sent' ? (
-          <div className="sent"><div className="ico grad"><Icon name="check" /></div><p className="ok">Application received. Thank you! We will contact you if you are shortlisted.</p><button className="btn sm" onClick={onClose}>Close</button></div>
-        ) : (
-          <form className="form" onSubmit={submit}>
-            <label>Full Name *<input name="name" required placeholder="Your full name" /></label>
-            <label>Email Address *<input name="email" type="email" required placeholder="you@example.com" /></label>
-            <label>Phone Number *<input name="phone" required placeholder="+8801XXXXXXXXX" /></label>
-            <label>Upload Your CV * <small className="muted">(PDF, DOC or DOCX, max 5 MB)</small>
-              <input name="cv" type="file" required accept=".pdf,.doc,.docx,application/pdf" />
-            </label>
-            <label>Cover note<textarea name="cover_note" rows="3" placeholder="Tell us briefly about yourself" /></label>
-            {error && <p className="err">{error}</p>}
-            <button className="btn block" disabled={state === 'sending'}>{state === 'sending' ? 'Submitting…' : 'Submit application'}</button>
-          </form>
-        )}
-      </div>
-    </div>
-  );
-}
-
-function Jobs({ s }) {
-  const [q, setQ] = useState('');
-  const [applying, setApplying] = useState(null);
-  const items = (s.data?.items || []).filter((j) => j.title.toLowerCase().includes(q.toLowerCase()));
-  return (
-    <section className="section alt" id="openings">
-      <div className="container narrow">
-        <Head s={s} />
-        <div className="search card glass">
-          <Icon name="eye" size={18} />
-          <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search positions…" />
-        </div>
-        {items.map((j) => (
-          <Reveal key={j.title}>
-            <div className="job card lift">
-              <div>
-                <h3>{j.title}</h3>
-                <div className="tags"><span>{j.location}</span><span>{j.type}</span><span>{j.level}</span>{j.posted && <span className="soft">{j.posted}</span>}{j.applicants && <span className="soft">{j.applicants}</span>}</div>
-                <p>{j.text}</p>
-              </div>
-              <div className="btn-row">
-                <button className="btn sm" onClick={() => setApplying(j)}>Apply Now</button>
-              </div>
-            </div>
-          </Reveal>
-        ))}
-        {!items.length && <p className="center muted">No positions match your search.</p>}
-        {applying && <ApplyModal job={applying} onClose={() => setApplying(null)} />}
-      </div>
-    </section>
-  );
-}
-
 function Block({ b, first }) {
   if (b.k === 'p') return <p className={first ? 'lead-p' : 'prose'}>{b.text}</p>;
   if (b.k === 'button') return <div className="btn-row"><Btn b={b} /></div>;
@@ -856,29 +774,6 @@ function Quotes({ s }) {
   );
 }
 
-function Posts({ s }) {
-  return (
-    <section className="section">
-      <div className="container">
-        <Head s={s} />
-        <div className="grid cols-3">
-          {(s.data?.items || []).map((p, i) => (
-            <Reveal key={p.title} delay={(i % 3) * 80}>
-              <ItemLink to={p.to} className="card post lift">
-                {p.category && <span className="tag">{p.category}</span>}
-                <h3>{p.title}</h3>
-                {p.text && <p>{p.text}</p>}
-                <div className="post-meta">{[p.date, p.read].filter(Boolean).join(' · ')}</div>
-                {p.to && <span className="more">Read more <Icon name="arrow" size={15} /></span>}
-              </ItemLink>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Clients({ s }) {
   return (
     <section className="section alt">
@@ -892,12 +787,101 @@ function Clients({ s }) {
   );
 }
 
+function JobList({ s }) {
+  const [data, setData] = useState({ jobs: [], locations: [] });
+  const [loading, setLoading] = useState(true);
+  const [q, setQ] = useState('');
+  const [loc, setLoc] = useState('');
+  useEffect(() => { getJson('/api/jobs').then(setData).catch(() => {}).finally(() => setLoading(false)); }, []);
+
+  const jobs = data.jobs.filter((j) => (!q || `${j.title} ${j.subtitle || ''}`.toLowerCase().includes(q.toLowerCase())) && (!loc || j.location === loc));
+  return (
+    <section className="section alt" id="openings">
+      <div className="container narrow">
+        <Head s={s} />
+        <div className="search-card card">
+          <label>Search<div className="search"><Icon name="eye" size={18} /><input value={q} onChange={(e) => setQ(e.target.value)} placeholder="Junior Software Engineer, Internship…" /></div></label>
+          <label>Location<select value={loc} onChange={(e) => setLoc(e.target.value)}><option value="">All Locations</option>{data.locations.map((l) => <option key={l}>{l}</option>)}</select></label>
+        </div>
+        {loading && <div className="center-row"><span className="spinner" /></div>}
+        {jobs.map((j) => (
+          <Reveal key={j.id}>
+            <div className="job card lift">
+              <div>
+                <h3><Link to={`/jobs/${j.slug}`}>{j.title}{j.subtitle ? ` – ${j.subtitle}` : ''}</Link></h3>
+                <div className="tags">{[j.location, j.employment_type, j.experience_level].filter(Boolean).map((x) => <span key={x}>{x}</span>)}</div>
+                {j.summary && <p>{j.summary}</p>}
+                <div className="tags"><span className="soft">{timeAgo(j.posted_at)}</span><span className="soft">{j.applicants} applicant{j.applicants === 1 ? '' : 's'}</span>{j.deadline && <span className="soft">Deadline: {fmtDate(j.deadline)}</span>}</div>
+              </div>
+              <div className="btn-row job-btns">
+                <Link to={`/jobs/${j.slug}`} className="btn sm outline">View Details</Link>
+                <Link to={`/jobs/${j.slug}?apply=1`} className="btn sm">Apply Now</Link>
+              </div>
+            </div>
+          </Reveal>
+        ))}
+        {!loading && !jobs.length && <div className="empty card"><h3>No jobs match your search criteria</h3><p className="muted">Try adjusting your filters or keywords.</p></div>}
+      </div>
+    </section>
+  );
+}
+
+function PostList({ s }) {
+  const kind = s.data?.kind === 'news' ? 'news' : 'blog';
+  const [state, setState] = useState({ data: [], meta: { current_page: 1, last_page: 1, total: 0 }, categories: [] });
+  const [loading, setLoading] = useState(true);
+  const [q, setQ] = useState('');
+  const [search, setSearch] = useState('');
+  const [cat, setCat] = useState('');
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    let alive = true;
+    setLoading(true);
+    const p = new URLSearchParams({ type: kind, page });
+    if (search) p.set('q', search);
+    if (cat) p.set('category', cat);
+    getJson(`/api/posts?${p}`).then((d) => alive && setState(d)).catch(() => {}).finally(() => alive && setLoading(false));
+    return () => { alive = false; };
+  }, [kind, page, search, cat]);
+
+  const go = (e) => { e.preventDefault(); setPage(1); setSearch(q.trim()); };
+  const { data, meta, categories } = state;
+  return (
+    <section className="section">
+      <div className="container">
+        <Head s={s} />
+        <div className="post-tools">
+          <form onSubmit={go} className="search-card card slim"><div className="search"><Icon name="eye" size={18} /><input value={q} onChange={(e) => setQ(e.target.value)} placeholder={`Search ${kind === 'news' ? 'news' : 'articles'}…`} /></div><button className="btn sm">Search</button></form>
+          {kind === 'blog' && !!categories.length && (
+            <div className="chips">
+              <button className={!cat ? 'on' : ''} onClick={() => { setCat(''); setPage(1); }}>All</button>
+              {categories.map((c) => <button key={c.slug} className={cat === c.slug ? 'on' : ''} onClick={() => { setCat(c.slug); setPage(1); }}>{c.name}</button>)}
+            </div>
+          )}
+        </div>
+        {loading && !data.length ? <div className="center-row"><span className="spinner" /></div> : (
+          <div className="grid cols-3">{data.map((p) => <PostCard key={p.slug} p={p} />)}</div>
+        )}
+        {!loading && !data.length && <div className="empty card"><h3>No {kind === 'news' ? 'news' : 'articles'} found</h3><p className="muted">Try a different search{kind === 'blog' ? ' or category' : ''}.</p></div>}
+        {meta.last_page > 1 && (
+          <div className="pager">
+            <button disabled={meta.current_page <= 1} onClick={() => { setPage(meta.current_page - 1); window.scrollTo({ top: 300, behavior: 'smooth' }); }}>← Previous</button>
+            {Array.from({ length: meta.last_page }, (_, i) => i + 1).map((n) => <button key={n} className={n === meta.current_page ? 'on' : ''} onClick={() => { setPage(n); window.scrollTo({ top: 300, behavior: 'smooth' }); }}>{n}</button>)}
+            <button disabled={meta.current_page >= meta.last_page} onClick={() => { setPage(meta.current_page + 1); window.scrollTo({ top: 300, behavior: 'smooth' }); }}>Next →</button>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
 const map = {
   strip: Strip, domain_search: DomainSearch, combo: Combo, pricing_plans: PricingPlans, spec_table: SpecTable, payments: Payments, benchmark: Benchmark,
-  article: Article, quotes: Quotes, posts: Posts, clients: Clients,
+  article: Article, quotes: Quotes, post_list: PostList, clients: Clients,
   hero: Hero, cards: Cards, services_grid: ServicesGrid, industries_grid: IndustriesGrid, stats: Stats,
   split: Split, showcase: Showcase, steps: Steps, testimonials: Testimonials, faq: Faq, cta: Cta,
-  branches: Branches, contact_form: ContactForm, jobs: Jobs,
+  branches: Branches, contact_form: ContactForm, job_list: JobList, jobs: JobList,
 };
 
 export default function Section({ section }) {

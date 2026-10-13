@@ -7,7 +7,6 @@ use App\Models\DomainTld;
 use App\Models\HostingPlan;
 use App\Models\Inquiry;
 use App\Models\Membership;
-use App\Models\JobApplication;
 use App\Models\Page;
 use App\Models\PageSection;
 use App\Models\ProjectCategory;
@@ -151,31 +150,5 @@ class PublicController extends Controller
         ]);
 
         return response()->json(['message' => 'Thank you, we will contact you within 24 hours.'], 201);
-    }
-
-    public function storeApplication(Request $request)
-    {
-        $data = $request->validate([
-            'position' => ['required', 'string', 'max:255'],
-            'name' => ['required', 'string', 'max:120'],
-            'email' => ['required', 'email', 'max:190'],
-            'phone' => ['required', 'string', 'max:30'],
-            'cover_note' => ['nullable', 'string', 'max:3000'],
-            'cv' => ['required', 'file', 'mimes:pdf,doc,docx', 'max:5120'],
-        ]);
-
-        $file = $request->file('cv');
-
-        JobApplication::create([
-            'position' => $data['position'],
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'phone' => $data['phone'],
-            'cover_note' => $data['cover_note'] ?? null,
-            'cv_path' => $file->store('cvs', 'local'),
-            'cv_original_name' => $file->getClientOriginalName(),
-        ]);
-
-        return response()->json(['message' => 'Application received. Thank you!'], 201);
     }
 }

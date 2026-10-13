@@ -10,6 +10,9 @@ import PagesSeo from '@/pages/pages-seo.jsx';
 import Hosting from '@/pages/hosting.jsx';
 import Memberships from '@/pages/memberships.jsx';
 import Applications from '@/pages/applications.jsx';
+import Jobs from '@/pages/jobs.jsx';
+import Posts from '@/pages/posts.jsx';
+import PostEdit from '@/pages/post-edit.jsx';
 import Inquiries from '@/pages/inquiries.jsx';
 
 export default function App() {
@@ -26,6 +29,9 @@ export default function App() {
         <Route path="pages" element={<PagesSeo />} />
         <Route path="hosting" element={<Hosting />} />
         <Route path="memberships" element={<Memberships />} />
+        <Route path="jobs" element={<Jobs />} />
+        <Route path="posts" element={<Posts />} />
+        <Route path="posts/:id" element={<PostEdit />} />
         <Route path="applications" element={<Applications />} />
         <Route path="inquiries" element={<Inquiries />} />
         <Route path="*" element={<Navigate to="/" replace />} />

@@ -40,7 +40,10 @@ For production build the admin once: `cd admin && npm run build`. Laravel then s
 - **Page Sections** – the content blocks of every page (text, images, JSON items)
 - **Page Titles & SEO** – browser title and meta description of every page
 - **Domain & Hosting** – hosting packages (monthly / yearly / 3-year prices, features, specs) and domain prices
-- **Job Applications** (CVs) and **Inquiries**
+- **Blog & News** – write posts in Markdown (live preview), categories, featured image, SEO, draft/publish/schedule
+- **Jobs** – careers listings with their own details pages (`/jobs/<slug>`) and application form (PDF CV upload)
+- **Job Applications** – filter by job/status, view details, download CV, notes, delete, export CSV
+- **Certifications** (footer logos) and **Inquiries**
 
 ## Fonts
 

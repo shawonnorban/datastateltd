@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Api\Admin as A;
+use App\Http\Controllers\Api\JobController;
+use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\PublicController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -16,7 +18,12 @@ Route::get('/services', [PublicController::class, 'services']);
 Route::get('/industries', [PublicController::class, 'industries']);
 Route::get('/testimonials', [PublicController::class, 'testimonials']);
 Route::post('/inquiries', [PublicController::class, 'storeInquiry'])->middleware('throttle:10,1');
-Route::post('/job-applications', [PublicController::class, 'storeApplication'])->middleware('throttle:6,1');
+Route::get('/jobs', [JobController::class, 'index']);
+Route::get('/jobs/{slug}', [JobController::class, 'show']);
+Route::post('/jobs/{slug}/apply', [JobController::class, 'apply'])->middleware('throttle:10,1');
+
+Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts/{type}/{slug}', [PostController::class, 'show']);
 
 Route::prefix('admin')->group(function () {
     Route::post('/login', [A\AuthController::class, 'login'])->middleware('throttle:10,1');
@@ -44,6 +51,16 @@ Route::prefix('admin')->group(function () {
         Route::post('/memberships/{membership}', [A\MembershipController::class, 'update']);
         Route::delete('/memberships/{membership}', [A\MembershipController::class, 'destroy']);
 
+        Route::apiResource('jobs', A\JobController::class);
+        Route::get('/posts', [A\PostController::class, 'index']);
+        Route::get('/posts/{post}', [A\PostController::class, 'show']);
+        Route::post('/posts', [A\PostController::class, 'store']);
+        Route::post('/posts/{post}', [A\PostController::class, 'update']);
+        Route::delete('/posts/{post}', [A\PostController::class, 'destroy']);
+        Route::apiResource('categories', A\PostCategoryController::class)->except('show');
+
+        Route::get('/applications/export', [A\ApplicationController::class, 'export']);
+        Route::delete('/applications/{application}', [A\ApplicationController::class, 'destroy']);
         Route::get('/applications', [A\ApplicationController::class, 'index']);
         Route::put('/applications/{application}', [A\ApplicationController::class, 'update']);
         Route::get('/applications/{application}/cv', [A\ApplicationController::class, 'cv']);

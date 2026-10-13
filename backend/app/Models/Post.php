@@ -9,9 +9,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Post extends Model
 {
     protected $fillable = [
-        'post_category_id', 'user_id', 'title', 'slug', 'excerpt',
+        'type', 'post_category_id', 'user_id', 'title', 'slug', 'excerpt',
         'content', 'featured_image', 'status', 'published_at',
-        'meta_title', 'meta_description', 'views_count',
+        'meta_title', 'meta_description', 'views_count', 'read_minutes',
     ];
 
     protected function casts(): array

@@ -21,1241 +21,13 @@
      }
     },
     {
-     "type": "posts",
-     "key": "posts",
+     "type": "post_list",
+     "key": "list",
      "eyebrow": "Blog",
      "title": "Latest Articles",
      "subtitle": "Discover our collection of informative articles about ERP solutions and business management.",
      "data": {
-      "items": [
-       {
-        "title": "ERP AI: AI Assistant and AI Agents Inside Your ERP",
-        "text": "ERP AI is live in Inspire BD IT. How the AI assistant answers in plain English, how agents do routine work, and where to start.",
-        "category": "ERP AI",
-        "date": "",
-        "read": "October 10, 2026 6 min read",
-        "to": "/blogs/erp-ai-assistant-and-agents"
-       },
-       {
-        "title": "ERP Implementation Guide: 7 Steps to Success in 2026",
-        "text": "Discover the proven framework for ERP implementation that reduces risks by 60% and ensures on-time, on-budget delivery for your business transformation.",
-        "category": "Implementation",
-        "date": "",
-        "read": "June 10, 2026 8 min read",
-        "to": "/blogs/erp-implementation-guide"
-       },
-       {
-        "title": "Transform ERP Data into Profit: Advanced Analytics Techniques",
-        "text": "Unlock hidden insights in your ERP data with these 5 powerful analytics methods that top companies use to boost revenue by 15-30% annually.",
-        "category": "Analytics",
-        "date": "",
-        "read": "May 22, 2026 6 min read",
-        "to": "/blogs/erp-data-business-intelligence"
-       },
-       {
-        "title": "Cloud ERP vs On-Premise: 2026 Cost-Benefit Analysis",
-        "text": "Comparative analysis showing how cloud ERP reduces IT costs by 40% while improving scalability - complete with ROI calculator for your business size.",
-        "category": "Technology",
-        "date": "",
-        "read": "April 15, 2026 10 min read",
-        "to": "/blogs/cloud-erp-vs-on-premise-erp"
-       },
-       {
-        "title": "Custom ERP Development: 2026 Best Practices",
-        "text": "Case studies revealing how custom ERP modules helped manufacturers reduce waste by 22% and retailers cut checkout times by 35%.",
-        "category": "Customization",
-        "date": "",
-        "read": "March 8, 2026 7 min read",
-        "to": "/blogs/custom-erp-development-best-practices"
-       },
-       {
-        "title": "Next-Gen ERP HR Modules: 2026 Trends",
-        "text": "How leading companies use ERP-integrated HR tools to reduce hiring time by 50% and improve employee retention with AI-powered analytics.",
-        "category": "Human Resources",
-        "date": "",
-        "read": "February 18, 2026 5 min read",
-        "to": "/blogs/erp-hr-trends"
-       },
-       {
-        "title": "ERP Financial Management: 2026 Innovations",
-        "text": "Step-by-step guide to configuring ERP financial modules for real-time reporting, automated reconciliations, and faster month-end closures.",
-        "category": "Finance",
-        "date": "",
-        "read": "January 5, 2026 9 min read",
-        "to": "/blogs/erp-financial-management-innovations"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "blogs/cloud-erp-vs-on-premise-erp": {
-   "slug": "blogs/cloud-erp-vs-on-premise-erp",
-   "title": "Cloud ERP vs On-Premise ERP: Cost-Benefit Analysis",
-   "meta": "Cloud ERP vs on-premise ERP compared: upfront cost, total cost of ownership, security, scalability and which model fits your business.",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "Technology",
-     "title": "Cloud ERP vs On-Premise: 2026 Cost-Benefit Analysis",
-     "subtitle": "April 15, 2026 10 min read As we move through 2026, the debate between cloud ERP and on-premise solutions has reached a critical juncture. Our comprehensive analysis reveals how cloud ERP systems are delivering 40% lower IT costs while providing superior scalability and flexibility compared to traditional on-premise installations.",
-     "data": {
-      "variant": "page",
-      "buttons": []
-     }
-    },
-    {
-     "type": "article",
-     "title": "1. Total Cost of Ownership Comparison",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "The 2026 cost landscape shows significant differences between deployment models:"
-       },
-       {
-        "k": "p",
-        "text": "Average 5-Year Savings: 40% with Cloud ERP Cost Factor Cloud ERP On-Premise ERP Initial Implementation Lower (No hardware costs) High (Servers, infrastructure) IT Staff Requirements Reduced by 60-70% Dedicated team needed Software Updates Automatic, included Manual, additional costs Scalability Instant, pay-as-you-grow Costly hardware upgrades Disaster Recovery Built-in redundancy Additional infrastructure 5-Year TCO (Mid-size business) $250,000 $420,000 2026 Insight: The break-even point for cloud ERP has moved to just 14 months for most businesses, down from 22 months in 2022."
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "2. ROI Analysis by Business Size",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Cloud ERP delivers different value propositions based on organization size:"
-       },
-       {
-        "k": "cards",
-        "items": [
-         {
-          "title": "Quick ROI Estimator",
-          "text": [
-           "Use this simple formula to estimate your potential savings:",
-           "Annual Savings = (Current IT Budget × 0.4) + (Productivity Gains × Employee Count × $8,500) Where 0.4 represents the 40% average IT cost reduction and $8,500 is the average productivity gain per employee."
-          ]
-         },
-         {
-          "title": "Small Businesses (1-50 employees)",
-          "text": "Key benefit: Enterprise features without enterprise costs Modern cloud ERP interface designed for small businesses",
-          "bullets": [
-           "Average implementation time: 2-4 weeks",
-           "Typical 3-year ROI: 220-280%"
-          ]
-         },
-         {
-          "title": "Mid-Market (50-500 employees)",
-          "bullets": [
-           "Average implementation time: 6-10 weeks",
-           "Typical 3-year ROI: 180-220%",
-           "Key benefit: Scalability during growth periods"
-          ]
-         },
-         {
-          "title": "Enterprise (500+ employees)",
-          "text": "Average implementation time: 12-20 weeks Typical 3-year ROI: 140-180% Key benefit: Global accessibility and standardization"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "3. 2026 Technology Advantages of Cloud ERP",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Recent advancements have significantly expanded cloud ERP capabilities:"
-       },
-       {
-        "k": "cards",
-        "items": [
-         {
-          "title": "Case Study: Manufacturing Company Transition",
-          "text": "A mid-sized manufacturer reduced their ERP-related costs by 43% after migrating to cloud ERP in 2024. The solution provided real-time analytics across their three facilities, automated inventory replenishment, and reduced month-end close from 7 days to 2 days."
-         },
-         {
-          "title": "AI-Powered Features Now Standard",
-          "text": "Automated anomaly detection in financials Predictive inventory optimization Intelligent cash flow forecasting Natural language reporting"
-         },
-         {
-          "title": "Enhanced Integration Capabilities",
-          "text": "Pre-built connectors for 500+ business applications Low-code integration tools for custom connections Real-time data synchronization API-first architecture"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "4. Security Comparison: 2026 Standards",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Security concerns have traditionally favored on-premise, but cloud has caught up:"
-       },
-       {
-        "k": "list",
-        "items": [
-         {
-          "text": "Security Aspect"
-         },
-         {
-          "text": "Cloud ERP"
-         },
-         {
-          "text": "On-Premise ERP"
-         },
-         {
-          "text": "Data Encryption"
-         },
-         {
-          "text": "256-bit AES + quantum-ready"
-         },
-         {
-          "text": "Typically 256-bit AES"
-         },
-         {
-          "text": "Compliance Certifications"
-         },
-         {
-          "text": "Automatically updated"
-         },
-         {
-          "text": "Manual updates required"
-         },
-         {
-          "text": "Patch Management"
-         },
-         {
-          "text": "Automated, within 24h of release"
-         },
-         {
-          "text": "Manual, often delayed"
-         },
-         {
-          "text": "DDoS Protection"
-         },
-         {
-          "text": "Enterprise-grade included"
-         },
-         {
-          "text": "Additional cost"
-         }
-        ]
-       },
-       {
-        "k": "p",
-        "text": "Security Note: 78% of enterprises now report equivalent or better security with cloud ERP compared to their previous on-premise systems (2026 ERP Security Survey)."
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "5. Making the Right Choice for Your Business",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Consider these factors when deciding:"
-       },
-       {
-        "k": "cards",
-        "items": [
-         {
-          "title": "When Cloud ERP Makes Sense",
-          "bullets": [
-           "You need rapid deployment",
-           "Your IT resources are limited",
-           "You have remote/mobile workforce",
-           "Your business is growing or changing"
-          ]
-         },
-         {
-          "title": "When On-Premise Might Still Be Preferred",
-          "text": "Extremely specialized customization needs Regulatory requirements preventing cloud use Existing heavy infrastructure investments"
-         },
-         {
-          "title": "Implementation Roadmap",
-          "text": "Assess current pain points and requirements Calculate TCO for both models Evaluate vendor options Plan data migration strategy Develop change management plan"
-         }
-        ]
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "blogs/custom-erp-development-best-practices": {
-   "slug": "blogs/custom-erp-development-best-practices",
-   "title": "Custom ERP Development: Best Practices",
-   "meta": "Best practices for custom ERP development: requirements, architecture, integrations, testing and rollout, from the Inspire BD IT team.",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "Custom ERP Development",
-     "title": "Custom ERP Development: Best Practices for 2026",
-     "subtitle": "In 2026, custom ERP development has become the cornerstone of digital transformation for forward-thinking businesses. Recent case studies reveal how tailored ERP modules help manufacturers reduce waste by 22% and enable retailers to cut checkout times by 35%. This guide explores the latest best practices in ERP customization to help your business achieve similar results.",
-     "data": {
-      "variant": "page",
-      "buttons": []
-     }
-    },
-    {
-     "type": "article",
-     "title": "1. The 2026 Advantage of Custom ERP Solutions",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Modern ERP customization delivers measurable business outcomes:"
-       },
-       {
-        "k": "p",
-        "text": "AI-Powered Process Optimization: Machine learning algorithms adapt workflows in real-time Hyper-Personalization: Role-specific interfaces boost productivity by 40% IoT Integration: Real-time equipment monitoring reduces downtime Sustainability Tracking: Custom modules for carbon footprint measurement Predictive Analytics: Custom dashboards with built-in forecasting 2026 Benchmark: Companies using strategic ERP customizations report 28% faster decision-making and 19% lower operational costs compared to standard implementations."
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "2. Industry-Specific Customization Success Stories",
-     "data": {
-      "blocks": [
-       {
-        "k": "cards",
-        "items": [
-         {
-          "title": "Manufacturing Case Study: 22% Waste Reduction",
-          "text": [
-           "A mid-sized automotive parts manufacturer implemented custom ERP modules for real-time material tracking and predictive maintenance. The solution integrated with their existing IoT sensors to:",
-           "Reduce raw material waste by 22% through precise inventory matching Cut machine downtime by 31% with predictive alerts Improve order accuracy to 99.7% with barcode integration"
-          ]
-         },
-         {
-          "title": "Retail Case Study: 35% Faster Checkouts",
-          "text": [
-           "The result was a 35% reduction in average checkout time and 18% increase in customer satisfaction scores.",
-           "2026 custom ERP dashboard with real-time analytics and AI recommendations"
-          ],
-          "bullets": [
-           "A regional retail chain customized their ERP with:",
-           "Mobile POS integration for floor staff",
-           "AI-powered inventory lookup",
-           "One-touch loyalty program access"
-          ]
-         }
-        ]
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "3. 2026 Custom ERP Development Framework",
-     "data": {
-      "blocks": [
-       {
-        "k": "list",
-        "items": [
-         {
-          "text": "The modern approach to ERP customization:"
-         },
-         {
-          "text": "Component"
-         },
-         {
-          "text": "2026 Innovation"
-         },
-         {
-          "text": "Business Impact"
-         },
-         {
-          "text": "Microservices Architecture"
-         },
-         {
-          "text": "Modular, scalable components"
-         },
-         {
-          "text": "Easier updates, lower TCO"
-         },
-         {
-          "text": "Low-Code Customization"
-         },
-         {
-          "text": "Visual development tools"
-         },
-         {
-          "text": "5x faster implementation"
-         },
-         {
-          "text": "Embedded AI"
-         },
-         {
-          "text": "Built-in machine learning"
-         },
-         {
-          "text": "Automated process optimization"
-         },
-         {
-          "text": "Blockchain Integration"
-         },
-         {
-          "text": "Secure transaction logging"
-         },
-         {
-          "text": "Enhanced compliance"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "4. Avoiding Customization Pitfalls in 2026",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Modern challenges and solutions:"
-       },
-       {
-        "k": "p",
-        "text": "Change Management: Use VR simulations for user training Data Security: Implement zero-trust architecture Integration Complexity: API-first design with standardized connectors Skill Gaps: Partner with certified ERP developers Pro Tip: In 2026, successful custom ERP projects allocate 20% of budget for continuous improvement and quarterly optimization sprints."
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "5. The Future of ERP Customization",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Emerging trends to watch:"
-       },
-       {
-        "k": "p",
-        "text": "Generative AI: Natural language customization requests Digital Twins: Virtual ERP testing environments Quantum Computing: Ultra-complex scenario modeling AR Interfaces: Hands-free ERP interaction"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "blogs/erp-ai-assistant-and-agents": {
-   "slug": "blogs/erp-ai-assistant-and-agents",
-   "title": "ERP AI: AI Assistant and AI Agents Inside Your ERP",
-   "meta": "How ERP AI works inside Inspire BD IT: an AI assistant that answers in plain English, AI agents that do routine work, and forecasts that warn you early.",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "ERP AI",
-     "title": "ERP AI: how an AI assistant and AI agents work inside your ERP",
-     "subtitle": "10 October 2026 · 6 min read ERP AI is now live in Inspire BD IT. It is the result of years of work by our team on AI features and agents, and it changes how people use their ERP: instead of only recording transactions, the ERP can now answer questions, do routine work and warn you before problems happen. This article explains what that means in practice.",
-     "data": {
-      "variant": "page",
-      "buttons": []
-     }
-    },
-    {
-     "type": "article",
-     "title": "Why AI belongs inside the ERP",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Your ERP already holds the most reliable picture of your business: every sale, purchase, stock movement, payment and payroll run. An AI tool that sits outside the ERP has to be fed exports and copies. ERP AI works where the data already is, with the same users and roles as your ERP, so it can answer from live numbers and hand work to the right person."
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "1. The AI Assistant: ask instead of searching",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Most ERP questions are simple to ask and slow to answer: find the right report, set the filters, export, sort. With the AI Assistant you ask in plain English and get a number, a table or a chart."
-       },
-       {
-        "k": "p",
-        "text": "“Who are our top 10 customers by outstanding due this month?”"
-       },
-       {
-        "k": "list",
-        "items": [
-         {
-          "text": "“Which products sold less this quarter than last quarter?”"
-         },
-         {
-          "text": "“Show stock value by warehouse as a chart.”"
-         }
-        ]
-       },
-       {
-        "k": "p",
-        "text": "Follow-up questions keep the context, so “now only the Dhaka branch” works the way you would expect."
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "2. AI Agents: from answers to actions",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "An answer is useful; work done is better."
-       },
-       {
-        "k": "p",
-        "text": "AI Agents"
-       },
-       {
-        "k": "p",
-        "text": "watch the ERP for moments that need action and prepare the work: a draft purchase order when stock reaches its reorder level, a reminder to a customer whose invoice is overdue, a nudge to a manager whose approval is waiting."
-       },
-       {
-        "k": "p",
-        "text": "People stay in control. Agents prepare and route; your team reviews and approves important actions in the ERP. The result is less typing, chasing and remembering, and fewer things that slip through the cracks."
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "3. Predictions and early warnings",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Because ERP AI learns from your own history, it can look ahead:"
-       },
-       {
-        "k": "p",
-        "text": "Demand & sales forecasting"
-       },
-       {
-        "k": "p",
-        "text": "predicts sales by product, branch, area and season."
-       },
-       {
-        "k": "p",
-        "text": "Smart reorder"
-       },
-       {
-        "k": "p",
-        "text": "suggests what to order and warns before stock-outs or expiry."
-       },
-       {
-        "k": "p",
-        "text": "Cash-flow AI"
-       },
-       {
-        "k": "p",
-        "text": "predicts cash in and out for the coming weeks."
-       },
-       {
-        "k": "p",
-        "text": "Anomaly & fraud detection"
-       },
-       {
-        "k": "p",
-        "text": "flags duplicate bills, unusual prices and stock mismatches."
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "4. Less typing with Document AI",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Document AI"
-       },
-       {
-        "k": "p",
-        "text": "reads supplier invoices, bills, receipts and delivery challans and prepares the ERP entry for your team to check and post. The original document stays attached for audit."
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "5. Briefings instead of report piles",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "AI Reports & Insights"
-       },
-       {
-        "k": "p",
-        "text": "turns the numbers into a short daily or weekly briefing: what went up, what went down and what needs attention, with links to the reports behind it."
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "Where to start",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "The quickest wins usually come from one department at a time:"
-       },
-       {
-        "k": "p",
-        "text": "Finance: Document AI for bills, anomaly detection for duplicate payments, and the cash-flow forecast."
-       },
-       {
-        "k": "p",
-        "text": "Sales: the AI Assistant for daily questions and sales forecasting for planning."
-       },
-       {
-        "k": "p",
-        "text": "Inventory and purchase: smart reorder with an agent that drafts the purchase orders."
-       },
-       {
-        "k": "p",
-        "text": "HR: CV screening and attendance insights."
-       },
-       {
-        "k": "p",
-        "text": "ERP AI works in English. See the full list of capabilities on the ERP AI page ."
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "See ERP AI on your own kind of data",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Book a live demo of the assistant, agents and forecasts with the Inspire BD IT team."
-       },
-       {
-        "k": "button",
-        "label": "Book an ERP AI demo",
-        "to": "/company/request-demo"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "blogs/erp-data-business-intelligence": {
-   "slug": "blogs/erp-data-business-intelligence",
-   "title": "Using ERP Data for Business Intelligence",
-   "meta": "Learn how to turn ERP data into business intelligence with dashboards, KPIs and analytics that drive faster, smarter decisions.",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "Advanced Analytics",
-     "title": "Turn ERP Data into Profit with Advanced Analytics",
-     "subtitle": "Top-performing companies are unlocking hidden insights in their ERP systems to boost revenue by 15-30% annually. This guide reveals the 5 most powerful analytics techniques transforming raw ERP data into measurable profit.",
-     "data": {
-      "variant": "page",
-      "buttons": []
-     }
-    },
-    {
-     "type": "article",
-     "title": "1. Cross-Functional Data Correlation Analysis",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Break down data silos to discover unexpected relationships between different business functions:"
-       },
-       {
-        "k": "p",
-        "text": "Financial + Operational: Correlate production costs with quality metrics Sales + Inventory: Match customer demand patterns with stock levels HR + Financial: Analyze workforce productivity impact on profitability Real-World Impact: A consumer goods company discovered that weekend shifts had 22% higher defect rates, leading to schedule changes that saved $1.2M annually in rework costs."
-       },
-       {
-        "k": "p",
-        "text": "Example of cross-functional data correlation dashboard showing relationships between departments"
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "2. Predictive Inventory Optimization",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Leverage machine learning to transform your inventory management:"
-       },
-       {
-        "k": "cards",
-        "items": [
-         {
-          "title": "Case Study: Retail Chain Implementation",
-          "text": "A national retailer implemented predictive inventory analytics, reducing stockouts by 68% while decreasing excess inventory by 42%. The system automatically adjusts reorder points based on 15+ variables including seasonality, promotions, and supplier lead times.",
-          "bullets": [
-           "Key components of predictive inventory:",
-           "Demand forecasting algorithms",
-           "Automated safety stock calculations",
-           "Supplier performance scoring",
-           "Real-time alerting for anomalies"
-          ]
-         }
-        ]
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "3. Customer Profitability Segmentation",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Not all customers are equally profitable. Advanced ERP analytics can reveal:"
-       },
-       {
-        "k": "list",
-        "items": [
-         {
-          "text": "Segment"
-         },
-         {
-          "text": "Characteristics"
-         },
-         {
-          "text": "Action"
-         },
-         {
-          "text": "High-Value"
-         },
-         {
-          "text": "5% of customers, 45% of profit"
-         }
-        ]
-       },
-       {
-        "k": "p",
-        "text": "VIP treatment, dedicated account managers At-Risk Declining order frequency Retention campaigns, satisfaction surveys Costly Frequent returns, high support needs Pricing adjustments, process changes Pro Tip: Combine ERP transaction data with CRM information for 360° customer profitability views."
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "4. AI-Driven Price Optimization",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Modern ERP systems can analyze thousands of pricing factors in real-time:"
-       },
-       {
-        "k": "list",
-        "items": [
-         {
-          "text": "Competitor pricing data"
-         },
-         {
-          "text": "Demand elasticity curves"
-         },
-         {
-          "text": "Inventory levels and turnover rates"
-         },
-         {
-          "text": "Customer-specific buying patterns"
-         },
-         {
-          "text": "AI-powered pricing recommendation engine with scenario modeling"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "5. Cash Flow Forecasting with Scenario Planning",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Transform financial data into predictive cash flow models:"
-       },
-       {
-        "k": "cards",
-        "items": [
-         {
-          "title": "Case Study: Manufacturing Firm",
-          "text": [
-           "By implementing 13-week rolling cash flow forecasts with scenario planning, a mid-sized manufacturer reduced emergency borrowing by 82% and improved their working capital position by $3.4M within six months.",
-           "Multiple scenario modeling (best case/worst case/most likely) Visualization of cash flow drivers Early warning indicators"
-          ],
-          "bullets": [
-           "Essential components:",
-           "Automated data feeds from AR/AP modules"
-          ]
-         },
-         {
-          "title": "Implementing Your ERP Analytics Strategy",
-          "text": [
-           "Start small: Pick one high-impact area to prove value Clean your data: Invest in data quality upfront Focus on actionability: Every dashboard should drive specific decisions Measure ROI: Track the financial impact of analytics initiatives Final Insight: Companies that fully leverage ERP analytics grow 2.3x faster than industry peers (Aberdeen Group).",
-           "Your ERP system contains millions of dollars in untapped profit potential. By applying these advanced analytics techniques, you can transform raw data into one of your organization's most valuable strategic assets."
-          ]
-         }
-        ]
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "blogs/erp-financial-management-innovations": {
-   "slug": "blogs/erp-financial-management-innovations",
-   "title": "ERP Financial Management Innovations",
-   "meta": "New innovations in ERP financial management: real-time reporting, automated reconciliation, AI forecasting and tax compliance.",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": null,
-     "title": "ERP Financial Management Innovations",
-     "subtitle": "New innovations in ERP financial management: real-time reporting, automated reconciliation, AI forecasting and tax compliance.",
-     "data": {
-      "variant": "page",
-      "buttons": []
-     }
-    },
-    {
-     "type": "article",
-     "title": null,
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "html"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "blogs/erp-hr-trends": {
-   "slug": "blogs/erp-hr-trends",
-   "title": "Top ERP HR Trends for Workforce Optimization",
-   "meta": "The top ERP HR trends shaping workforce management: self-service portals, AI in recruitment, payroll automation and people analytics.",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "Human Resources",
-     "title": "Top ERP HR Trends for 2026: Smarter Workforce Optimization",
-     "subtitle": "February 18, 2026 5 min read In 2026, ERP-integrated HR solutions are revolutionizing workforce management. Leading organizations are leveraging these tools to cut hiring time in half while using AI-powered analytics to significantly improve employee retention rates. This article explores the cutting-edge features transforming HR operations in next-generation ERP systems.",
-     "data": {
-      "variant": "page",
-      "buttons": []
-     }
-    },
-    {
-     "type": "article",
-     "title": "1. The AI Revolution in HR Processes",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Modern ERP HR modules now incorporate sophisticated AI capabilities that are redefining talent management:"
-       },
-       {
-        "k": "p",
-        "text": "Intelligent Recruitment: Natural language processing analyzes resumes and matches candidates to job requirements with 92% accuracy Predictive Retention: Machine learning models identify at-risk employees 6-9 months before turnover Automated Onboarding: Chatbots handle 80% of routine new hire questions and paperwork Skills Gap Analysis: AI maps current workforce capabilities against future business needs Bias Detection: Algorithms flag potentially discriminatory language in job postings and evaluations 2026 Benchmark: Companies using AI-enhanced ERP HR modules report 50% faster hiring cycles and 35% improvement in first-year retention rates compared to traditional systems."
-       },
-       {
-        "k": "cards",
-        "items": [
-         {
-          "title": "Case Study: Global Tech Firm Reduces Hiring Time by 58%",
-          "text": "A Fortune 500 technology company implemented Oracle Cloud HCM's AI recruiting tools within their ERP system. The solution reduced time-to-hire from 42 to 18 days while improving candidate quality scores by 27%. The AI-powered system automatically screened 12,000 monthly applications, identifying top candidates based on both skills and cultural fit indicators."
-         }
-        ]
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "2. Unified Workforce Analytics",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Next-gen ERP systems break down HR data silos with powerful analytics integrations:"
-       },
-       {
-        "k": "p",
-        "text": "2026 ERP-HRM analytics dashboard showing real-time workforce insights"
-       },
-       {
-        "k": "cards",
-        "items": [
-         {
-          "title": "Key Analytics Features",
-          "text": "Real-time Headcount Planning: Visualize workforce needs across departments and locations Compensation Benchmarking: Compare pay scales against industry standards Productivity Correlations: Identify factors impacting team performance Diversity Metrics: Track representation across all levels Learning ROI: Measure training impact on performance"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "3. Hyper-Personalized Employee Experiences",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "2026 ERP systems deliver individualized HR experiences at scale:"
-       },
-       {
-        "k": "p",
-        "text": "Adaptive Career Paths: AI recommends personalized development plans Dynamic Benefits: Systems suggest optimal benefit packages based on life stage Sentiment Analysis: Continuous pulse surveys with real-time feedback Microlearning: Bite-sized training modules delivered contextually Wellness Integration: Health data connected to productivity analytics"
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "4. Implementation Roadmap for 2026",
-     "data": {
-      "blocks": [
-       {
-        "k": "list",
-        "items": [
-         {
-          "text": "Successful adoption requires strategic planning:"
-         },
-         {
-          "text": "Phase"
-         },
-         {
-          "text": "Key Activities"
-         },
-         {
-          "text": "Timeline"
-         },
-         {
-          "text": "Assessment"
-         }
-        ]
-       },
-       {
-        "k": "p",
-        "text": "Current state analysis, needs identification 2-4 weeks Vendor Selection RFPs, demonstrations, ROI analysis 4-8 weeks Data Migration HRIS consolidation, data cleansing 6-12 weeks Pilot Testing Limited rollout, user feedback 4-8 weeks Full Deployment Organization-wide implementation 8-16 weeks Optimization Continuous improvement, new features Ongoing Implementation Insight: Organizations that involve HR staff in system design from the beginning see 40% faster adoption rates and 30% higher satisfaction scores."
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "5. Emerging Trends to Watch",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "The future of ERP HR technology includes:"
-       },
-       {
-        "k": "p",
-        "text": "Generative AI: Automated job description writing and interview question generation Blockchain Credentials: Immutable records of education and certifications VR Onboarding: Immersive orientation experiences for remote employees Predictive Workforce Planning: Scenario modeling for organizational changes Emotion AI: Voice and facial analysis for employee well-being monitoring"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "blogs/erp-implementation-guide": {
-   "slug": "blogs/erp-implementation-guide",
-   "title": "ERP Implementation Guide: 7 Proven Steps",
-   "meta": "Plan your ERP rollout with 7 proven steps: scoping, data migration, training and go-live. A practical ERP implementation guide for businesses.",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "Implementation",
-     "title": "ERP Implementation Guide: 7 Proven Steps for 2026",
-     "subtitle": "Implementing an Enterprise Resource Planning (ERP) system in 2026 demands a strategic approach to navigate evolving digital landscapes. Our proven 7-step framework reduces implementation risks by 60% while ensuring on-time, on-budget delivery for your organization's digital transformation.",
-     "data": {
-      "variant": "page",
-      "buttons": []
-     }
-    },
-    {
-     "type": "article",
-     "title": "1. Strategic Planning & Business Process Mapping",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Begin with a comprehensive digital maturity assessment to identify gaps and opportunities in your current workflows. Leading organizations in 2026 are investing 25% more time in planning phases to ensure ERP success."
-       },
-       {
-        "k": "cards",
-        "items": [
-         {
-          "title": "Key Activities:",
-          "text": "Process documentation: Map 300+ business processes with RPA tools Gap analysis: Identify automation opportunities with AI integration ROI forecasting: Set measurable KPIs for implementation success Vendor evaluation: Scorecard assessment of 5-7 potential solutions 2026 Insight: Companies completing thorough process mapping experience 45% fewer customization requests and 30% faster user adoption ."
-         }
-        ]
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "2. Selecting the Right ERP Solution for 2026",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "The ERP market has evolved significantly with these 2026 must-have features :"
-       },
-       {
-        "k": "list",
-        "items": [
-         {
-          "text": "Feature"
-         },
-         {
-          "text": "Importance"
-         },
-         {
-          "text": "2026 Benchmark"
-         },
-         {
-          "text": "AI-Powered Analytics"
-         },
-         {
-          "text": "Critical"
-         },
-         {
-          "text": "Predictive insights with 90%+ accuracy"
-         },
-         {
-          "text": "Hybrid Cloud Architecture"
-         },
-         {
-          "text": "High"
-         },
-         {
-          "text": "Seamless multi-cloud deployment"
-         },
-         {
-          "text": "Industry-Specific Modules"
-         },
-         {
-          "text": "Essential"
-         },
-         {
-          "text": "Pre-configured for your vertical"
-         },
-         {
-          "text": "IoT Integration"
-         },
-         {
-          "text": "High"
-         },
-         {
-          "text": "Real-time equipment monitoring"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "3. Building Your 2026 ERP Dream Team",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Successful implementations require cross-functional collaboration with these key roles:"
-       },
-       {
-        "k": "cards",
-        "items": [
-         {
-          "title": "Core Team Members",
-          "bullets": [
-           "Executive Sponsor (C-level authority)",
-           "ERP Project Manager (Agile certified)",
-           "Functional Leads (All business units)"
-          ]
-         },
-         {
-          "title": "Supporting Roles",
-          "bullets": [
-           "Data Migration Specialists",
-           "Change Management Experts",
-           "Security & Compliance Officers"
-          ]
-         }
-        ]
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "4. Data Migration: 2026 Best Practices",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Modern data challenges require advanced solutions:"
-       },
-       {
-        "k": "p",
-        "text": "2026 Standard: AI-powered data cleansing tools now reduce migration errors by 72% compared to manual methods."
-       },
-       {
-        "k": "cards",
-        "items": [
-         {
-          "title": "Migration Checklist",
-          "text": "Conduct complete data audit (include unstructured data) Implement automated cleansing tools Establish data governance framework Run parallel testing for 3 full cycles Validate with 200% sample size of legacy data"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "5. Agile Implementation Methodology",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "The waterfall approach is obsolete. 2026 implementations use:"
-       },
-       {
-        "k": "cards",
-        "items": [
-         {
-          "title": "Sprint Planning",
-          "text": "2-week cycles with defined deliverables"
-         },
-         {
-          "title": "Continuous Testing",
-          "text": "Automated regression testing"
-         },
-         {
-          "title": "Stakeholder Demos",
-          "text": "Monthly showcase of progress"
-         }
-        ]
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "6. Change Management for 2026 Workforce",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Modern employees expect engaging adoption programs:"
-       },
-       {
-        "k": "p",
-        "text": "Microlearning (5-7 minute training modules) VR simulations for complex processes Gamification with real performance rewards AI chatbots for instant support"
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "7. Post-Implementation Optimization",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Go-live is just the beginning. Top performers in 2026 2026 Benchmark: Organizations with continuous optimization programs achieve 27% faster ROI and 40% higher user satisfaction ."
-       },
-       {
-        "k": "cards",
-        "items": [
-         {
-          "title": "Optimization Roadmap",
-          "bullets": [
-           "0-30 Days:",
-           "Hypercare support, issue resolution",
-           "1-3 Months:",
-           "Advanced user training, process refinement 3-6 Months:",
-           "Automation enhancements, KPI analysis",
-           "6-12 Months:",
-           "AI model training, predictive analytics"
-          ]
-         }
-        ]
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "2026 ERP Implementation Timeline",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Typical project duration for mid-size enterprises:"
-       },
-       {
-        "k": "cards",
-        "items": [
-         {
-          "title": "Core Implementation",
-          "bullets": [
-           "Planning: 6-8 weeks",
-           "Configuration: 10-12 weeks",
-           "Testing: 4-6 weeks"
-          ]
-         },
-         {
-          "title": "Deployment",
-          "bullets": [
-           "Pilot: 2-3 weeks",
-           "Phased Rollout: 4-8 weeks",
-           "Hypercare: 4 weeks"
-          ]
-         },
-         {
-          "title": "Ready to Start Your ERP Journey?",
-          "text": "Download our free 2026 ERP Implementation Checklist with 150+ action items and timeline templates."
-         }
-        ]
-       }
-      ]
+      "kind": "blog"
      }
     }
    ]
@@ -3382,30 +2154,23 @@
      }
     },
     {
-     "type": "jobs",
+     "type": "job_list",
      "key": "jobs",
      "eyebrow": "Open positions",
      "title": "Find Your Perfect Role",
      "subtitle": "Browse through our open positions for Junior Software Engineers and Internships",
+     "data": {}
+    },
+    {
+     "type": "cta",
+     "key": "cta",
+     "title": "Do not see your role?",
+     "subtitle": "Send us your CV and we will get in touch when a suitable position opens.",
      "data": {
-      "items": [
+      "buttons": [
        {
-        "title": "Jr. Software Engineer - ERP Development, Implementation & Maintenance (Internship)",
-        "location": "Remote",
-        "type": "Internship (3-6 months)",
-        "level": "Entry Level",
-        "text": "Gain hands-on experience in ERP development, implementation and maintenance. This internship offers a performance-based stipend and is perfect for aspiring software engineers looking to build their skills in real-world ERP systems.",
-        "posted": "Posted 2 days ago",
-        "applicants": "5 applicants"
-       },
-       {
-        "title": "Jr. Software Engineer - ERP Development, Implementation & Maintenance (Full-time)",
-        "location": "Remote/Hybrid, Dhaka",
-        "type": "Full-time",
-        "level": "Entry Level (0-1 year)",
-        "text": "Full-time position for a junior software engineer to work on ERP development, implementation and maintenance. Freshers with strong fundamentals are encouraged to apply. Work with modern technologies and grow your career with us.",
-        "posted": "Posted 2 days ago",
-        "applicants": "7 applicants"
+        "label": "Contact us",
+        "to": "/company/contact"
        }
       ]
      }
@@ -3428,833 +2193,13 @@
      }
     },
     {
-     "type": "posts",
-     "key": "posts",
+     "type": "post_list",
+     "key": "list",
      "eyebrow": "News",
      "title": "Latest ERP Industry News",
-     "subtitle": "Stay informed about the latest developments in enterprise technology",
+     "subtitle": "Stay informed about the latest developments in enterprise technology.",
      "data": {
-      "items": [
-       {
-        "title": "Global Manufacturer Cuts Costs by 34% with ERP",
-        "text": "How Acme Industries transformed their operations with a comprehensive ERP implementation",
-        "date": "June 28, 2025",
-        "to": "/news/global-manufacturer-cuts-costs-by-34-with-erp"
-       },
-       {
-        "title": "New ERP Certification Program Launches",
-        "text": "The ERP Professional Association announces updated certification tracks including Cloud ERP",
-        "date": "June 25, 2025",
-        "to": "/news/new-erp-certification-program-launches"
-       },
-       {
-        "title": "Generative AI Transforms ERP User Experience",
-        "text": "Leading ERP vendors are integrating generative AI to create natural language interfaces",
-        "date": "June 20, 2025",
-        "to": "/news/generative-ai-transforms-erp-user-experience"
-       },
-       {
-        "title": "New ERP Security Vulnerabilities Discovered",
-        "text": "Cybersecurity researchers have identified critical vulnerabilities in several major ERP systems",
-        "date": "June 18, 2025",
-        "to": "/news/new-erp-security-vulnerabilities-discovered"
-       },
-       {
-        "title": "Smart Factories See 30% Efficiency Gains",
-        "text": "Manufacturers combining ERP systems with IoT sensors are achieving unprecedented operational efficiency.",
-        "date": "June 15, 2025",
-        "to": "/news/smart-factories-see-30-efficiency-gains"
-       },
-       {
-        "title": "Real-time Analytics Now Standard in ERP",
-        "text": "Modern ERP systems now include built-in real-time analytics dashboards with predictive capabilities.",
-        "date": "June 12, 2025",
-        "to": "/news/real-time-analytics-now-standard-in-erp"
-       },
-       {
-        "title": "Mobile ERP Usage Doubles in 2025",
-        "text": "New report shows mobile access to ERP systems has increased by 112% year-over-year.",
-        "date": "June 10, 2025",
-        "to": "/news/mobile-erp-usage-doubles-in-2025"
-       },
-       {
-        "title": "AI-Driven Forecasting Revolutionizes Supply Chains",
-        "text": "ERP platforms with AI modules now provide real-time demand forecasts and auto-replenishment for enterprises.",
-        "date": "May 27, 2025",
-        "to": "/news/ai-driven-forecasting-revolutionizes-supply-chains"
-       },
-       {
-        "title": "ERP Vendors Add Blockchain for Audit Trails",
-        "text": "Blockchain integration is becoming standard in ERP systems to ensure immutable records for finance teams.",
-        "date": "May 25, 2025",
-        "to": "/news/erp-vendors-add-blockchain-for-audit-trails"
-       },
-       {
-        "title": "Open Source ERP Gains Momentum Among Startups",
-        "text": "More startups are adopting open-source ERP for cost-effectiveness and customization flexibility.",
-        "date": "May 24, 2025",
-        "to": "/news/open-source-erp-gains-momentum-among-startups"
-       },
-       {
-        "title": "ERP and CRM Integration Becomes Industry Norm",
-        "text": "Unified platforms are merging ERP and CRM modules to give businesses 360° visibility.",
-        "date": "May 23, 2025",
-        "to": "/news/erp-and-crm-integration-becomes-industry-norm"
-       },
-       {
-        "title": "SaaS ERP Growth Hits $50B Globally",
-        "text": "Gartner reports SaaS-based ERP solutions are on track to dominate the market by end of 2025.",
-        "date": "May 21, 2025",
-        "to": "/news/saas-erp-growth-hits-50b-globally"
-       },
-       {
-        "title": "ERP for SMEs: New Affordable Plans Announced",
-        "text": "Vendors roll out ERP plans tailored for small to mid-sized businesses with simplified features.",
-        "date": "May 20, 2025",
-        "to": "/news/erp-for-smes-new-affordable-plans-announced"
-       },
-       {
-        "title": "Data Privacy Laws Push ERP Vendors to Adapt",
-        "text": "ERP companies are adjusting to stricter global data regulations like GDPR 2.0 and APAC privacy laws.",
-        "date": "May 18, 2025",
-        "to": "/news/data-privacy-laws-push-erp-vendors-to-adapt"
-       },
-       {
-        "title": "Voice-Activated ERP Assistants Launch Globally",
-        "text": "New AI assistants inside ERP systems allow users to query reports via voice like using Alexa.",
-        "date": "May 16, 2025",
-        "to": "/news/voice-activated-erp-assistants-launch-globally"
-       },
-       {
-        "title": "Manufacturers Embrace ERP Digital Twins",
-        "text": "ERP platforms now simulate operations with digital twins for real-time monitoring and optimization.",
-        "date": "May 14, 2025",
-        "to": "/news/manufacturers-embrace-erp-digital-twins"
-       },
-       {
-        "title": "Government Agencies Move to Cloud ERP",
-        "text": "Major public sector organizations are shifting to secure cloud-based ERP for transparency and cost-savings.",
-        "date": "May 11, 2025",
-        "to": "/news/government-agencies-move-to-cloud-erp"
-       },
-       {
-        "title": "ERP-Powered Personalization Boosts Retail Revenue",
-        "text": "Retailers using ERP-integrated customer data see 35% higher average order values",
-        "date": "May 7, 2025",
-        "to": "/news/erp-powered-personalization-boosts-retail-revenue"
-       },
-       {
-        "title": "ERP Systems Reduce Construction Delays by 52%",
-        "text": "Major infrastructure projects leverage ERP for materials tracking and compliance automation",
-        "date": "May 3, 2025",
-        "to": "/news/erp-systems-reduce-construction-delays-by-52"
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "Industry-Specific Solutions",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Tailored ERP solutions for your business sector"
-       },
-       {
-        "k": "cards",
-        "items": [
-         {
-          "title": "Manufacturing",
-          "text": "New IIoT integrations reduce downtime by 27% in smart factories using real-time machine monitoring."
-         },
-         {
-          "title": "Healthcare",
-          "text": "HIPAA-compliant systems now integrate with telemedicine platforms for unified patient management."
-         },
-         {
-          "title": "Retail",
-          "text": "Omnichannel inventory systems now predict demand with 92% accuracy using AI and POS data."
-         },
-         {
-          "title": "Construction",
-          "text": "New mobile apps enable real-time project tracking with BIM integration on job sites."
-         }
-        ]
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "Transformation Journeys",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Real success stories that inspire and transform businesses Manufacturing 18 Month Journey"
-       },
-       {
-        "k": "cards",
-        "items": [
-         {
-          "title": "From Legacy Systems to Digital Powerhouse",
-          "text": "How a 300-employee automotive supplier revolutionized their operations with our ERP solution.",
-          "bullets": [
-           "65% Faster Processing",
-           "99.7% Inventory Accuracy",
-           "$2.4M Annual Savings",
-           "Read Full Story",
-           "Healthcare 12 Month Rollout"
-          ]
-         },
-         {
-          "title": "Revolutionizing Patient Care Through Technology",
-          "text": "A 5-hospital network achieved seamless operations with our integrated ERP solution.",
-          "bullets": [
-           "40% Faster Billing",
-           "92% Compliance",
-           "3.2M Annual Savings",
-           "Read Full Story"
-          ]
-         }
-        ]
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "Vendor Updates",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Latest announcements from leading ERP providers"
-       },
-       {
-        "k": "cards",
-        "items": [
-         {
-          "title": "SAP S/4HANA 2025 Edition",
-          "text": "Next-gen release features embedded AI across all modules and 40% faster processing for complex analytics.",
-          "bullets": [
-           "New sustainability dashboard",
-           "Enhanced industry clouds"
-          ]
-         },
-         {
-          "title": "Oracle Netsuite ✕ Microsoft Teams",
-          "text": [
-           "New deep integration allows collaborative workflows directly within Teams interface with real-time ERP data.",
-           "Key Benefit: Users can approve purchase orders without leaving Teams."
-          ]
-         },
-         {
-          "title": "Global Tax Regulation Changes",
-          "text": "Most major ERP vendors will release automated updates.",
-          "bullets": [
-           "17 Countries Affected",
-           "Major updates requiring ERP system patches or configuration changes:",
-           "Country",
-           "Change",
-           "Deadline",
-           "United States",
-           "New state sales tax rules",
-           "Oct 2025",
-           "United Kingdom",
-           "VAT reverse charge expansion",
-           "Jan 2026"
-          ]
-         }
-        ]
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "ERP Knowledge Center",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Resources to help you navigate the ERP landscape"
-       },
-       {
-        "k": "cards",
-        "items": [
-         {
-          "title": "ERP Selection Guide",
-          "text": "50-page whitepaper on evaluation criteria, vendor comparisons & planning."
-         },
-         {
-          "title": "Implementation Webinar",
-          "text": "90-minute recorded session with ERP experts sharing best practices for successful implementations."
-         },
-         {
-          "title": "ERP FAQ",
-          "text": "Answers to 100+ frequently asked questions about ERP systems, migrations, and optimization."
-         }
-        ]
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": "More ERP stories",
-     "data": {
-      "blocks": [
-       {
-        "k": "p",
-        "text": "Cloud ERP adoption reaches a tipping point How a global manufacturer cut costs by 34% with ERP"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/ai-driven-forecasting-revolutionizes-supply-chains": {
-   "slug": "news/ai-driven-forecasting-revolutionizes-supply-chains",
-   "title": "AI-Driven Forecasting Revolutionizes Supply Chains",
-   "meta": "ERP platforms with AI modules now provide real-time demand forecasts and auto-replenishment for enterprises",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "May 27, 2025",
-     "title": "AI-Driven Forecasting Revolutionizes Supply Chains",
-     "subtitle": "ERP platforms with AI modules now provide real-time demand forecasts and auto-replenishment for enterprises.",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/cloud-erp-adoption-soars-2025-market-report": {
-   "slug": "news/cloud-erp-adoption-soars-2025-market-report",
-   "title": "Cloud ERP Adoption Soars: 2025 Market Report",
-   "meta": "New industry report shows 72% of enterprises now run critical ERP functions in the cloud as hybrid models dominate",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "$101B Market Value 2027",
-     "title": "Cloud ERP Adoption Soars: 2025 Market Report",
-     "subtitle": "New industry report shows 72% of enterprises now run critical ERP functions in the cloud as hybrid models dominate Photo: Courtesy of Unsplash/ScreenGraph The accelerated migration toward cloud-based ERP solutions is fundamentally reshaping enterprise operations, with hybrid deployment models emerging as the dominant strategy for 89% of large organizations. This strategic shift is primarily fueled by the critical need for dynamic scalability during volatile demand cycles and the necessity to maintain legacy systems during phased digital transitions. Industry-specific adoption rates reveal manu",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/cloud-erp-adoption-tipping-point": {
-   "slug": "news/cloud-erp-adoption-tipping-point",
-   "title": "Cloud ERP Adoption Reaches a Tipping Point",
-   "meta": "Cloud ERP adoption has reached a tipping point. See the market data, what is driving the shift and what it means for your business.",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "72%",
-     "title": "Cloud ERP Adoption Reaches Tipping Point in 2025",
-     "subtitle": "New industry report shows 72% of enterprises now run critical ERP functions in the cloud as hybrid models dominate Photo: Christina @ wocintechchat.com/Unsplash T he enterprise technology landscape has reached a watershed moment with cloud-based ERP systems now powering the majority of business operations. The 2025 Global Cloud ERP Report reveals that 72% of organizations have migrated core ERP functions to the cloud, up from just 44% in 2020. This seismic shift reflects both technological maturity and changing business priorities in the post-digital transformation era. \"We've crossed the chas",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/data-privacy-laws-push-erp-vendors-to-adapt": {
-   "slug": "news/data-privacy-laws-push-erp-vendors-to-adapt",
-   "title": "Data Privacy Laws Push ERP Vendors to Adapt",
-   "meta": "ERP companies are adjusting to stricter global data regulations like GDPR 2.0 and APAC privacy laws",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "May 18, 2025",
-     "title": "Data Privacy Laws Push ERP Vendors to Adapt",
-     "subtitle": "ERP companies are adjusting to stricter global data regulations like GDPR 2.0 and APAC privacy laws.",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/erp-and-crm-integration-becomes-industry-norm": {
-   "slug": "news/erp-and-crm-integration-becomes-industry-norm",
-   "title": "ERP and CRM Integration Becomes Industry Norm",
-   "meta": "Unified platforms are merging ERP and CRM modules to give businesses 360° visibility",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "May 23, 2025",
-     "title": "ERP and CRM Integration Becomes Industry Norm",
-     "subtitle": "Unified platforms are merging ERP and CRM modules to give businesses 360° visibility.",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/erp-for-smes-new-affordable-plans-announced": {
-   "slug": "news/erp-for-smes-new-affordable-plans-announced",
-   "title": "ERP for SMEs: New Affordable Plans Announced",
-   "meta": "Vendors roll out ERP plans tailored for small to mid-sized businesses with simplified features",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "May 20, 2025",
-     "title": "ERP for SMEs: New Affordable Plans Announced",
-     "subtitle": "Vendors roll out ERP plans tailored for small to mid-sized businesses with simplified features.",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/erp-powered-personalization-boosts-retail-revenue": {
-   "slug": "news/erp-powered-personalization-boosts-retail-revenue",
-   "title": "ERP-Powered Personalization Boosts Retail Revenue",
-   "meta": "Retailers using ERP-integrated customer data see 35% higher average order values",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "May 7, 2025",
-     "title": "ERP-Powered Personalization Boosts Retail Revenue",
-     "subtitle": "Retailers using ERP-integrated customer data see 35% higher average order values",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/erp-systems-reduce-construction-delays-by-52": {
-   "slug": "news/erp-systems-reduce-construction-delays-by-52",
-   "title": "ERP Systems Reduce Construction Delays by 52%",
-   "meta": "Major infrastructure projects leverage ERP for materials tracking and compliance automation",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "May 3, 2025",
-     "title": "ERP Systems Reduce Construction Delays by 52%",
-     "subtitle": "Major infrastructure projects leverage ERP for materials tracking and compliance automation",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/erp-vendors-add-blockchain-for-audit-trails": {
-   "slug": "news/erp-vendors-add-blockchain-for-audit-trails",
-   "title": "ERP Vendors Add Blockchain for Audit Trails",
-   "meta": "Blockchain integration is becoming standard in ERP systems to ensure immutable records for finance teams",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "May 25, 2025",
-     "title": "ERP Vendors Add Blockchain for Audit Trails",
-     "subtitle": "Blockchain integration is becoming standard in ERP systems to ensure immutable records for finance teams.",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/generative-ai-transforms-erp-user-experience": {
-   "slug": "news/generative-ai-transforms-erp-user-experience",
-   "title": "Generative AI Transforms ERP User Experience",
-   "meta": "Leading ERP vendors are integrating generative AI to create natural language interfaces",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "June 20, 2025",
-     "title": "Generative AI Transforms ERP User Experience",
-     "subtitle": "Leading ERP vendors are integrating generative AI to create natural language interfaces",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/global-manufacturer-cuts-costs-by-34-with-erp": {
-   "slug": "news/global-manufacturer-cuts-costs-by-34-with-erp",
-   "title": "Global Manufacturer Cuts Costs by 34% with ERP",
-   "meta": "How Acme Industries transformed their operations with a comprehensive ERP implementation",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "June 28, 2025",
-     "title": "Global Manufacturer Cuts Costs by 34% with ERP",
-     "subtitle": "How Acme Industries transformed their operations with a comprehensive ERP implementation",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/government-agencies-move-to-cloud-erp": {
-   "slug": "news/government-agencies-move-to-cloud-erp",
-   "title": "Government Agencies Move to Cloud ERP",
-   "meta": "Major public sector organizations are shifting to secure cloud-based ERP for transparency and cost-savings",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "May 11, 2025",
-     "title": "Government Agencies Move to Cloud ERP",
-     "subtitle": "Major public sector organizations are shifting to secure cloud-based ERP for transparency and cost-savings.",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/manufacturer-cuts-costs-with-erp": {
-   "slug": "news/manufacturer-cuts-costs-with-erp",
-   "title": "Manufacturer Cuts Costs by 34% with ERP",
-   "meta": "How a global manufacturer cut operating costs by 34% with ERP: the modules, process changes and results behind the project.",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "34%",
-     "title": "How a Global Manufacturer Cut Costs by 34% with ERP",
-     "subtitle": "How Acme Industries transformed their operations with a comprehensive ERP implementation across 12 countries Photo: ThisIsEngineering/Pexels A cme Industries, a global manufacturing leader with operations in 12 countries, has achieved a remarkable 34% reduction in operational costs following their enterprise-wide ERP implementation. The 18-month transformation project standardized processes across all facilities, eliminated redundant systems, and provided real-time visibility into global operations. \"We went from 27 disparate systems to one unified platform,\" said Sarah Chen, Acme's Chief Tran",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    },
-    {
-     "type": "article",
-     "title": null,
-     "data": {
-      "blocks": [
-       {
-        "k": "cards",
-        "items": [
-         {
-          "title": "Key Implementation Lessons",
-          "text": [
-           "Successful implementations focus on reengineering processes before system configuration.",
-           "Clean, standardized data is the foundation for ERP success.",
-           "User adoption makes or breaks ERP implementations."
-          ]
-         },
-         {
-          "title": "Common Challenges",
-          "bullets": [
-           "Resistance to process changes",
-           "Data migration complexities",
-           "Integration with shop floor systems"
-          ]
-         }
-        ]
-       },
-       {
-        "k": "tiles",
-        "items": [
-         {
-          "title": "Manufacturing ERP Guide",
-          "to": "/company/contact"
-         }
-        ]
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/manufacturers-embrace-erp-digital-twins": {
-   "slug": "news/manufacturers-embrace-erp-digital-twins",
-   "title": "Manufacturers Embrace ERP Digital Twins",
-   "meta": "ERP platforms now simulate operations with digital twins for real-time monitoring and optimization",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "May 14, 2025",
-     "title": "Manufacturers Embrace ERP Digital Twins",
-     "subtitle": "ERP platforms now simulate operations with digital twins for real-time monitoring and optimization.",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/mobile-erp-usage-doubles-in-2025": {
-   "slug": "news/mobile-erp-usage-doubles-in-2025",
-   "title": "Mobile ERP Usage Doubles in 2025",
-   "meta": "New report shows mobile access to ERP systems has increased by 112% year-over-year",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "June 10, 2025",
-     "title": "Mobile ERP Usage Doubles in 2025",
-     "subtitle": "New report shows mobile access to ERP systems has increased by 112% year-over-year.",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/new-erp-certification-program-launches": {
-   "slug": "news/new-erp-certification-program-launches",
-   "title": "New ERP Certification Program Launches",
-   "meta": "The ERP Professional Association announces updated certification tracks including Cloud ERP",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "June 25, 2025",
-     "title": "New ERP Certification Program Launches",
-     "subtitle": "The ERP Professional Association announces updated certification tracks including Cloud ERP",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/new-erp-security-vulnerabilities-discovered": {
-   "slug": "news/new-erp-security-vulnerabilities-discovered",
-   "title": "New ERP Security Vulnerabilities Discovered",
-   "meta": "Cybersecurity researchers have identified critical vulnerabilities in several major ERP systems",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "June 18, 2025",
-     "title": "New ERP Security Vulnerabilities Discovered",
-     "subtitle": "Cybersecurity researchers have identified critical vulnerabilities in several major ERP systems",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/open-source-erp-gains-momentum-among-startups": {
-   "slug": "news/open-source-erp-gains-momentum-among-startups",
-   "title": "Open Source ERP Gains Momentum Among Startups",
-   "meta": "More startups are adopting open-source ERP for cost-effectiveness and customization flexibility",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "May 24, 2025",
-     "title": "Open Source ERP Gains Momentum Among Startups",
-     "subtitle": "More startups are adopting open-source ERP for cost-effectiveness and customization flexibility.",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/real-time-analytics-now-standard-in-erp": {
-   "slug": "news/real-time-analytics-now-standard-in-erp",
-   "title": "Real-time Analytics Now Standard in ERP",
-   "meta": "Modern ERP systems now include built-in real-time analytics dashboards with predictive capabilities",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "June 12, 2025",
-     "title": "Real-time Analytics Now Standard in ERP",
-     "subtitle": "Modern ERP systems now include built-in real-time analytics dashboards with predictive capabilities.",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/saas-erp-growth-hits-50b-globally": {
-   "slug": "news/saas-erp-growth-hits-50b-globally",
-   "title": "SaaS ERP Growth Hits $50B Globally",
-   "meta": "Gartner reports SaaS-based ERP solutions are on track to dominate the market by end of 2025",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "May 21, 2025",
-     "title": "SaaS ERP Growth Hits $50B Globally",
-     "subtitle": "Gartner reports SaaS-based ERP solutions are on track to dominate the market by end of 2025.",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/smart-factories-see-30-efficiency-gains": {
-   "slug": "news/smart-factories-see-30-efficiency-gains",
-   "title": "Smart Factories See 30% Efficiency Gains",
-   "meta": "Manufacturers combining ERP systems with IoT sensors are achieving unprecedented operational efficiency",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "June 15, 2025",
-     "title": "Smart Factories See 30% Efficiency Gains",
-     "subtitle": "Manufacturers combining ERP systems with IoT sensors are achieving unprecedented operational efficiency.",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
-     }
-    }
-   ]
-  },
-  "news/voice-activated-erp-assistants-launch-globally": {
-   "slug": "news/voice-activated-erp-assistants-launch-globally",
-   "title": "Voice-Activated ERP Assistants Launch Globally",
-   "meta": "New AI assistants inside ERP systems allow users to query reports via voice like using Alexa",
-   "sections": [
-    {
-     "type": "hero",
-     "eyebrow": "May 16, 2025",
-     "title": "Voice-Activated ERP Assistants Launch Globally",
-     "subtitle": "New AI assistants inside ERP systems allow users to query reports via voice like using Alexa.",
-     "data": {
-      "variant": "page",
-      "buttons": [
-       {
-        "label": "Back to news",
-        "to": "/news",
-        "style": "ghost"
-       }
-      ]
+      "kind": "news"
      }
     }
    ]
@@ -8613,5 +6558,462 @@
    ".site",
    551
   ]
+ ],
+ "posts": [
+  {
+   "type": "blog",
+   "slug": "cloud-erp-vs-on-premise-erp",
+   "title": "Cloud ERP vs On-Premise: 2026 Cost-Benefit Analysis",
+   "excerpt": "Comparative analysis showing how cloud ERP reduces IT costs by 40% while improving scalability - complete with ROI calculator for your business size.",
+   "category": "Technology",
+   "date": "April 15, 2026",
+   "read_minutes": 10,
+   "content": "## 1. Total Cost of Ownership Comparison\n\nThe 2026 cost landscape shows significant differences between deployment models:\n\nAverage 5-Year Savings: 40% with Cloud ERP Cost Factor Cloud ERP On-Premise ERP Initial Implementation Lower (No hardware costs) High (Servers, infrastructure) IT Staff Requirements Reduced by 60-70% Dedicated team needed Software Updates Automatic, included Manual, additional costs Scalability Instant, pay-as-you-grow Costly hardware upgrades Disaster Recovery Built-in redundancy Additional infrastructure 5-Year TCO (Mid-size business) $250,000 $420,000 2026 Insight: The break-even point for cloud ERP has moved to just 14 months for most businesses, down from 22 months in 2022.\n\n## 2. ROI Analysis by Business Size\n\nCloud ERP delivers different value propositions based on organization size:\n\n### Quick ROI Estimator\n\nUse this simple formula to estimate your potential savings: Annual Savings = (Current IT Budget × 0.4) + (Productivity Gains × Employee Count × $8,500) Where 0.4 represents the 40% average IT cost reduction and $8,500 is the average productivity gain per employee.\n\n### Small Businesses (1-50 employees)\n\nKey benefit: Enterprise features without enterprise costs Modern cloud ERP interface designed for small businesses\n\n- Average implementation time: 2-4 weeks\n- Typical 3-year ROI: 220-280%\n\n### Mid-Market (50-500 employees)\n\n- Average implementation time: 6-10 weeks\n- Typical 3-year ROI: 180-220%\n- Key benefit: Scalability during growth periods\n\n### Enterprise (500+ employees)\n\nAverage implementation time: 12-20 weeks Typical 3-year ROI: 140-180% Key benefit: Global accessibility and standardization\n\n## 3. 2026 Technology Advantages of Cloud ERP\n\nRecent advancements have significantly expanded cloud ERP capabilities:\n\n### Case Study: Manufacturing Company Transition\n\nA mid-sized manufacturer reduced their ERP-related costs by 43% after migrating to cloud ERP in 2024. The solution provided real-time analytics across their three facilities, automated inventory replenishment, and reduced month-end close from 7 days to 2 days.\n\n### AI-Powered Features Now Standard\n\nAutomated anomaly detection in financials Predictive inventory optimization Intelligent cash flow forecasting Natural language reporting\n\n### Enhanced Integration Capabilities\n\nPre-built connectors for 500+ business applications Low-code integration tools for custom connections Real-time data synchronization API-first architecture\n\n## 4. Security Comparison: 2026 Standards\n\nSecurity concerns have traditionally favored on-premise, but cloud has caught up:\n\n- Security Aspect\n- Cloud ERP\n- On-Premise ERP\n- Data Encryption\n- 256-bit AES + quantum-ready\n- Typically 256-bit AES\n- Compliance Certifications\n- Automatically updated\n- Manual updates required\n- Patch Management\n- Automated, within 24h of release\n- Manual, often delayed\n- DDoS Protection\n- Enterprise-grade included\n- Additional cost\n\nSecurity Note: 78% of enterprises now report equivalent or better security with cloud ERP compared to their previous on-premise systems (2026 ERP Security Survey).\n\n## 5. Making the Right Choice for Your Business\n\nConsider these factors when deciding:\n\n### When Cloud ERP Makes Sense\n\n- You need rapid deployment\n- Your IT resources are limited\n- You have remote/mobile workforce\n- Your business is growing or changing\n\n### When On-Premise Might Still Be Preferred\n\nExtremely specialized customization needs Regulatory requirements preventing cloud use Existing heavy infrastructure investments\n\n### Implementation Roadmap\n\nAssess current pain points and requirements Calculate TCO for both models Evaluate vendor options Plan data migration strategy Develop change management plan",
+   "meta": "Cloud ERP vs on-premise ERP compared: upfront cost, total cost of ownership, security, scalability and which model fits your business."
+  },
+  {
+   "type": "blog",
+   "slug": "custom-erp-development-best-practices",
+   "title": "Custom ERP Development: Best Practices for 2026",
+   "excerpt": "Case studies revealing how custom ERP modules helped manufacturers reduce waste by 22% and retailers cut checkout times by 35%.",
+   "category": "Custom ERP Development",
+   "date": "March 8, 2026",
+   "read_minutes": 7,
+   "content": "## 1. The 2026 Advantage of Custom ERP Solutions\n\nModern ERP customization delivers measurable business outcomes:\n\nAI-Powered Process Optimization: Machine learning algorithms adapt workflows in real-time Hyper-Personalization: Role-specific interfaces boost productivity by 40% IoT Integration: Real-time equipment monitoring reduces downtime Sustainability Tracking: Custom modules for carbon footprint measurement Predictive Analytics: Custom dashboards with built-in forecasting 2026 Benchmark: Companies using strategic ERP customizations report 28% faster decision-making and 19% lower operational costs compared to standard implementations.\n\n## 2. Industry-Specific Customization Success Stories\n\n### Manufacturing Case Study: 22% Waste Reduction\n\nA mid-sized automotive parts manufacturer implemented custom ERP modules for real-time material tracking and predictive maintenance. The solution integrated with their existing IoT sensors to: Reduce raw material waste by 22% through precise inventory matching Cut machine downtime by 31% with predictive alerts Improve order accuracy to 99.7% with barcode integration\n\n### Retail Case Study: 35% Faster Checkouts\n\nThe result was a 35% reduction in average checkout time and 18% increase in customer satisfaction scores. 2026 custom ERP dashboard with real-time analytics and AI recommendations\n\n- A regional retail chain customized their ERP with:\n- Mobile POS integration for floor staff\n- AI-powered inventory lookup\n- One-touch loyalty program access\n\n## 3. 2026 Custom ERP Development Framework\n\n- The modern approach to ERP customization:\n- Component\n- 2026 Innovation\n- Business Impact\n- Microservices Architecture\n- Modular, scalable components\n- Easier updates, lower TCO\n- Low-Code Customization\n- Visual development tools\n- 5x faster implementation\n- Embedded AI\n- Built-in machine learning\n- Automated process optimization\n- Blockchain Integration\n- Secure transaction logging\n- Enhanced compliance\n\n## 4. Avoiding Customization Pitfalls in 2026\n\nModern challenges and solutions:\n\nChange Management: Use VR simulations for user training Data Security: Implement zero-trust architecture Integration Complexity: API-first design with standardized connectors Skill Gaps: Partner with certified ERP developers Pro Tip: In 2026, successful custom ERP projects allocate 20% of budget for continuous improvement and quarterly optimization sprints.\n\n## 5. The Future of ERP Customization\n\nEmerging trends to watch:\n\nGenerative AI: Natural language customization requests Digital Twins: Virtual ERP testing environments Quantum Computing: Ultra-complex scenario modeling AR Interfaces: Hands-free ERP interaction",
+   "meta": "Best practices for custom ERP development: requirements, architecture, integrations, testing and rollout, from the Inspire BD IT team."
+  },
+  {
+   "type": "blog",
+   "slug": "erp-ai-assistant-and-agents",
+   "title": "ERP AI: how an AI assistant and AI agents work inside your ERP",
+   "excerpt": "ERP AI is live in Inspire BD IT. How the AI assistant answers in plain English, how agents do routine work, and where to start.",
+   "category": "ERP AI",
+   "date": "October 10, 2026",
+   "read_minutes": 6,
+   "content": "## Why AI belongs inside the ERP\n\nYour ERP already holds the most reliable picture of your business: every sale, purchase, stock movement, payment and payroll run. An AI tool that sits outside the ERP has to be fed exports and copies. ERP AI works where the data already is, with the same users and roles as your ERP, so it can answer from live numbers and hand work to the right person.\n\n## 1. The AI Assistant: ask instead of searching\n\nMost ERP questions are simple to ask and slow to answer: find the right report, set the filters, export, sort. With the AI Assistant you ask in plain English and get a number, a table or a chart.\n\n“Who are our top 10 customers by outstanding due this month?”\n\n- “Which products sold less this quarter than last quarter?”\n- “Show stock value by warehouse as a chart.”\n\nFollow-up questions keep the context, so “now only the Dhaka branch” works the way you would expect.\n\n## 2. AI Agents: from answers to actions\n\nAn answer is useful; work done is better.\n\nAI Agents\n\nwatch the ERP for moments that need action and prepare the work: a draft purchase order when stock reaches its reorder level, a reminder to a customer whose invoice is overdue, a nudge to a manager whose approval is waiting.\n\nPeople stay in control. Agents prepare and route; your team reviews and approves important actions in the ERP. The result is less typing, chasing and remembering, and fewer things that slip through the cracks.\n\n## 3. Predictions and early warnings\n\nBecause ERP AI learns from your own history, it can look ahead:\n\nDemand & sales forecasting\n\npredicts sales by product, branch, area and season.\n\nSmart reorder\n\nsuggests what to order and warns before stock-outs or expiry.\n\nCash-flow AI\n\npredicts cash in and out for the coming weeks.\n\nAnomaly & fraud detection\n\nflags duplicate bills, unusual prices and stock mismatches.\n\n## 4. Less typing with Document AI\n\nDocument AI\n\nreads supplier invoices, bills, receipts and delivery challans and prepares the ERP entry for your team to check and post. The original document stays attached for audit.\n\n## 5. Briefings instead of report piles\n\nAI Reports & Insights\n\nturns the numbers into a short daily or weekly briefing: what went up, what went down and what needs attention, with links to the reports behind it.\n\n## Where to start\n\nThe quickest wins usually come from one department at a time:\n\nFinance: Document AI for bills, anomaly detection for duplicate payments, and the cash-flow forecast.\n\nSales: the AI Assistant for daily questions and sales forecasting for planning.\n\nInventory and purchase: smart reorder with an agent that drafts the purchase orders.\n\nHR: CV screening and attendance insights.\n\nERP AI works in English. See the full list of capabilities on the ERP AI page .\n\n## See ERP AI on your own kind of data\n\nBook a live demo of the assistant, agents and forecasts with the Inspire BD IT team.",
+   "meta": "How ERP AI works inside Inspire BD IT: an AI assistant that answers in plain English, AI agents that do routine work, and forecasts that warn you early."
+  },
+  {
+   "type": "blog",
+   "slug": "erp-data-business-intelligence",
+   "title": "Turn ERP Data into Profit with Advanced Analytics",
+   "excerpt": "Unlock hidden insights in your ERP data with these 5 powerful analytics methods that top companies use to boost revenue by 15-30% annually.",
+   "category": "Advanced Analytics",
+   "date": "May 22, 2026",
+   "read_minutes": 6,
+   "content": "## 1. Cross-Functional Data Correlation Analysis\n\nBreak down data silos to discover unexpected relationships between different business functions:\n\nFinancial + Operational: Correlate production costs with quality metrics Sales + Inventory: Match customer demand patterns with stock levels HR + Financial: Analyze workforce productivity impact on profitability Real-World Impact: A consumer goods company discovered that weekend shifts had 22% higher defect rates, leading to schedule changes that saved $1.2M annually in rework costs.\n\nExample of cross-functional data correlation dashboard showing relationships between departments\n\n## 2. Predictive Inventory Optimization\n\nLeverage machine learning to transform your inventory management:\n\n### Case Study: Retail Chain Implementation\n\nA national retailer implemented predictive inventory analytics, reducing stockouts by 68% while decreasing excess inventory by 42%. The system automatically adjusts reorder points based on 15+ variables including seasonality, promotions, and supplier lead times.\n\n- Key components of predictive inventory:\n- Demand forecasting algorithms\n- Automated safety stock calculations\n- Supplier performance scoring\n- Real-time alerting for anomalies\n\n## 3. Customer Profitability Segmentation\n\nNot all customers are equally profitable. Advanced ERP analytics can reveal:\n\n- Segment\n- Characteristics\n- Action\n- High-Value\n- 5% of customers, 45% of profit\n\nVIP treatment, dedicated account managers At-Risk Declining order frequency Retention campaigns, satisfaction surveys Costly Frequent returns, high support needs Pricing adjustments, process changes Pro Tip: Combine ERP transaction data with CRM information for 360° customer profitability views.\n\n## 4. AI-Driven Price Optimization\n\nModern ERP systems can analyze thousands of pricing factors in real-time:\n\n- Competitor pricing data\n- Demand elasticity curves\n- Inventory levels and turnover rates\n- Customer-specific buying patterns\n- AI-powered pricing recommendation engine with scenario modeling\n\n## 5. Cash Flow Forecasting with Scenario Planning\n\nTransform financial data into predictive cash flow models:\n\n### Case Study: Manufacturing Firm\n\nBy implementing 13-week rolling cash flow forecasts with scenario planning, a mid-sized manufacturer reduced emergency borrowing by 82% and improved their working capital position by $3.4M within six months. Multiple scenario modeling (best case/worst case/most likely) Visualization of cash flow drivers Early warning indicators\n\n- Essential components:\n- Automated data feeds from AR/AP modules\n\n### Implementing Your ERP Analytics Strategy\n\nStart small: Pick one high-impact area to prove value Clean your data: Invest in data quality upfront Focus on actionability: Every dashboard should drive specific decisions Measure ROI: Track the financial impact of analytics initiatives Final Insight: Companies that fully leverage ERP analytics grow 2.3x faster than industry peers (Aberdeen Group). Your ERP system contains millions of dollars in untapped profit potential. By applying these advanced analytics techniques, you can transform raw data into one of your organization's most valuable strategic assets.",
+   "meta": "Learn how to turn ERP data into business intelligence with dashboards, KPIs and analytics that drive faster, smarter decisions."
+  },
+  {
+   "type": "blog",
+   "slug": "erp-financial-management-innovations",
+   "title": "ERP Financial Management Innovations",
+   "excerpt": "Step-by-step guide to configuring ERP financial modules for real-time reporting, automated reconciliations, and faster month-end closures.",
+   "category": "Technology",
+   "date": "January 5, 2026",
+   "read_minutes": 9,
+   "content": "html",
+   "meta": "New innovations in ERP financial management: real-time reporting, automated reconciliation, AI forecasting and tax compliance."
+  },
+  {
+   "type": "blog",
+   "slug": "erp-hr-trends",
+   "title": "Top ERP HR Trends for 2026: Smarter Workforce Optimization",
+   "excerpt": "How leading companies use ERP-integrated HR tools to reduce hiring time by 50% and improve employee retention with AI-powered analytics.",
+   "category": "Human Resources",
+   "date": "February 18, 2026",
+   "read_minutes": 5,
+   "content": "## 1. The AI Revolution in HR Processes\n\nModern ERP HR modules now incorporate sophisticated AI capabilities that are redefining talent management:\n\nIntelligent Recruitment: Natural language processing analyzes resumes and matches candidates to job requirements with 92% accuracy Predictive Retention: Machine learning models identify at-risk employees 6-9 months before turnover Automated Onboarding: Chatbots handle 80% of routine new hire questions and paperwork Skills Gap Analysis: AI maps current workforce capabilities against future business needs Bias Detection: Algorithms flag potentially discriminatory language in job postings and evaluations 2026 Benchmark: Companies using AI-enhanced ERP HR modules report 50% faster hiring cycles and 35% improvement in first-year retention rates compared to traditional systems.\n\n### Case Study: Global Tech Firm Reduces Hiring Time by 58%\n\nA Fortune 500 technology company implemented Oracle Cloud HCM's AI recruiting tools within their ERP system. The solution reduced time-to-hire from 42 to 18 days while improving candidate quality scores by 27%. The AI-powered system automatically screened 12,000 monthly applications, identifying top candidates based on both skills and cultural fit indicators.\n\n## 2. Unified Workforce Analytics\n\nNext-gen ERP systems break down HR data silos with powerful analytics integrations:\n\n2026 ERP-HRM analytics dashboard showing real-time workforce insights\n\n### Key Analytics Features\n\nReal-time Headcount Planning: Visualize workforce needs across departments and locations Compensation Benchmarking: Compare pay scales against industry standards Productivity Correlations: Identify factors impacting team performance Diversity Metrics: Track representation across all levels Learning ROI: Measure training impact on performance\n\n## 3. Hyper-Personalized Employee Experiences\n\n2026 ERP systems deliver individualized HR experiences at scale:\n\nAdaptive Career Paths: AI recommends personalized development plans Dynamic Benefits: Systems suggest optimal benefit packages based on life stage Sentiment Analysis: Continuous pulse surveys with real-time feedback Microlearning: Bite-sized training modules delivered contextually Wellness Integration: Health data connected to productivity analytics\n\n## 4. Implementation Roadmap for 2026\n\n- Successful adoption requires strategic planning:\n- Phase\n- Key Activities\n- Timeline\n- Assessment\n\nCurrent state analysis, needs identification 2-4 weeks Vendor Selection RFPs, demonstrations, ROI analysis 4-8 weeks Data Migration HRIS consolidation, data cleansing 6-12 weeks Pilot Testing Limited rollout, user feedback 4-8 weeks Full Deployment Organization-wide implementation 8-16 weeks Optimization Continuous improvement, new features Ongoing Implementation Insight: Organizations that involve HR staff in system design from the beginning see 40% faster adoption rates and 30% higher satisfaction scores.\n\n## 5. Emerging Trends to Watch\n\nThe future of ERP HR technology includes:\n\nGenerative AI: Automated job description writing and interview question generation Blockchain Credentials: Immutable records of education and certifications VR Onboarding: Immersive orientation experiences for remote employees Predictive Workforce Planning: Scenario modeling for organizational changes Emotion AI: Voice and facial analysis for employee well-being monitoring",
+   "meta": "The top ERP HR trends shaping workforce management: self-service portals, AI in recruitment, payroll automation and people analytics."
+  },
+  {
+   "type": "blog",
+   "slug": "erp-implementation-guide",
+   "title": "ERP Implementation Guide: 7 Proven Steps for 2026",
+   "excerpt": "Discover the proven framework for ERP implementation that reduces risks by 60% and ensures on-time, on-budget delivery for your business transformation.",
+   "category": "Implementation",
+   "date": "June 10, 2026",
+   "read_minutes": 8,
+   "content": "## 1. Strategic Planning & Business Process Mapping\n\nBegin with a comprehensive digital maturity assessment to identify gaps and opportunities in your current workflows. Leading organizations in 2026 are investing 25% more time in planning phases to ensure ERP success.\n\n### Key Activities:\n\nProcess documentation: Map 300+ business processes with RPA tools Gap analysis: Identify automation opportunities with AI integration ROI forecasting: Set measurable KPIs for implementation success Vendor evaluation: Scorecard assessment of 5-7 potential solutions 2026 Insight: Companies completing thorough process mapping experience 45% fewer customization requests and 30% faster user adoption .\n\n## 2. Selecting the Right ERP Solution for 2026\n\nThe ERP market has evolved significantly with these 2026 must-have features :\n\n- Feature\n- Importance\n- 2026 Benchmark\n- AI-Powered Analytics\n- Critical\n- Predictive insights with 90%+ accuracy\n- Hybrid Cloud Architecture\n- High\n- Seamless multi-cloud deployment\n- Industry-Specific Modules\n- Essential\n- Pre-configured for your vertical\n- IoT Integration\n- High\n- Real-time equipment monitoring\n\n## 3. Building Your 2026 ERP Dream Team\n\nSuccessful implementations require cross-functional collaboration with these key roles:\n\n### Core Team Members\n\n- Executive Sponsor (C-level authority)\n- ERP Project Manager (Agile certified)\n- Functional Leads (All business units)\n\n### Supporting Roles\n\n- Data Migration Specialists\n- Change Management Experts\n- Security & Compliance Officers\n\n## 4. Data Migration: 2026 Best Practices\n\nModern data challenges require advanced solutions:\n\n2026 Standard: AI-powered data cleansing tools now reduce migration errors by 72% compared to manual methods.\n\n### Migration Checklist\n\nConduct complete data audit (include unstructured data) Implement automated cleansing tools Establish data governance framework Run parallel testing for 3 full cycles Validate with 200% sample size of legacy data\n\n## 5. Agile Implementation Methodology\n\nThe waterfall approach is obsolete. 2026 implementations use:\n\n### Sprint Planning\n\n2-week cycles with defined deliverables\n\n### Continuous Testing\n\nAutomated regression testing\n\n### Stakeholder Demos\n\nMonthly showcase of progress\n\n## 6. Change Management for 2026 Workforce\n\nModern employees expect engaging adoption programs:\n\nMicrolearning (5-7 minute training modules) VR simulations for complex processes Gamification with real performance rewards AI chatbots for instant support\n\n## 7. Post-Implementation Optimization\n\nGo-live is just the beginning. Top performers in 2026 2026 Benchmark: Organizations with continuous optimization programs achieve 27% faster ROI and 40% higher user satisfaction .\n\n### Optimization Roadmap\n\n- 0-30 Days:\n- Hypercare support, issue resolution\n- 1-3 Months:\n- Advanced user training, process refinement 3-6 Months:\n- Automation enhancements, KPI analysis\n- 6-12 Months:\n- AI model training, predictive analytics\n\n## 2026 ERP Implementation Timeline\n\nTypical project duration for mid-size enterprises:\n\n### Core Implementation\n\n- Planning: 6-8 weeks\n- Configuration: 10-12 weeks\n- Testing: 4-6 weeks\n\n### Deployment\n\n- Pilot: 2-3 weeks\n- Phased Rollout: 4-8 weeks\n- Hypercare: 4 weeks\n\n### Ready to Start Your ERP Journey?\n\nDownload our free 2026 ERP Implementation Checklist with 150+ action items and timeline templates.",
+   "meta": "Plan your ERP rollout with 7 proven steps: scoping, data migration, training and go-live. A practical ERP implementation guide for businesses."
+  },
+  {
+   "type": "news",
+   "slug": "ai-driven-forecasting-revolutionizes-supply-chains",
+   "title": "AI-Driven Forecasting Revolutionizes Supply Chains",
+   "excerpt": "ERP platforms with AI modules now provide real-time demand forecasts and auto-replenishment for enterprises.",
+   "category": null,
+   "date": "May 27, 2025",
+   "read_minutes": null,
+   "content": "ERP platforms with AI modules now provide real-time demand forecasts and auto-replenishment for enterprises.",
+   "meta": "ERP platforms with AI modules now provide real-time demand forecasts and auto-replenishment for enterprises"
+  },
+  {
+   "type": "news",
+   "slug": "cloud-erp-adoption-soars-2025-market-report",
+   "title": "Cloud ERP Adoption Soars: 2025 Market Report",
+   "excerpt": "New industry report shows 72% of enterprises now run critical ERP functions in the cloud as hybrid models dominate Photo: Courtesy of Unsplash/ScreenGraph The accelerated migration toward cloud-based ERP solutions is fundamentally reshaping enterprise operations, with hybrid deployment models emerging as the dominant strategy for 89% of large organizations. This strategic shift is primarily fueled by the critical need for dynamic scalability during volatile demand cycles and the necessity to maintain legacy systems during phased digital transitions. Industry-specific adoption rates reveal manu",
+   "category": null,
+   "date": "July 2, 2025",
+   "read_minutes": null,
+   "content": "New industry report shows 72% of enterprises now run critical ERP functions in the cloud as hybrid models dominate Photo: Courtesy of Unsplash/ScreenGraph The accelerated migration toward cloud-based ERP solutions is fundamentally reshaping enterprise operations, with hybrid deployment models emerging as the dominant strategy for 89% of large organizations. This strategic shift is primarily fueled by the critical need for dynamic scalability during volatile demand cycles and the necessity to maintain legacy systems during phased digital transitions. Industry-specific adoption rates reveal manu",
+   "meta": "New industry report shows 72% of enterprises now run critical ERP functions in the cloud as hybrid models dominate"
+  },
+  {
+   "type": "news",
+   "slug": "cloud-erp-adoption-tipping-point",
+   "title": "Cloud ERP Adoption Reaches Tipping Point in 2025",
+   "excerpt": "New industry report shows 72% of enterprises now run critical ERP functions in the cloud as hybrid models dominate Photo: Christina @ wocintechchat.com/Unsplash T he enterprise technology landscape has reached a watershed moment with cloud-based ERP systems now powering the majority of business operations. The 2025 Global Cloud ERP Report reveals that 72% of organizations have migrated core ERP functions to the cloud, up from just 44% in 2020. This seismic shift reflects both technological maturity and changing business priorities in the post-digital transformation era. \"We've crossed the chas",
+   "category": null,
+   "date": null,
+   "read_minutes": null,
+   "content": "New industry report shows 72% of enterprises now run critical ERP functions in the cloud as hybrid models dominate Photo: Christina @ wocintechchat.com/Unsplash T he enterprise technology landscape has reached a watershed moment with cloud-based ERP systems now powering the majority of business operations. The 2025 Global Cloud ERP Report reveals that 72% of organizations have migrated core ERP functions to the cloud, up from just 44% in 2020. This seismic shift reflects both technological maturity and changing business priorities in the post-digital transformation era. \"We've crossed the chas",
+   "meta": "Cloud ERP adoption has reached a tipping point. See the market data, what is driving the shift and what it means for your business."
+  },
+  {
+   "type": "news",
+   "slug": "data-privacy-laws-push-erp-vendors-to-adapt",
+   "title": "Data Privacy Laws Push ERP Vendors to Adapt",
+   "excerpt": "ERP companies are adjusting to stricter global data regulations like GDPR 2.0 and APAC privacy laws.",
+   "category": null,
+   "date": "May 18, 2025",
+   "read_minutes": null,
+   "content": "ERP companies are adjusting to stricter global data regulations like GDPR 2.0 and APAC privacy laws.",
+   "meta": "ERP companies are adjusting to stricter global data regulations like GDPR 2.0 and APAC privacy laws"
+  },
+  {
+   "type": "news",
+   "slug": "erp-and-crm-integration-becomes-industry-norm",
+   "title": "ERP and CRM Integration Becomes Industry Norm",
+   "excerpt": "Unified platforms are merging ERP and CRM modules to give businesses 360° visibility.",
+   "category": null,
+   "date": "May 23, 2025",
+   "read_minutes": null,
+   "content": "Unified platforms are merging ERP and CRM modules to give businesses 360° visibility.",
+   "meta": "Unified platforms are merging ERP and CRM modules to give businesses 360° visibility"
+  },
+  {
+   "type": "news",
+   "slug": "erp-for-smes-new-affordable-plans-announced",
+   "title": "ERP for SMEs: New Affordable Plans Announced",
+   "excerpt": "Vendors roll out ERP plans tailored for small to mid-sized businesses with simplified features.",
+   "category": null,
+   "date": "May 20, 2025",
+   "read_minutes": null,
+   "content": "Vendors roll out ERP plans tailored for small to mid-sized businesses with simplified features.",
+   "meta": "Vendors roll out ERP plans tailored for small to mid-sized businesses with simplified features"
+  },
+  {
+   "type": "news",
+   "slug": "erp-powered-personalization-boosts-retail-revenue",
+   "title": "ERP-Powered Personalization Boosts Retail Revenue",
+   "excerpt": "Retailers using ERP-integrated customer data see 35% higher average order values",
+   "category": null,
+   "date": "May 7, 2025",
+   "read_minutes": null,
+   "content": "Retailers using ERP-integrated customer data see 35% higher average order values",
+   "meta": "Retailers using ERP-integrated customer data see 35% higher average order values"
+  },
+  {
+   "type": "news",
+   "slug": "erp-systems-reduce-construction-delays-by-52",
+   "title": "ERP Systems Reduce Construction Delays by 52%",
+   "excerpt": "Major infrastructure projects leverage ERP for materials tracking and compliance automation",
+   "category": null,
+   "date": "May 3, 2025",
+   "read_minutes": null,
+   "content": "Major infrastructure projects leverage ERP for materials tracking and compliance automation",
+   "meta": "Major infrastructure projects leverage ERP for materials tracking and compliance automation"
+  },
+  {
+   "type": "news",
+   "slug": "erp-vendors-add-blockchain-for-audit-trails",
+   "title": "ERP Vendors Add Blockchain for Audit Trails",
+   "excerpt": "Blockchain integration is becoming standard in ERP systems to ensure immutable records for finance teams.",
+   "category": null,
+   "date": "May 25, 2025",
+   "read_minutes": null,
+   "content": "Blockchain integration is becoming standard in ERP systems to ensure immutable records for finance teams.",
+   "meta": "Blockchain integration is becoming standard in ERP systems to ensure immutable records for finance teams"
+  },
+  {
+   "type": "news",
+   "slug": "generative-ai-transforms-erp-user-experience",
+   "title": "Generative AI Transforms ERP User Experience",
+   "excerpt": "Leading ERP vendors are integrating generative AI to create natural language interfaces",
+   "category": null,
+   "date": "June 20, 2025",
+   "read_minutes": null,
+   "content": "Leading ERP vendors are integrating generative AI to create natural language interfaces",
+   "meta": "Leading ERP vendors are integrating generative AI to create natural language interfaces"
+  },
+  {
+   "type": "news",
+   "slug": "global-manufacturer-cuts-costs-by-34-with-erp",
+   "title": "Global Manufacturer Cuts Costs by 34% with ERP",
+   "excerpt": "How Acme Industries transformed their operations with a comprehensive ERP implementation",
+   "category": null,
+   "date": "June 28, 2025",
+   "read_minutes": null,
+   "content": "How Acme Industries transformed their operations with a comprehensive ERP implementation",
+   "meta": "How Acme Industries transformed their operations with a comprehensive ERP implementation"
+  },
+  {
+   "type": "news",
+   "slug": "government-agencies-move-to-cloud-erp",
+   "title": "Government Agencies Move to Cloud ERP",
+   "excerpt": "Major public sector organizations are shifting to secure cloud-based ERP for transparency and cost-savings.",
+   "category": null,
+   "date": "May 11, 2025",
+   "read_minutes": null,
+   "content": "Major public sector organizations are shifting to secure cloud-based ERP for transparency and cost-savings.",
+   "meta": "Major public sector organizations are shifting to secure cloud-based ERP for transparency and cost-savings"
+  },
+  {
+   "type": "news",
+   "slug": "manufacturer-cuts-costs-with-erp",
+   "title": "How a Global Manufacturer Cut Costs by 34% with ERP",
+   "excerpt": "How Acme Industries transformed their operations with a comprehensive ERP implementation across 12 countries Photo: ThisIsEngineering/Pexels A cme Industries, a global manufacturing leader with operations in 12 countries, has achieved a remarkable 34% reduction in operational costs following their enterprise-wide ERP implementation. The 18-month transformation project standardized processes across all facilities, eliminated redundant systems, and provided real-time visibility into global operations. \"We went from 27 disparate systems to one unified platform,\" said Sarah Chen, Acme's Chief Tran",
+   "category": null,
+   "date": null,
+   "read_minutes": null,
+   "content": "How Acme Industries transformed their operations with a comprehensive ERP implementation across 12 countries Photo: ThisIsEngineering/Pexels A cme Industries, a global manufacturing leader with operations in 12 countries, has achieved a remarkable 34% reduction in operational costs following their enterprise-wide ERP implementation. The 18-month transformation project standardized processes across all facilities, eliminated redundant systems, and provided real-time visibility into global operations. \"We went from 27 disparate systems to one unified platform,\" said Sarah Chen, Acme's Chief Tran\n\n### Key Implementation Lessons\n\nSuccessful implementations focus on reengineering processes before system configuration. Clean, standardized data is the foundation for ERP success. User adoption makes or breaks ERP implementations.\n\n### Common Challenges\n\n- Resistance to process changes\n- Data migration complexities\n- Integration with shop floor systems",
+   "meta": "How a global manufacturer cut operating costs by 34% with ERP: the modules, process changes and results behind the project."
+  },
+  {
+   "type": "news",
+   "slug": "manufacturers-embrace-erp-digital-twins",
+   "title": "Manufacturers Embrace ERP Digital Twins",
+   "excerpt": "ERP platforms now simulate operations with digital twins for real-time monitoring and optimization.",
+   "category": null,
+   "date": "May 14, 2025",
+   "read_minutes": null,
+   "content": "ERP platforms now simulate operations with digital twins for real-time monitoring and optimization.",
+   "meta": "ERP platforms now simulate operations with digital twins for real-time monitoring and optimization"
+  },
+  {
+   "type": "news",
+   "slug": "mobile-erp-usage-doubles-in-2025",
+   "title": "Mobile ERP Usage Doubles in 2025",
+   "excerpt": "New report shows mobile access to ERP systems has increased by 112% year-over-year.",
+   "category": null,
+   "date": "June 10, 2025",
+   "read_minutes": null,
+   "content": "New report shows mobile access to ERP systems has increased by 112% year-over-year.",
+   "meta": "New report shows mobile access to ERP systems has increased by 112% year-over-year"
+  },
+  {
+   "type": "news",
+   "slug": "new-erp-certification-program-launches",
+   "title": "New ERP Certification Program Launches",
+   "excerpt": "The ERP Professional Association announces updated certification tracks including Cloud ERP",
+   "category": null,
+   "date": "June 25, 2025",
+   "read_minutes": null,
+   "content": "The ERP Professional Association announces updated certification tracks including Cloud ERP",
+   "meta": "The ERP Professional Association announces updated certification tracks including Cloud ERP"
+  },
+  {
+   "type": "news",
+   "slug": "new-erp-security-vulnerabilities-discovered",
+   "title": "New ERP Security Vulnerabilities Discovered",
+   "excerpt": "Cybersecurity researchers have identified critical vulnerabilities in several major ERP systems",
+   "category": null,
+   "date": "June 18, 2025",
+   "read_minutes": null,
+   "content": "Cybersecurity researchers have identified critical vulnerabilities in several major ERP systems",
+   "meta": "Cybersecurity researchers have identified critical vulnerabilities in several major ERP systems"
+  },
+  {
+   "type": "news",
+   "slug": "open-source-erp-gains-momentum-among-startups",
+   "title": "Open Source ERP Gains Momentum Among Startups",
+   "excerpt": "More startups are adopting open-source ERP for cost-effectiveness and customization flexibility.",
+   "category": null,
+   "date": "May 24, 2025",
+   "read_minutes": null,
+   "content": "More startups are adopting open-source ERP for cost-effectiveness and customization flexibility.",
+   "meta": "More startups are adopting open-source ERP for cost-effectiveness and customization flexibility"
+  },
+  {
+   "type": "news",
+   "slug": "real-time-analytics-now-standard-in-erp",
+   "title": "Real-time Analytics Now Standard in ERP",
+   "excerpt": "Modern ERP systems now include built-in real-time analytics dashboards with predictive capabilities.",
+   "category": null,
+   "date": "June 12, 2025",
+   "read_minutes": null,
+   "content": "Modern ERP systems now include built-in real-time analytics dashboards with predictive capabilities.",
+   "meta": "Modern ERP systems now include built-in real-time analytics dashboards with predictive capabilities"
+  },
+  {
+   "type": "news",
+   "slug": "saas-erp-growth-hits-50b-globally",
+   "title": "SaaS ERP Growth Hits $50B Globally",
+   "excerpt": "Gartner reports SaaS-based ERP solutions are on track to dominate the market by end of 2025.",
+   "category": null,
+   "date": "May 21, 2025",
+   "read_minutes": null,
+   "content": "Gartner reports SaaS-based ERP solutions are on track to dominate the market by end of 2025.",
+   "meta": "Gartner reports SaaS-based ERP solutions are on track to dominate the market by end of 2025"
+  },
+  {
+   "type": "news",
+   "slug": "smart-factories-see-30-efficiency-gains",
+   "title": "Smart Factories See 30% Efficiency Gains",
+   "excerpt": "Manufacturers combining ERP systems with IoT sensors are achieving unprecedented operational efficiency.",
+   "category": null,
+   "date": "June 15, 2025",
+   "read_minutes": null,
+   "content": "Manufacturers combining ERP systems with IoT sensors are achieving unprecedented operational efficiency.",
+   "meta": "Manufacturers combining ERP systems with IoT sensors are achieving unprecedented operational efficiency"
+  },
+  {
+   "type": "news",
+   "slug": "voice-activated-erp-assistants-launch-globally",
+   "title": "Voice-Activated ERP Assistants Launch Globally",
+   "excerpt": "New AI assistants inside ERP systems allow users to query reports via voice like using Alexa.",
+   "category": null,
+   "date": "May 16, 2025",
+   "read_minutes": null,
+   "content": "New AI assistants inside ERP systems allow users to query reports via voice like using Alexa.",
+   "meta": "New AI assistants inside ERP systems allow users to query reports via voice like using Alexa"
+  }
+ ],
+ "jobs": [
+  {
+   "slug": "intern-software-engineer",
+   "title": "Intern – Jr. Software Engineer",
+   "subtitle": "ERP Development, Implementation & Maintenance",
+   "company": "Inspire BD IT",
+   "location": "Dhaka, Bangladesh (Remote/Hybrid)",
+   "employment_type": "Internship (3-6 months)",
+   "experience_level": "Entry Level",
+   "salary": "Stipend based on performance",
+   "vacancies": 5,
+   "deadline_days": 45,
+   "summary": "Final-year students, fresh graduates, or self-taught coders from any background are encouraged to apply",
+   "sections": [
+    {
+     "title": "What You'll Learn & Do",
+     "items": [
+      "Assist in developing and maintaining custom ERP modules using PHP, MySQL, and JavaScript",
+      "Support the software team in implementing features and solving real-world problems",
+      "Debug, test, and improve performance of existing systems",
+      "Work closely with senior developers to understand ERP workflows",
+      "Participate in team discussions, code reviews, and learn clean coding practices",
+      "Chance to become a permanent team member after internship"
+     ]
+    },
+    {
+     "title": "Who Can Apply",
+     "items": [
+      "Final-year students, fresh graduates, or self-taught coders from any background",
+      "Non-IT graduates (like BBA, Economics, Science) with interest in software development",
+      "Basic knowledge of programming (PHP, JavaScript, or Python preferred)",
+      "Curious, logical, and eager to learn real-life software development",
+      "Bonus if you've built a small project, website, or tool (personal or academic)"
+     ]
+    },
+    {
+     "title": "Perks & Benefits",
+     "items": [
+      "Real-world ERP development experience",
+      "Mentorship from experienced engineers",
+      "Internship certificate and job reference",
+      "Friendly and learning-focused culture",
+      "Potential full-time role for high performers",
+      "Stipend based on performance"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "junior-software-engineer",
+   "title": "Jr. Software Engineer",
+   "subtitle": "ERP Development, Implementation & Maintenance",
+   "company": "Inspire BD IT",
+   "location": "Remote/Hybrid, Dhaka",
+   "employment_type": "Full-time",
+   "experience_level": "Entry Level (0-1 year)",
+   "salary": "Negotiable",
+   "vacancies": 2,
+   "deadline_days": 60,
+   "summary": "Full-time position for a junior software engineer to work on ERP development, implementation and maintenance. Freshers with strong fundamentals are encouraged to apply. Work with modern technologies and grow your career with us.",
+   "sections": [
+    {
+     "title": "Responsibilities",
+     "items": [
+      "Develop, test and maintain ERP modules and features",
+      "Work with the implementation team to configure systems for clients",
+      "Fix bugs and improve the performance of existing code",
+      "Write clear documentation and follow code review practices",
+      "Support clients during go-live when required"
+     ]
+    },
+    {
+     "title": "Requirements",
+     "items": [
+      "Bachelor degree in Computer Science, Engineering or a related field (freshers welcome)",
+      "Good knowledge of PHP, MySQL and JavaScript",
+      "Understanding of databases, APIs and version control (Git)",
+      "Strong problem solving skills and willingness to learn",
+      "Good communication in Bangla and English"
+     ]
+    },
+    {
+     "title": "Perks & Benefits",
+     "items": [
+      "Work on real ERP projects used by businesses",
+      "Mentorship from senior engineers",
+      "Performance-based bonus and salary review",
+      "Flexible remote/hybrid working",
+      "Training and career growth"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "business-analyst-erp",
+   "title": "Business Analyst",
+   "subtitle": "ERP Implementation & Client Requirements",
+   "company": "Inspire BD IT",
+   "location": "Dhaka, Bangladesh (On-site)",
+   "employment_type": "Full-time",
+   "experience_level": "Mid Level (2-4 years)",
+   "salary": "Negotiable",
+   "vacancies": 1,
+   "deadline_days": 30,
+   "summary": "Translate client needs into clear requirements and guide ERP implementations from kickoff to go-live.",
+   "sections": [
+    {
+     "title": "Responsibilities",
+     "items": [
+      "Run requirement meetings with clients and document business processes",
+      "Map client workflows to ERP modules and prepare functional specifications",
+      "Coordinate with developers, testers and the support team",
+      "Prepare training material and train client users",
+      "Follow up after go-live and collect feedback"
+     ]
+    },
+    {
+     "title": "Requirements",
+     "items": [
+      "Bachelor degree in Business, Accounting, IT or a related field",
+      "2-4 years of experience in ERP, accounting software or business analysis",
+      "Strong understanding of accounts, inventory, sales or HR processes",
+      "Excellent communication, presentation and documentation skills"
+     ]
+    },
+    {
+     "title": "Perks & Benefits",
+     "items": [
+      "Competitive salary with festival bonus",
+      "Learning and certification support",
+      "Friendly team and clear career path"
+     ]
+    }
+   ]
+  }
  ]
 }

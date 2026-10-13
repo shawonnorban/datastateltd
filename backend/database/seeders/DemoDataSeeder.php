@@ -4,7 +4,11 @@ namespace Database\Seeders;
 
 use App\Models\DomainTld;
 use App\Models\HostingPlan;
+use App\Models\Job;
 use App\Models\Membership;
+use App\Models\Post;
+use App\Models\PostCategory;
+use App\Models\User;
 use App\Models\ProjectCategory;
 use App\Models\Service;
 use App\Models\SiteSetting;
@@ -29,6 +33,8 @@ class DemoDataSeeder extends Seeder
         $this->testimonials($data['testimonials']);
         $this->hosting($data['plans'] ?? [], $data['tlds'] ?? []);
         $this->memberships();
+        $this->jobs($data['jobs'] ?? []);
+        $this->posts($data['posts'] ?? []);
     }
 
     private function settings(array $scrapedBranches): void
@@ -164,6 +170,55 @@ SVG);
 
         foreach ($items as $i => [$name, $full]) {
             Membership::firstOrCreate(['name' => $name], ['full_name' => $full, 'is_active' => true, 'sort_order' => ($i + 1) * 10]);
+        }
+    }
+
+    private function jobs(array $jobs): void
+    {
+        foreach ($jobs as $i => $j) {
+            Job::firstOrCreate(['slug' => $j['slug']], [
+                'title' => $j['title'],
+                'subtitle' => $j['subtitle'] ?? null,
+                'company' => $j['company'] ?? null,
+                'location' => $j['location'] ?? null,
+                'employment_type' => $j['employment_type'] ?? null,
+                'experience_level' => $j['experience_level'] ?? null,
+                'salary' => $j['salary'] ?? null,
+                'vacancies' => $j['vacancies'] ?? null,
+                'deadline' => isset($j['deadline_days']) ? now()->addDays($j['deadline_days'])->toDateString() : null,
+                'summary' => $j['summary'] ?? null,
+                'sections' => $j['sections'] ?? [],
+                'is_active' => true,
+                'sort_order' => ($i + 1) * 10,
+            ]);
+        }
+    }
+
+    private function posts(array $posts): void
+    {
+        $author = User::first()?->id;
+
+        foreach ($posts as $p) {
+            $category = $p['category'] ? PostCategory::firstOrCreate(
+                ['slug' => Str::slug($p['category'])],
+                ['name' => $p['category'], 'is_active' => true]
+            ) : null;
+
+            $date = ! empty($p['date']) ? date_create($p['date']) : false;
+
+            Post::firstOrCreate(['slug' => $p['slug']], [
+                'type' => $p['type'],
+                'post_category_id' => $category?->id,
+                'user_id' => $author,
+                'title' => $p['title'],
+                'excerpt' => $p['excerpt'] ?: null,
+                'content' => $p['content'] ?: null,
+                'status' => 'published',
+                'published_at' => $date ?: now(),
+                'meta_title' => $p['title'],
+                'meta_description' => $p['meta'] ?: ($p['excerpt'] ?: null),
+                'read_minutes' => $p['read_minutes'] ?? null,
+            ]);
         }
     }
 }
