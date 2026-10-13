@@ -26,7 +26,6 @@ class SettingsController extends Controller
         'linkedin_url' => ['url', 'social'],
         'youtube_url' => ['url', 'social'],
         'legal_info' => ['textarea', 'legal'],
-        'memberships' => ['textarea', 'legal'],
     ];
 
     public function show()

@@ -13,12 +13,14 @@ export default function Footer() {
           <div className="container">
             <div className="sec-head"><h2>Certifications and Membership</h2></div>
             <div className="cert-row">
-              {site.memberships.map((m) => (
-                <div className="cert" key={m.name}>
-                  <b>{m.name}</b>
-                  <span>{m.full_name}</span>
-                </div>
-              ))}
+              {site.memberships.map((m) => {
+                const inner = m.image_url
+                  ? <img src={m.image_url} alt={m.full_name || m.name} title={m.full_name || m.name} loading="lazy" />
+                  : <><b>{m.name}</b><span>{m.full_name}</span></>;
+                return m.url
+                  ? <a className={`cert ${m.image_url ? 'cert-img' : ''}`} key={m.name} href={m.url} target="_blank" rel="noreferrer">{inner}</a>
+                  : <div className={`cert ${m.image_url ? 'cert-img' : ''}`} key={m.name}>{inner}</div>;
+              })}
             </div>
           </div>
         </section>

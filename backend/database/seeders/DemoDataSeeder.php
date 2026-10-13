@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\DomainTld;
 use App\Models\HostingPlan;
+use App\Models\Membership;
 use App\Models\ProjectCategory;
 use App\Models\Service;
 use App\Models\SiteSetting;
@@ -27,6 +28,7 @@ class DemoDataSeeder extends Seeder
         $this->industries($data['industries']);
         $this->testimonials($data['testimonials']);
         $this->hosting($data['plans'] ?? [], $data['tlds'] ?? []);
+        $this->memberships();
     }
 
     private function settings(array $scrapedBranches): void
@@ -57,7 +59,6 @@ SVG);
             'linkedin_url' => ['', 'url', 'social'],
             'youtube_url' => ['', 'url', 'social'],
             'legal_info' => ["Trade License No: 15511 · Address: House-181, Tetuibari, Kashimpur, Gazipur\nVAT Registration No. (BIN): 007430612-0101\nBIDA Registration No: L-202601050018353-H", 'textarea', 'legal'],
-            'memberships' => ["BASIS|Bangladesh Association of Software & Information Services\nBIDA|Bangladesh Investment Development Authority", 'textarea', 'legal'],
             'branches' => [json_encode($branches, JSON_UNESCAPED_UNICODE), 'json', 'contact'],
         ];
 
@@ -150,6 +151,19 @@ SVG);
                 'is_active' => true,
                 'sort_order' => ($i + 1) * 10,
             ]);
+        }
+    }
+
+    /** Logos are uploaded from the admin panel (Certifications); until then the name is shown as text. */
+    private function memberships(): void
+    {
+        $items = [
+            ['BASIS', 'Bangladesh Association of Software & Information Services'],
+            ['BIDA', 'Bangladesh Investment Development Authority'],
+        ];
+
+        foreach ($items as $i => [$name, $full]) {
+            Membership::firstOrCreate(['name' => $name], ['full_name' => $full, 'is_active' => true, 'sort_order' => ($i + 1) * 10]);
         }
     }
 }

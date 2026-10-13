@@ -58,7 +58,7 @@ export default function Settings() {
           <TabsTrigger value="branding">Branding</TabsTrigger>
           <TabsTrigger value="contact">Contact</TabsTrigger>
           <TabsTrigger value="social">Social</TabsTrigger>
-          <TabsTrigger value="legal">Legal & memberships</TabsTrigger>
+          <TabsTrigger value="legal">Legal</TabsTrigger>
           <TabsTrigger value="branches">Branches</TabsTrigger>
         </TabsList>
 
@@ -102,10 +102,9 @@ export default function Settings() {
         </TabsContent>
 
         <TabsContent value="legal">
-          <Card><CardHeader><CardTitle>Legal & memberships</CardTitle><CardDescription>Shown in the website footer.</CardDescription></CardHeader>
+          <Card><CardHeader><CardTitle>Legal</CardTitle><CardDescription>Shown in the website footer.</CardDescription></CardHeader>
             <CardContent className="grid gap-5 md:grid-cols-2">
-              <Field label="Legal info" hint="One line each" htmlFor="legal_info"><Textarea id="legal_info" rows={5} value={values.legal_info ?? ''} onChange={set('legal_info')} /></Field>
-              <Field label="Memberships" hint="One per line: SHORT|Full name" htmlFor="memberships"><Textarea id="memberships" rows={5} value={values.memberships ?? ''} onChange={set('memberships')} /></Field>
+              <Field label="Legal info" hint="One line each. Certification logos are managed under Certifications." htmlFor="legal_info" className="md:col-span-2"><Textarea id="legal_info" rows={5} value={values.legal_info ?? ''} onChange={set('legal_info')} /></Field>
             </CardContent></Card>
         </TabsContent>
 

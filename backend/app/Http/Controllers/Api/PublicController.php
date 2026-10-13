@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\DomainTld;
 use App\Models\HostingPlan;
 use App\Models\Inquiry;
+use App\Models\Membership;
 use App\Models\JobApplication;
 use App\Models\Page;
 use App\Models\PageSection;
@@ -47,9 +48,8 @@ class PublicController extends Controller
             ],
             'branches' => json_decode($s['branches'] ?? '[]', true) ?: [],
             'legal' => $this->lines($s['legal_info'] ?? ''),
-            'memberships' => collect($this->lines($s['memberships'] ?? ''))
-                ->map(fn ($l) => ['name' => trim(Str::before($l, '|')), 'full_name' => trim(Str::contains($l, '|') ? Str::after($l, '|') : '')])
-                ->all(),
+            'memberships' => Membership::where('is_active', true)->orderBy('sort_order')->get()
+                ->map(fn ($m) => ['name' => $m->name, 'full_name' => $m->full_name, 'image_url' => $m->image_url, 'url' => $m->url])->values(),
         ];
     }
 

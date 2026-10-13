@@ -39,6 +39,11 @@ Route::prefix('admin')->group(function () {
         Route::apiResource('plans', A\PlanController::class)->except('show');
         Route::apiResource('tlds', A\TldController::class)->except('show');
 
+        Route::get('/memberships', [A\MembershipController::class, 'index']);
+        Route::post('/memberships', [A\MembershipController::class, 'store']);
+        Route::post('/memberships/{membership}', [A\MembershipController::class, 'update']);
+        Route::delete('/memberships/{membership}', [A\MembershipController::class, 'destroy']);
+
         Route::get('/applications', [A\ApplicationController::class, 'index']);
         Route::put('/applications/{application}', [A\ApplicationController::class, 'update']);
         Route::get('/applications/{application}/cv', [A\ApplicationController::class, 'cv']);

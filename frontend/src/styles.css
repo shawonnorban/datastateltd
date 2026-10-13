@@ -349,3 +349,20 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);bo
 .map-wrap{position:relative;margin-bottom:8px}
 .map-wrap .map{display:block;height:250px;filter:none}
 .map-open{position:absolute;top:10px;left:10px;background:#fff;color:#1d4ed8;font-size:.78rem;font-weight:600;padding:6px 12px;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+
+/* certification logos */
+.cert-img{padding:22px 38px;min-width:220px;justify-content:center;min-height:120px}
+.cert-img img{display:block;max-height:76px;max-width:240px;width:auto;height:auto;object-fit:contain}
+a.cert{transition:.25s}a.cert:hover{transform:translateY(-3px);box-shadow:0 14px 30px -14px rgba(37,99,235,.35)}
+.cert-row{gap:24px}
+
+/* header: keep nav on one line (8 items) */
+.nav{gap:2px;margin-left:12px}
+.nav a{padding:8px 11px;font-size:.74rem;white-space:nowrap}
+.header .btn.sm{white-space:nowrap}
+.logo-img,.logo{flex:none}
+@media(max-width:1260px){
+  .burger{display:block}.header .btn.sm{display:none}
+  .nav{display:none;position:absolute;top:100%;left:4%;right:4%;margin:0;flex-direction:column;background:#fff;border-radius:6px;padding:12px;box-shadow:var(--shadow);gap:2px}
+  .nav.open{display:flex}.nav a{color:var(--text)!important;font-size:.82rem}
+}
