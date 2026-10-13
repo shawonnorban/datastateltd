@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\DomainTld;
+use App\Models\HostingPlan;
 use App\Models\ProjectCategory;
 use App\Models\Service;
 use App\Models\SiteSetting;
@@ -18,18 +20,19 @@ class DemoDataSeeder extends Seeder
 {
     public function run(): void
     {
-        $data = json_decode(file_get_contents(database_path('seeders/data/erp_pages.json')), true, 512, JSON_THROW_ON_ERROR);
+        $data = json_decode(file_get_contents(database_path('seeders/data/site_pages.json')), true, 512, JSON_THROW_ON_ERROR);
 
         $this->settings($data['branches']);
         $this->solutions($data['services']);
         $this->industries($data['industries']);
         $this->testimonials($data['testimonials']);
+        $this->hosting($data['plans'] ?? [], $data['tlds'] ?? []);
     }
 
     private function settings(array $scrapedBranches): void
     {
         Storage::disk('public')->put('branding/demo-logo.svg', <<<'SVG'
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 56"><path d="M20 4l16 16-16 16L4 20z" fill="#0a0a0a"/><path d="M20 14l6 6-6 6-6-6z" fill="#fff"/><text x="46" y="38" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="30" fill="#0a0a0a">SARKAR IT FIRM</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 56"><path d="M20 4l16 16-16 16L4 20z" fill="#0a0a0a"/><path d="M20 14l6 6-6 6-6-6z" fill="#fff"/><text x="46" y="38" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="30" fill="#0a0a0a">INSPIRE BD IT</text></svg>
 SVG);
 
         $branches = array_merge([[
@@ -40,7 +43,8 @@ SVG);
         ]], array_slice($scrapedBranches, 1));
 
         $demo = [
-            'site_name' => ['Sarkar IT Firm', 'text', 'general'],
+            'site_name' => ['Inspire BD IT', 'text', 'general'],
+            'site_full_name' => ['Inspire Bangladesh Information Technology', 'text', 'general'],
             'tagline' => ['Cloud-based, fully customizable software designed to enhance your business growth.', 'text', 'general'],
             'logo' => ['branding/demo-logo.svg', 'image', 'general'],
             'contact_phone' => ['+88 09666707635', 'text', 'contact'],
@@ -115,6 +119,35 @@ SVG);
                 'is_featured' => $i < 3,
                 'is_active' => true,
                 'sort_order' => 10 + $i,
+            ]);
+        }
+    }
+
+    private function hosting(array $plans, array $tlds): void
+    {
+        foreach ($plans as $i => $p) {
+            HostingPlan::firstOrCreate(['name' => $p['name']], [
+                'tagline' => $p['tagline'],
+                'badge' => $p['badge'] ?? null,
+                'discount_label' => $p['discount'] ?? null,
+                'old_price_yearly' => $p['old_yearly'] ?? null,
+                'price_monthly' => $p['monthly'],
+                'price_yearly' => $p['yearly'],
+                'price_triennial' => $p['triennial'],
+                'features' => $p['features'],
+                'specs' => $p['specs'],
+                'order_url' => '/company/request-demo',
+                'is_popular' => $p['popular'],
+                'is_active' => true,
+                'sort_order' => ($i + 1) * 10,
+            ]);
+        }
+
+        foreach ($tlds as $i => [$ext, $price]) {
+            DomainTld::firstOrCreate(['extension' => $ext], [
+                'price' => $price,
+                'is_active' => true,
+                'sort_order' => ($i + 1) * 10,
             ]);
         }
     }

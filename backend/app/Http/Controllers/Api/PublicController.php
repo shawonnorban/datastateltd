@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\DomainTld;
+use App\Models\HostingPlan;
 use App\Models\Inquiry;
 use App\Models\JobApplication;
+use App\Models\Page;
 use App\Models\PageSection;
 use App\Models\ProjectCategory;
 use App\Models\Service;
@@ -22,6 +25,7 @@ class PublicController extends Controller
 
         return [
             'name' => $s['site_name'] ?? null,
+            'full_name' => $s['site_full_name'] ?? null,
             'tagline' => $s['tagline'] ?? null,
             'hero_banner_url' => ($s['hero_banner'] ?? null) ? Storage::disk('public')->url($s['hero_banner']) : null,
             'logo_url' => ($s['logo'] ?? null) ? Storage::disk('public')->url($s['logo']) : null,
@@ -57,7 +61,10 @@ class PublicController extends Controller
 
         abort_if($sections->isEmpty(), 404);
 
-        return $sections->map(function ($section) {
+        $meta = Page::where('slug', $slug)->first(['title', 'meta_title', 'meta_description', 'is_published']);
+        abort_if($meta && ! $meta->is_published, 404);
+
+        $sections = $sections->map(function ($section) {
             $data = $section->data ?? [];
             if (! empty($data['image'])) {
                 $data['image_url'] = Storage::disk('public')->url($data['image']);
@@ -66,6 +73,37 @@ class PublicController extends Controller
 
             return $section;
         });
+
+        return [
+            'page' => [
+                'title' => $meta?->meta_title ?: $meta?->title,
+                'description' => $meta?->meta_description,
+            ],
+            'sections' => $sections,
+        ];
+    }
+
+    public function hosting()
+    {
+        return [
+            'plans' => HostingPlan::where('is_active', true)->orderBy('sort_order')->get()->map(fn ($p) => [
+                'id' => $p->id,
+                'name' => $p->name,
+                'tagline' => $p->tagline,
+                'badge' => $p->badge,
+                'discount_label' => $p->discount_label,
+                'old_price_yearly' => $p->old_price_yearly,
+                'price_monthly' => $p->price_monthly,
+                'price_yearly' => $p->price_yearly,
+                'price_triennial' => $p->price_triennial,
+                'features' => $p->features ?? [],
+                'specs' => $p->specs ?? [],
+                'order_url' => $p->order_url,
+                'is_popular' => $p->is_popular,
+            ]),
+            'tlds' => DomainTld::where('is_active', true)->orderBy('sort_order')
+                ->get(['id', 'extension', 'price', 'old_price']),
+        ];
     }
 
     public function services()

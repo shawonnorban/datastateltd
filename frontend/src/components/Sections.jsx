@@ -17,7 +17,7 @@ function ItemLink({ to, className, children }) {
 }
 
 function Btn({ b }) {
-  const cls = `btn ${b.style === 'ghost' ? 'ghost' : ''}`;
+  const cls = `btn ${b.style === 'ghost' ? 'ghost' : ''} ${b.style === 'outline' ? 'outline' : ''} ${b.style === 'amber' ? 'amber' : ''}`;
   if (b.to?.startsWith('#')) return <a href={b.to} className={cls}>{b.label}</a>;
   if (/^https?:/.test(b.to || '')) return <a href={b.to} className={cls} target="_blank" rel="noreferrer">{b.label}</a>;
   return <Link to={b.to || '/'} className={cls}>{b.label} <Icon name="arrow" size={16} /></Link>;
@@ -34,9 +34,47 @@ function Head({ s, light }) {
   );
 }
 
+function HeroLight({ s }) {
+  const d = s.data || {};
+  const o = d.offer;
+  return (
+    <section className="hero-light">
+      <div className="grid-bg light" />
+      <div className="container">
+        <div className="hero-light-copy">
+          {s.eyebrow && <span className="pill dark">{s.eyebrow}</span>}
+          <h1><Rich text={s.title} /></h1>
+          {s.subtitle && <p className="hero-sub">{s.subtitle}</p>}
+          {!!d.buttons?.length && <div className="btn-row center">{d.buttons.map((b) => <Btn key={b.label} b={b} />)}</div>}
+        </div>
+        {o && (
+          <div className="offer card">
+            <div className="offer-bar"><i /><i /><i /><span className="url">{o.url}</span><span className="chip-blue">{o.badge}</span></div>
+            <div className="offer-body">
+              <div>
+                <span className="chip-blue">{o.chip}</span>
+                <h3>{o.plan}</h3>
+                <p className="muted">{o.text}</p>
+                <div className="offer-price"><b>{o.price}</b><span>{o.per}</span><s>{o.old}</s><em className="save">{o.save}</em></div>
+                <div className="btn-row"><Btn b={o.cta} /><span className="guarantee"><Icon name="shield" size={16} /> {o.guarantee}</span></div>
+              </div>
+              <div className="included">
+                <div className="included-top"><b>{o.included_title}</b><span>{o.included_note}</span></div>
+                <ul>{(o.included || []).map((x) => <li key={x}><Icon name="check" size={15} />{x}</li>)}</ul>
+                <div className="tags-row">{(o.tags || []).map((x) => <span key={x}>{x}</span>)}</div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
 function Hero({ s }) {
   const d = s.data || {};
   const { site } = useSite();
+  if (d.variant === 'light') return <HeroLight s={s} />;
   const main = d.variant === 'main';
   const img = d.image_url || site.hero_banner_url;
   return (
@@ -257,10 +295,12 @@ function Showcase({ s }) {
 }
 
 function Steps({ s }) {
+  const dark = s.data?.dark;
   return (
-    <section className="section alt">
+    <section className={`section ${dark ? 'dark-band steps-dark' : 'alt'}`}>
+      {dark && <><div className="blob b1" /><div className="blob b2" /></>}
       <div className="container">
-        <Head s={s} />
+        <Head s={s} light={dark} />
         <div className="grid cols-3 steps">
           {(s.data?.items || []).map((p, i) => (
             <Reveal key={p.title} delay={i * 100}>
@@ -268,6 +308,7 @@ function Steps({ s }) {
                 <div className="step-top"><div className="ico grad"><Icon name={p.icon} /></div><span className="step-n">0{i + 1}</span></div>
                 <h3>{p.title}</h3>
                 <p>{p.text}</p>
+                {p.note && <div className="step-note"><Icon name="check" size={15} /> {p.note}</div>}
               </div>
             </Reveal>
           ))}
@@ -571,6 +612,180 @@ function Block({ b, first }) {
   return null;
 }
 
+const taka = (n) => (n == null || n === '' ? '' : `৳${Number(n).toLocaleString(undefined, { maximumFractionDigits: 2 })}`);
+
+function useHosting() {
+  const [h, setH] = useState({ plans: [], tlds: [] });
+  useEffect(() => {
+    let alive = true;
+    fetch('/api/hosting', { headers: { Accept: 'application/json' } }).then((r) => r.json()).then((d) => alive && setH(d)).catch(() => {});
+    return () => { alive = false; };
+  }, []);
+  return h;
+}
+
+function Strip({ s }) {
+  return (
+    <div className="strip">
+      <div className="container strip-in">
+        <span className="strip-title"><i />{s.title}</span>
+        <ul>{(s.data?.items || []).map((x) => <li key={x}>{x}</li>)}</ul>
+      </div>
+    </div>
+  );
+}
+
+function DomainSearch({ s }) {
+  const d = s.data || {};
+  const { tlds } = useHosting();
+  const [name, setName] = useState('');
+  const [ext, setExt] = useState('');
+  const sel = ext || tlds[0]?.extension || '.com';
+  const go = (e) => {
+    e.preventDefault();
+    const domain = `${name.replace(/\..*$/, '').trim()}${sel}`;
+    if (name.trim()) window.location.assign(`${d.order_url || '/company/request-demo'}?domain=${encodeURIComponent(domain)}`);
+  };
+  return (
+    <section className="section alt" id="domain-search">
+      <div className="container">
+        <Head s={s} />
+        <div className="domain-box card">
+          <form className="domain-form" onSubmit={go}>
+            <div className="domain-input"><Icon name="eye" size={18} /><input value={name} onChange={(e) => setName(e.target.value)} placeholder={d.placeholder || 'Type your desired domain name'} /></div>
+            <select value={sel} onChange={(e) => setExt(e.target.value)} aria-label="Extension">{tlds.map((t) => <option key={t.id}>{t.extension}</option>)}</select>
+            <button className="btn dark">{d.button || 'Search'}</button>
+          </form>
+          <div className="tld-row">
+            {tlds.map((t) => (
+              <button type="button" key={t.id} className={`tld ${sel === t.extension ? 'on' : ''}`} onClick={() => setExt(t.extension)}>
+                <b>{t.extension}</b> <span>{taka(t.price)}/yr</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Combo({ s }) {
+  const d = s.data || {};
+  return (
+    <section className="section combo-wrap">
+      <div className="container">
+        <Reveal>
+          <div className="combo">
+            <div>
+              {s.eyebrow && <span className="combo-badge">{s.eyebrow}</span>}
+              <h2><Rich text={s.title} /></h2>
+              {s.subtitle && <p>{s.subtitle}</p>}
+            </div>
+            {d.button && <Btn b={{ ...d.button, style: 'amber' }} />}
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
+function PricingPlans({ s }) {
+  const d = s.data || {};
+  const { plans } = useHosting();
+  const cycles = d.cycles || [{ key: 'yearly', label: 'Yearly', suffix: '/year' }];
+  const [cycle, setCycle] = useState(d.default || cycles[0].key);
+  const cur = cycles.find((c) => c.key === cycle) || cycles[0];
+  const price = (p) => ({ monthly: p.price_monthly, yearly: p.price_yearly, triennial: p.price_triennial }[cur.key]);
+  const strike = (p) => (cur.key === 'yearly' ? p.old_price_yearly : cur.key === 'triennial' && p.old_price_yearly ? p.old_price_yearly * 3 : null);
+  const perMonth = (p) => (cur.key === 'yearly' ? p.price_yearly / 12 : cur.key === 'triennial' ? p.price_triennial / 36 : null);
+  const order = (p) => p.order_url || '/company/request-demo';
+
+  return (
+    <section className="section" id="pricing">
+      <div className="container">
+        <Head s={s} />
+        <div className="cycle-wrap"><div className="cycle">
+          {cycles.map((c) => <button key={c.key} className={c.key === cur.key ? 'on' : ''} onClick={() => setCycle(c.key)}>{c.label}</button>)}
+        </div></div>
+        <div className="grid plans">
+          {plans.map((p) => (
+            <div key={p.id} className={`plan card ${p.is_popular ? 'popular' : ''}`}>
+              {p.is_popular && <span className="plan-badge">★ {p.badge || 'Most Popular'}</span>}
+              <div className="plan-head"><h3>{p.name}</h3>{p.discount_label && <span className="off">{p.discount_label}</span>}</div>
+              <p className="muted plan-tag">{p.tagline}</p>
+              {strike(p) ? <div className="strike"><s>{taka(strike(p))}{cur.suffix}</s> {p.discount_label && <em>Save {p.discount_label.replace(' OFF', '')} Discount</em>}</div> : <div className="strike">&nbsp;</div>}
+              <div className="plan-price"><b>{taka(price(p))}</b><span>{cur.suffix}</span></div>
+              <p className="muted plan-eq">{perMonth(p) ? `Equates to ${taka(perMonth(p))}/month${p.discount_label ? ` • ${p.discount_label}` : ''}` : '\u00a0'}</p>
+              <Link to={order(p)} className={`btn block ${p.is_popular ? '' : 'dark'}`}>{d.order_label || 'Order Now'} <Icon name="arrow" size={16} /></Link>
+              <div className="inc-title">Included resources:</div>
+              <ul className="inc">{(p.features || []).map((f) => <li key={f}><Icon name="check" size={15} />{f}</li>)}</ul>
+            </div>
+          ))}
+        </div>
+        {d.guarantee && <div className="guar"><Icon name="shield" size={18} /> {d.guarantee}</div>}
+      </div>
+    </section>
+  );
+}
+
+function SpecTable({ s }) {
+  const { plans } = useHosting();
+  if (!plans.length) return null;
+  const rows = Object.keys(plans[0].specs || {});
+  return (
+    <section className="section alt">
+      <div className="container">
+        <Head s={s} />
+        <div className="spec card">
+          <table>
+            <thead><tr><th>Specification</th>{plans.map((p) => <th key={p.id} className={p.is_popular ? 'pop' : ''}>{p.name}</th>)}</tr></thead>
+            <tbody>
+              {rows.map((r) => <tr key={r}><td>{r}</td>{plans.map((p) => <td key={p.id} className={p.is_popular ? 'pop' : ''}>{p.specs?.[r] ?? '—'}</td>)}</tr>)}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Payments({ s }) {
+  return (
+    <section className="section">
+      <div className="container">
+        <Head s={s} />
+        <div className="pay-row">{(s.data?.items || []).map((x) => <span key={x} className="pay">{x}</span>)}</div>
+      </div>
+    </section>
+  );
+}
+
+function Benchmark({ s }) {
+  const d = s.data || {};
+  return (
+    <section className="section">
+      <div className="container split">
+        <Reveal>
+          <div className="sec-head left">
+            {s.eyebrow && <span className="pill soft">{s.eyebrow}</span>}
+            <h2><Rich text={s.title} /></h2>
+          </div>
+          {s.subtitle && <p className="prose">{s.subtitle}</p>}
+          {d.paragraph && <p className="prose">{d.paragraph}</p>}
+          <div className="mini-stats">{(d.stats || []).map((x) => <div key={x.label}><b>{x.value}</b><span>{x.label}</span></div>)}</div>
+        </Reveal>
+        <Reveal delay={120}>
+          <div className="bench card">
+            <div className="bench-head"><div><h4>{d.card_title}</h4><span className="muted">{d.card_sub}</span></div>{d.card_badge && <span className="ok-pill">{d.card_badge}</span>}</div>
+            {(d.rows || []).map((r) => <div className="bench-row" key={r.name}><span>{r.name}</span><span><b>{r.ms}</b> <s>{r.old}</s></span></div>)}
+            <div className="bench-foot"><span>{d.foot}</span>{d.link && <a href={d.link.to}>{d.link.label}</a>}</div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+}
+
 const visuals = ['dashboard', 'network', 'shield'];
 function Article({ s }) {
   const blocks = s.data?.blocks || [];
@@ -674,6 +889,7 @@ function Clients({ s }) {
 }
 
 const map = {
+  strip: Strip, domain_search: DomainSearch, combo: Combo, pricing_plans: PricingPlans, spec_table: SpecTable, payments: Payments, benchmark: Benchmark,
   article: Article, quotes: Quotes, posts: Posts, clients: Clients,
   hero: Hero, cards: Cards, services_grid: ServicesGrid, industries_grid: IndustriesGrid, stats: Stats,
   split: Split, showcase: Showcase, steps: Steps, testimonials: Testimonials, faq: Faq, cta: Cta,

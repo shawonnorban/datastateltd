@@ -29,6 +29,7 @@ export default function Footer() {
           <div className="footer-grid">
             <div>
               <h4>Contact Us</h4>
+              {site.full_name && <p className="full-name">{site.full_name}</p>}
               <p className="muted-blue">{site.tagline}</p>
               {site.address && <p className="line"><Icon name="pin" size={15} /> <span><b>Corporate Head Office:</b><br />{site.address}</span></p>}
               {site.phone && <p className="line"><Icon name="phone" size={15} /> <span><b>Telephone (Office):</b><br />{site.phone}</span></p>}

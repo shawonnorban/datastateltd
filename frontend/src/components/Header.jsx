@@ -1,4 +1,4 @@
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { nav } from '../data.js';
 import { useSite } from '../SiteContext.jsx';
@@ -7,6 +7,8 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const { site } = useSite();
   const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
+  const solid = scrolled || pathname === '/domain';
   useEffect(() => {
     const f = () => setScrolled(window.scrollY > 10);
     f();
@@ -14,7 +16,7 @@ export default function Header() {
     return () => window.removeEventListener('scroll', f);
   }, []);
   return (
-    <header className={`header ${scrolled ? 'scrolled' : ''}`}>
+    <header className={`header ${solid ? 'scrolled' : ''}`}>
       <div className="header-in">
         <Link to="/" className="logo">{site.logo_url ? <img src={site.logo_url} alt={site.name} className="logo-img" /> : site.name}</Link>
         <button className="burger" onClick={() => setOpen(!open)} aria-label="Menu">☰</button>

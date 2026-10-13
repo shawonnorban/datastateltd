@@ -1,8 +1,8 @@
 // Placeholder content. Replace with API data (Laravel backend) later.
 export const site = {
-  name: 'Sarkar IT Firm',
+  name: 'Inspire BD IT',
   phone: '+880 1XXX-XXXXXX',
-  email: 'info@sarkaritfirm.com',
+  email: 'info@inspirebdit.com',
   tagline: 'Cloud-based, customizable software designed to grow your business.',
 };
 
@@ -10,6 +10,7 @@ export const nav = [
   { to: '/', label: 'Home' },
   { to: '/industry', label: 'Industries' },
   { to: '/solution', label: 'Solutions' },
+  { to: '/domain', label: 'Domain & Hosting' },
   { to: '/company/clients', label: 'Client List' },
   { to: '/blogs', label: 'Blogs' },
   { to: '/jobs', label: 'Career' },
@@ -49,9 +50,9 @@ export const process = [
 ];
 
 export const branches = [
-  { name: 'Head Office', address: 'Address line, City, Country', phone: '+880 1XXX-XXXXXX', email: 'info@sarkaritfirm.com' },
-  { name: 'Branch Office', address: 'Address line, City, Country', phone: '+880 1XXX-XXXXXX', email: 'info@sarkaritfirm.com' },
-  { name: 'Overseas Office', address: 'Address line, City, Country', phone: '+000 XXX-XXXXXX', email: 'info@sarkaritfirm.com' },
+  { name: 'Head Office', address: 'Address line, City, Country', phone: '+880 1XXX-XXXXXX', email: 'info@inspirebdit.com' },
+  { name: 'Branch Office', address: 'Address line, City, Country', phone: '+880 1XXX-XXXXXX', email: 'info@inspirebdit.com' },
+  { name: 'Overseas Office', address: 'Address line, City, Country', phone: '+000 XXX-XXXXXX', email: 'info@inspirebdit.com' },
 ];
 
 export const perks = [
