@@ -307,7 +307,7 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--blue);bo
 .plan{position:relative;padding:24px}.plan.popular{border:2px solid var(--blue);box-shadow:0 20px 40px -20px rgba(37,99,235,.5)}
 .plan-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:6px;white-space:nowrap}
 .plan-head{display:flex;justify-content:space-between;align-items:center;gap:8px}.plan-head h3{margin:0;font-size:1.3rem}
-.off{font-size:.68rem;font-weight:700;color:#e11d48;background:#fff1f2;border:1px solid #fecdd3;padding:3px 8px;border-radius:4px;white-space:nowrap}
+.plan-off{font-size:.68rem;font-weight:700;color:#e11d48;background:#fff1f2;border:1px solid #fecdd3;padding:3px 8px;border-radius:4px;white-space:nowrap}
 .plan-tag{font-size:.84rem;margin:6px 0 14px;min-height:42px}
 .strike{font-size:.78rem;color:#94a3b8;display:flex;gap:8px;align-items:center;min-height:20px}.strike em{font-style:normal;color:#16a34a;font-weight:600}
 .plan-price{display:flex;align-items:baseline;gap:6px;margin:4px 0}.plan-price b{font-size:2.3rem;line-height:1}.plan-price span{color:var(--muted)}
@@ -412,4 +412,4 @@ a.cert{transition:.25s}a.cert:hover{transform:translateY(-3px);box-shadow:0 14px
 /* two logos: light one over the dark hero, dark one on the white scrolled header. Both share one box, so nothing shifts. */
 .logo-stack{position:relative;display:block;width:240px;height:56px;flex:none}
 .logo-stack .logo-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:left center;transition:opacity .25s ease}
-.logo-stack .off{opacity:0;pointer-events:none}
+.logo-stack .is-hidden{opacity:0;pointer-events:none}

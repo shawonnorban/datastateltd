@@ -20,8 +20,8 @@ export default function Header() {
       <div className="header-in">
         <Link to="/" className="logo">{site.logo_url ? (
             <span className="logo-stack">
-              <img src={site.logo_url} alt={site.name} className={`logo-img logo-top ${solid ? 'off' : ''}`} />
-              <img src={site.logo_scrolled_url || site.logo_url} alt="" aria-hidden="true" className={`logo-img logo-solid ${solid ? '' : 'off'}`} />
+              <img src={site.logo_url} alt={site.name} className={`logo-img logo-top ${solid ? 'is-hidden' : ''}`} />
+              <img src={site.logo_scrolled_url || site.logo_url} alt="" aria-hidden="true" className={`logo-img logo-solid ${solid ? '' : 'is-hidden'}`} />
             </span>
           ) : site.name}</Link>
         <button className="burger" onClick={() => setOpen(!open)} aria-label="Menu">☰</button>

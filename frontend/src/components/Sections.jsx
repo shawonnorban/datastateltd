@@ -633,7 +633,7 @@ function PricingPlans({ s }) {
           {plans.map((p) => (
             <div key={p.id} className={`plan card ${p.is_popular ? 'popular' : ''}`}>
               {p.is_popular && <span className="plan-badge">★ {p.badge || 'Most Popular'}</span>}
-              <div className="plan-head"><h3>{p.name}</h3>{p.discount_label && <span className="off">{p.discount_label}</span>}</div>
+              <div className="plan-head"><h3>{p.name}</h3>{p.discount_label && <span className="plan-off">{p.discount_label}</span>}</div>
               <p className="muted plan-tag">{p.tagline}</p>
               {strike(p) ? <div className="strike"><s>{taka(strike(p))}{cur.suffix}</s> {p.discount_label && <em>Save {p.discount_label.replace(' OFF', '')} Discount</em>}</div> : <div className="strike">&nbsp;</div>}
               <div className="plan-price"><b>{taka(price(p))}</b><span>{cur.suffix}</span></div>
