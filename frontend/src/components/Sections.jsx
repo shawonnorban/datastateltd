@@ -876,7 +876,185 @@ function PostList({ s }) {
   );
 }
 
+/* ---- Product / module detail layout ---- */
+function Crumbs({ items }) {
+  return (
+    <nav className="pd-crumbs" aria-label="Breadcrumb">
+      {items.map((c, i) => (
+        <span key={c.label}>
+          {i > 0 && <i>›</i>}
+          {c.to && i < items.length - 1 ? <Link to={c.to}>{c.label}</Link> : <b>{c.label}</b>}
+        </span>
+      ))}
+    </nav>
+  );
+}
+
+function ProductHero({ s }) {
+  const d = s.data || {};
+  return (
+    <section className="pd-hero">
+      <div className="grid-bg" />
+      <div className="container pd-hero-in">
+        {s.eyebrow && <span className="pd-pill">{s.eyebrow}</span>}
+        <h1><Rich text={s.title} /></h1>
+        {s.subtitle && <p className="hero-sub">{s.subtitle}</p>}
+        {!!d.crumbs?.length && <Crumbs items={d.crumbs} />}
+        {d.tag && <span className="pd-pill sm">{d.tag}</span>}
+        {!!d.buttons?.length && <div className="btn-row center">{d.buttons.map((b) => <Btn key={b.label} b={b} />)}</div>}
+      </div>
+    </section>
+  );
+}
+
+function CheckList({ items, cols }) {
+  return (
+    <ul className={`pd-checks ${cols ? 'cols' : ''}`}>
+      {items.map((t) => <li key={t}><Icon name="check" size={15} />{t}</li>)}
+    </ul>
+  );
+}
+
+function ProductAbout({ s }) {
+  const d = s.data || {};
+  const sb = d.sidebar || {};
+  return (
+    <section className="section pd-about">
+      <div className="container pd-about-grid">
+        <Reveal className="pd-about-main">
+          {d.image_url && (
+            <div className="pd-media"><img src={d.image_url} alt="" />{d.badge && <span>{d.badge}</span>}</div>
+          )}
+          <h2><Rich text={s.title} /></h2>
+          {(d.paragraphs || []).map((t) => <p key={t} className="muted">{t}</p>)}
+          {!!d.checks?.length && <CheckList items={d.checks} cols />}
+        </Reveal>
+        <aside className="pd-side">
+          <Reveal className="pd-card">
+            {sb.rating && (
+              <div className="pd-rate"><span>{'★★★★★'}</span><b>{sb.rating}</b></div>
+            )}
+            {(sb.meta || []).map((m) => <div className="pd-meta" key={m.k}><span>{m.k}</span><b>{m.v}</b></div>)}
+            {sb.cta && <Link to={sb.cta.to || '/'} className="btn pd-wide">{sb.cta.label}</Link>}
+          </Reveal>
+          {!!d.receive?.items?.length && (
+            <Reveal className="pd-card">
+              <h3><Icon name="box" size={20} /> {d.receive.title || 'What you receive'}</h3>
+              <CheckList items={d.receive.items} />
+            </Reveal>
+          )}
+        </aside>
+      </div>
+    </section>
+  );
+}
+
+function NumCards({ s }) {
+  const d = s.data || {};
+  return (
+    <section className={`section pd-sec ${d.dark ? 'dark' : ''}`} id={d.anchor || undefined}>
+      <div className="container">
+        <Reveal className="pd-head">
+          {s.eyebrow && <span className={d.pill ? 'pd-pill tint' : 'pd-eyebrow'}>{s.eyebrow}</span>}
+          {s.title && <h2><Rich text={s.title} /></h2>}
+          {s.subtitle && <p className="muted">{s.subtitle}</p>}
+        </Reveal>
+        <div className="pd-numgrid">
+          {(d.items || []).map((it, i) => (
+            <Reveal key={it.title} className="pd-numcard" delay={(i % 3) * 70}>
+              <span className="pd-num">{String(i + 1).padStart(2, '0')}</span>
+              <h3>{it.title}</h3>
+              {it.text && <p>{it.text}</p>}
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FlowRow({ steps }) {
+  return (
+    <div className="pd-flow">
+      {steps.map((t, i) => (
+        <span key={t + i} className="pd-flow-i"><b>{t}</b>{i < steps.length - 1 && <Icon name="arrow" size={14} />}</span>
+      ))}
+    </div>
+  );
+}
+
+/* One block: pill + title, optional flow rows, dot tiles, quote, button. */
+function FeatureBlock({ s }) {
+  const d = s.data || {};
+  return (
+    <section className={`section pd-sec ${d.dark ? 'dark' : ''}`}>
+      <div className="container">
+        <Reveal className="pd-head">
+          {s.eyebrow && <span className="pd-pill tint">{s.eyebrow}</span>}
+          {s.title && <h2><Rich text={s.title} /></h2>}
+          {s.subtitle && <p className="muted">{s.subtitle}</p>}
+        </Reveal>
+        {(d.flows || []).map((f, i) => (
+          <Reveal key={i} className="pd-flowwrap">
+            {f.label && <h4 className="pd-label">{f.label}</h4>}
+            <FlowRow steps={f.steps} />
+          </Reveal>
+        ))}
+        {!!d.lists?.length && (
+          <div className="pd-inout">
+            {d.lists.map((l) => (
+              <Reveal key={l.title} className="pd-card in">
+                <h4 className="pd-label">{l.title}</h4>
+                <div className="pd-tags">{l.items.map((t) => <span key={t}>{t}</span>)}</div>
+              </Reveal>
+            ))}
+          </div>
+        )}
+        {!!d.items?.length && (
+          <div className="pd-tiles">
+            {d.items.map((it, i) => {
+              const o = typeof it === 'string' ? { title: it } : it;
+              return (
+                <Reveal key={o.title + i} className="pd-tile" delay={(i % 3) * 60}>
+                  {o.icon ? <span className="pd-ico"><Icon name={o.icon} size={18} /></span> : <i className="pd-dot" />}
+                  <div><b>{o.title}</b>{o.text && <p>{o.text}</p>}</div>
+                </Reveal>
+              );
+            })}
+          </div>
+        )}
+        {d.quote && <blockquote className="pd-quote">{d.quote}</blockquote>}
+        {d.button && <Link to={d.button.to || '/'} className="btn outline pd-btn">{d.button.label}</Link>}
+      </div>
+    </section>
+  );
+}
+
+function ModuleGroups({ s }) {
+  const d = s.data || {};
+  return (
+    <section className="section pd-sec">
+      <div className="container">
+        <Reveal className="pd-head">
+          {s.eyebrow && <span className="pd-pill tint">{s.eyebrow}</span>}
+          {s.title && <h2><Rich text={s.title} /></h2>}
+          {s.subtitle && <p className="muted">{s.subtitle}</p>}
+        </Reveal>
+        <div className="pd-numgrid">
+          {(d.groups || []).map((g, i) => (
+            <Reveal key={g.title} className="pd-numcard grp" delay={(i % 3) * 70}>
+              <h3><small>{String(i + 1).padStart(2, '0')}</small>{g.title}</h3>
+              <div className="pd-tags">{g.items.map((t) => <span key={t}>{t}</span>)}</div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 const map = {
+  product_hero: ProductHero, product_about: ProductAbout, num_cards: NumCards, feature_block: FeatureBlock, module_groups: ModuleGroups,
   strip: Strip, domain_search: DomainSearch, combo: Combo, pricing_plans: PricingPlans, spec_table: SpecTable, payments: Payments, benchmark: Benchmark,
   article: Article, quotes: Quotes, post_list: PostList, clients: Clients,
   hero: Hero, cards: Cards, services_grid: ServicesGrid, industries_grid: IndustriesGrid, stats: Stats,
